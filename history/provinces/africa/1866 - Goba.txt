@@ -1,0 +1,13 @@
+owner = SID
+controller = SID
+add_core = SID
+add_core = MAJ
+add_core = GEL
+add_core = WRL
+add_core = ETH
+trade_goods = cattle
+life_rating = 30
+1861.1.1 = {
+	owner = ETH
+	controller = ETH
+}

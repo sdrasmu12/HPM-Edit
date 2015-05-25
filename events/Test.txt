@@ -1,0 +1,37 @@
+country_event = {
+	id = 777777
+	title = " Frontiers Open For Settlement 1"
+	desc = " Frontiers Open 1 "
+	
+	trigger = {
+		NOT = {
+			any_owned_province = {
+				life_rating = 30
+				OR = {
+					AND = {
+						has_pop_type = farmers
+						NOT = { unemployment_by_type = { value = 0.05 type = farmers } }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 100
+		
+		modifier = {
+			factor = 0.1
+			total_pops = 5000
+			}
+	}
+	
+	
+	option = {
+		name = "It is a frontier"
+		add_country_modifier = {
+					name = russian_army
+					duration = 3650
+				}
+		}
+}	

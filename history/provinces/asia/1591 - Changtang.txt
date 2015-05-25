@@ -1,0 +1,8 @@
+owner = XIN
+controller = XIN
+add_core = CHI
+add_core = XIN
+add_core = TIB
+trade_goods = cattle
+life_rating = 30
+ 

@@ -1,0 +1,62 @@
+province_event = {
+	id = 6016804
+	title = "EVTNAME6016804"
+	desc = "EVTDESC6016804"
+	
+
+	
+	trigger = {
+		unit_in_battle = yes
+		has_building = fort
+	}
+	
+	mean_time_to_happen = { days = 30 }
+	
+	option = {
+		name = "EVT6016804OPTA"
+		fort = -1
+	}
+}
+
+province_event = {
+	id = 6016805
+	title = "EVTNAME6016805"
+	desc = "EVTDESC6016805"
+	
+
+	
+	trigger = {
+		unit_in_battle = yes
+		has_building = railroad
+	}
+	
+	mean_time_to_happen = { days = 15 }
+	
+	option = {
+		name = "EVT6016805OPTA"
+		infrastructure = -1
+	}
+}
+
+province_event = {
+	id = 6016806
+	title = "EVTNAME6016806"
+	desc = "EVTDESC6016806"
+	
+
+	
+	trigger = {
+		unit_in_battle = yes
+		has_building = telegraph
+	}
+	
+	mean_time_to_happen = { days = 7 }
+	
+	option = {
+		name = "EVT6016806OPTA"
+		telegraph = -1
+	}
+}
+
+
+

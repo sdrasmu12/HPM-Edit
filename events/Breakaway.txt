@@ -1,0 +1,1329 @@
+country_event = {
+	id = 140044
+	title = "Breakaway Substates"
+	desc = "We have a new government will our vassals, substates and colonies stay true to us?"
+	picture = "meeting3"
+
+	is_triggered_only = yes
+
+	
+	option = {
+		set_country_flag = recent_revolution
+	}
+}
+
+country_event = {
+	id = 140011
+	title = "Spread the Revolution?"
+	desc = "We have undergone a revolution, shall we attempt to reform the governments
+	of our puppet states as well?"
+	picture = "meeting3"
+	
+	trigger = {
+			has_country_flag = recent_revolution
+			NOT = { is_vassal = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	option = {
+	name = "Spread the Revolution!"
+		set_country_flag = spread_the_revolution_among_vassals
+	}	
+	option = {
+	name = "Do not trouble our Vassals"
+	}	
+}
+
+
+
+country_event = {
+	id = 140020
+	title = "Revolution in Overlord -- Demand Release"
+	desc = "There has been a revolution in the country that has ruled us from afar, 
+	we may decide to declare independence"
+	picture = "meeting3"
+
+	trigger = {
+		overlord = {
+			has_country_flag = recent_revolution
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		set_country_flag = deliberating_on_overlord_revolution
+	}	
+}
+
+
+
+country_event = {
+	id = 140021
+	title = "Revolution in Overlord -- Demand Hostile Release"
+	desc = "There has been a revolution in the country that has ruled us from afar,
+	we no longer recognize the legitimacy of that government and demand freedom either through peace or war "
+	picture = "meeting3"
+
+	trigger = {
+		has_country_flag = deliberating_on_overlord_revolution
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 9
+		modifier = {
+			factor = 0.5
+			NOT = {
+				overlord = {
+					stronger_army_than = THIS
+				}
+			}
+		}
+	}
+	
+	option = {
+		sphere_owner = {
+			country_event = 140030
+		}
+		clr_country_flag = deliberating_on_overlord_revolution
+	}	
+}
+
+country_event = {
+	id = 140022
+	title = "Revolution in Overlord -- Demand Amenable Release"
+	desc = "There has been a revolution in the country that has ruled us from afar,
+	we no longer recognize the legitimacy of that government and demand freedom either through peace or war "
+	picture = "meeting3"
+
+	trigger = {
+		has_country_flag = deliberating_on_overlord_revolution
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.5
+			NOT = {
+				overlord = {
+					stronger_army_than = THIS
+				}
+			}
+		}
+	}
+	
+	option = {
+		sphere_owner = {
+			country_event = 140031
+		}
+		clr_country_flag = deliberating_on_overlord_revolution
+	}	
+}
+
+country_event = {
+	id = 140033
+	title = "Revolution in Overlord -- Demand Revolution"
+	desc = "There has been a revolution in the country that has ruled us from afar,
+	the people of our country demand that their country adopt a similar government"
+	picture = "meeting3"
+
+	trigger = {
+		has_country_flag = deliberating_on_overlord_revolution
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.5
+			NOT = {
+				overlord = {
+					stronger_army_than = THIS
+				}
+			}
+		}
+	}
+	
+	option = {
+		sphere_owner = {
+			country_event = 140031
+		}
+		clr_country_flag = deliberating_on_overlord_revolution
+	}	
+}
+
+
+
+country_event = {
+	id = 140030
+	title = "Our Vassal has demanded Independence"
+	desc = "After our Revolution some of our puppets no longer regard the new government as 
+	legitimate, they demand a complete severing of ties from us"
+	picture = "meeting3"
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "we will release them if we must"
+		release_vassal = FROM
+		leave_alliance = FROM
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+	}
+	
+	option = {
+		name = "Never, we will fight for this"
+		release_vassal = FROM
+		leave_alliance = FROM
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+		add_causus_belli = {
+		target = FROM
+		type = add_to_sphere
+		months = 12
+		}
+	}
+}
+
+
+country_event = {
+	id = 140031
+	title = "Vassal Insists on Independence"
+	desc = "Our new government is not regarded as legitimate by some of our vassals
+	they will retain positive relations with us if we allow them to leave peacefully, but they
+	will fight us if we don't"
+	picture = "meeting3"
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "we will release"
+		release_vassal = FROM
+	}
+	
+option = {
+		name = "Never, we will fight for this"
+		release_vassal = FROM
+		leave_alliance = FROM
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+	add_causus_belli = {
+		target = FROM
+		type = add_to_sphere
+		months = 12
+		}
+	}
+}
+
+country_event = {
+	id = 140032
+	title = "Vassal Requests Independence"
+	desc = "Our new government is not regarded as legitimate by some of our vassals
+	they will retain positive relations with us if we allow them to leave peacefully, if we do not 
+	the current government may lose the support of the people"
+	picture = "meeting3"
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "Amenably Release them"
+		release_vassal = FROM
+		relation = {
+			who = FROM
+			value = 200
+		}
+	}
+	
+option = {
+		name = "Refuse to release them"
+		relation = {
+			who = FROM 
+			value = -200
+		}
+	}
+}
+
+country_event = {
+	id = 140040
+	title = "Deliberate on reforms"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+		}
+		NOT = {
+			OR  = {
+				AND = {
+					overlord = { government = proleterian_dictatorship}
+					government = proleterian_dictatorship
+				}
+				AND = {
+					overlord = { government = presidential_dictatorship }
+					government = presidential_dictatorship
+				}
+				AND = {
+					overlord = { government = bourgeois_dictatorship }
+					government = bourgeois_dictatorship
+				}
+				AND = {
+					overlord = { government = fascist_dictatorship }
+					government = fascist_dictatorship
+				}
+				AND = {
+					overlord = { government = absolute_monarchy }
+					government = absolute_monarchy
+				}
+				AND = {
+					overlord = { government = prussian_constitutionalism }
+					government = prussian_constitutionalism
+				}
+				AND = {
+					overlord = { government = hms_government }
+					government = hms_government
+				}
+				AND = {
+					overlord = { government = democracy }
+					government = democracy
+				}
+				AND = {
+					overlord = { government = theocracy }
+					government = theocracy
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 18	
+	}
+	
+	option = {
+		name = "we will have to think about this"
+		set_country_flag = deliberating_on_overlord_reforms
+	}
+}
+
+country_event = {
+	id = 140041
+	title = "Communist Revolution spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = proleterian_dictatorship
+		}
+		NOT = { government = proleterian_dictatorship }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+
+		modifier = {
+			factor = 0.5
+				OR = {
+				ideology = socialist
+				ideology = communist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = conservative
+				ideology = fascist
+				ideology = reactionary
+				}
+		}
+		modifier = {
+			factor = 5
+				OR = {
+				government = presidential_dictatorship
+				government = bourgeois_dictatorship
+				government = fascist_dictatorship
+				government = absolute_monarchy
+				government = theocracy
+				}
+		}
+	}
+	
+	option = {
+		name = "The revolution spreads"
+		government = proleterian_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = debtors_prisons
+		political_reform = hereditary_bureaucracy
+		political_reform = no_slavery
+		political_reform = mandatory_service
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = good_subsidies
+		social_reform = good_pensions
+		social_reform = good_health_care
+	}
+	
+}
+
+country_event = {
+	id = 140042
+	title = "Dictatorship spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = presidential_dictatorship
+		}
+		NOT = { government = presidential_dictatorship }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				ideology = liberal
+				ideology = anarcho_liberal
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = liberal
+				pop_majority_ideology = anarcho_liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 5
+				OR = {
+				government = absolute_monarchy
+				government = theocracy
+				}
+		}
+		modifier = {
+			factor = 1.5
+				OR = {
+				government = democracy
+				}
+		}
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = bourgeois_dictatorship
+				government = fascist_dictatorship
+				government = hms_government
+				government = prussian_constitutionalism
+				}
+		}
+	}
+	
+	option = {
+		name = "Appoint the President for life"
+		government = presidential_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+	}
+	
+}
+
+country_event = {
+	id = 140043
+	title = "Dictatorship spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = bourgeois_dictatorship
+		}
+		NOT = { government = bourgeois_dictatorship }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.9
+				OR = {
+				ideology = liberal
+				ideology = anarcho_liberal
+				}
+		}
+		modifier = {
+			factor = 0.9
+				OR = {
+				pop_majority_ideology = liberal
+				pop_majority_ideology = anarcho_liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = reactionary
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = conservative
+				}
+		}
+		modifier = {
+			factor = 5
+				OR = {
+				government = absolute_monarchy
+				government = theocracy
+				government = proleterian_dictatorship
+				government = presidential_dictatorship
+				}
+		}
+		modifier = {
+			factor = 1.5
+				OR = {
+				government = democracy
+				}
+		}
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = fascist_dictatorship
+				government = hms_government
+				government = prussian_constitutionalism
+				government = democracy
+				}
+		}
+			modifier = {
+			factor = 0.7
+				political_reform = wealth_voting
+		}
+	}
+	
+	option = {
+		name = "Usher in the Reign of the Bourgeois"
+		government = presidential_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+	}
+	
+}
+
+country_event = {
+	id = 140044
+	title = "Fascism spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = fascist_dictatorship
+		}
+		NOT = { government = fascist_dictatorship }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.8
+				OR = {
+				ideology = reactionary
+				ideology = conservative
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = socialist
+				ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 5
+				OR = {
+				government = absolute_monarchy
+				government = theocracy
+				government = proleterian_dictatorship
+				}
+		}
+
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = absolute_monarchy
+				government = presidential_dictatorship
+				}
+		}
+	}
+	
+	option = {
+		name = "From Unity Strength"
+		government = fascist_dictatorship
+		ruling_party_ideology = fascist
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = mandatory_service
+		
+	}
+	
+}
+
+country_event = {
+	id = 140045
+	title = "Monarchy spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = absolute_monarchy
+		}
+		NOT = { government = absolute_monarchy }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.8
+				OR = {
+				ideology = reactionary
+				ideology = conservative
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = socialist
+				ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 3
+				OR = {
+				government = proleterian_dictatorship
+				government = democracy
+				}
+		}
+
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = fascist_dictatorship
+				government = presidential_dictatorship
+				government = theocracy
+				government = hms_government
+				government = prussian_constitutionalism
+				}
+		}
+	}
+	
+	option = {
+		name = "Long live the King!"
+		government = absolute_monarchy
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = mandatory_service
+	}
+	
+}
+
+country_event = {
+	id = 140046
+	title = "Monarchy spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = prussian_constitutionalism
+		}
+		NOT = { government = prussian_constitutionalism }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.8
+				OR = {
+				ideology = reactionary
+				ideology = conservative
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = socialist
+				ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 3
+				OR = {
+				government = proleterian_dictatorship
+				government = democracy
+				}
+		}
+
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = fascist_dictatorship
+				government = presidential_dictatorship
+				government = theocracy
+				government = hms_government
+				government = prussian_constitutionalism
+				}
+		}
+	}
+	
+	option = {
+		name = "Long live the King!"
+		government = prussian_constitutionalism
+		random_owned = {
+			limit = {
+				owner = { NOT = { vote_franschise = universal_voting } }
+			}
+			owner = { political_reform = universal_weighted_voting }
+		}
+		political_reform = population_equal_weight
+		political_reform = yes_meeting
+		political_reform = free_press
+		random_owned = {
+			limit = {
+				owner = { NOT = { trade_unions = all_trade_unions } }
+			}
+			owner = { political_reform = non_socialist }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						political_parties = underground_parties
+						political_parties = harassment
+					}
+				}
+			}
+			owner = { political_reform = gerrymandering }
+		}
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = gerrymandering } }
+			}
+			owner = { political_reform = non_secret_ballots }
+		}		
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = non_secret_ballots } }
+			}
+			owner = { political_reform = secret_ballots }
+		}
+	}
+	
+}
+
+country_event = {
+	id = 140047
+	title = "Monarchy spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = hms_government
+		}
+		NOT = { government = hms_government }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.8
+				OR = {
+				ideology = reactionary
+				ideology = conservative
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = socialist
+				ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 3
+				OR = {
+				government = proleterian_dictatorship
+				government = democracy
+				}
+		}
+
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = fascist_dictatorship
+				government = presidential_dictatorship
+				government = theocracy
+				government = hms_government
+				government = prussian_constitutionalism
+				}
+		}
+	}
+	
+	option = {
+		name = "Long live the King!"
+		government = hms_government
+		random_owned = {
+			limit = {
+				owner = { NOT = { vote_franschise = universal_voting } }
+			}
+			owner = { political_reform = universal_weighted_voting }
+		}
+		political_reform = population_equal_weight
+		political_reform = yes_meeting
+		political_reform = free_press
+		random_owned = {
+			limit = {
+				owner = { NOT = { trade_unions = all_trade_unions } }
+			}
+			owner = { political_reform = non_socialist }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						political_parties = underground_parties
+						political_parties = harassment
+					}
+				}
+			}
+			owner = { political_reform = gerrymandering }
+		}
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = gerrymandering } }
+			}
+			owner = { political_reform = non_secret_ballots }
+		}		
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = non_secret_ballots } }
+			}
+			owner = { political_reform = secret_ballots }
+		}
+	}
+	
+}
+
+ountry_event = {
+	id = 140048
+	title = "Democracy spreads from Overlord"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+			government = democracy
+		}
+		NOT = { government = democracy }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.9
+				overlord = {
+					brigades_compare = 2
+				}
+		}
+		modifier = {
+			factor = 0.75
+				overlord = {
+					brigades_compare = 3
+				}
+		}
+		modifier = {
+			factor = 0.5
+				overlord = {
+					brigades_compare = 4
+				}
+		}
+		modifier = {
+			factor = 0.8
+				OR = {
+				ideology = reactionary
+				ideology = conservative
+				ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 0.5
+				OR = {
+				pop_majority_ideology = reactionary
+				pop_majority_ideology = conservative
+				pop_majority_ideology = fascist
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				pop_majority_ideology = socialist
+				pop_majority_ideology = communist
+				pop_majority_ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 2
+				OR = {
+				ideology = communist
+				ideology = socialist
+				ideology = liberal
+				}
+		}
+		modifier = {
+			factor = 3
+				OR = {
+				government = proleterian_dictatorship
+				}
+		}
+
+		modifier = {
+			factor = 0.7
+				OR = {
+				government = fascist_dictatorship
+				government = presidential_dictatorship
+				government = theocracy
+				government = hms_government
+				government = prussian_constitutionalism
+				}
+		}
+	}
+	
+	option = {
+		name = "Long live the King!"
+		government = democracy
+		random_owned = {
+			limit = {
+				owner = { NOT = { vote_franschise = universal_voting } }
+			}
+			owner = { political_reform = universal_weighted_voting }
+		}
+		political_reform = population_equal_weight
+		political_reform = yes_meeting
+		political_reform = free_press
+		random_owned = {
+			limit = {
+				owner = { NOT = { trade_unions = all_trade_unions } }
+			}
+			owner = { political_reform = non_socialist }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						political_parties = underground_parties
+						political_parties = harassment
+					}
+				}
+			}
+			owner = { political_reform = gerrymandering }
+		}
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = gerrymandering } }
+			}
+			owner = { political_reform = non_secret_ballots }
+		}		
+		random_owned = {
+			limit = {
+				owner = { NOT = { political_parties = non_secret_ballots } }
+			}
+			owner = { political_reform = secret_ballots }
+		}
+	}
+	
+}
+
+country_event = {
+	id = 140049
+	title = "Refuse the Reforms"
+	desc = "The country which rules us from afar has undergone a revolution, they demand
+	we change our government to match theirs"
+	picture = "meeting3"
+
+trigger = {
+		ai = yes
+		overlord = {
+			has_country_flag = spread_the_revolution_among_vassals
+		}
+		NOT = {
+			OR  = {
+				AND = {
+					overlord = { government = proleterian_dictatorship}
+					government = proleterian_dictatorship
+				}
+				AND = {
+					overlord = { government = presidential_dictatorship }
+					government = presidential_dictatorship
+				}
+				AND = {
+					overlord = { government = bourgeois_dictatorship }
+					government = bourgeois_dictatorship
+				}
+				AND = {
+					overlord = { government = fascist_dictatorship }
+					government = fascist_dictatorship
+				}
+				AND = {
+					overlord = { government = absolute_monarchy }
+					government = absolute_monarchy
+				}
+				AND = {
+					overlord = { government = prussian_constitutionalism }
+					government = prussian_constitutionalism
+				}
+				AND = {
+					overlord = { government = hms_government }
+					government = hms_government
+				}
+				AND = {
+					overlord = { government = democracy }
+					government = democracy
+				}
+				AND = {
+					overlord = { government = theocracy }
+					government = theocracy
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 18	
+	}
+	
+	option = {
+		name = "We refuse the reforms"
+		release_vassal = FROM
+		overlord = { 
+		country_event = 140050}
+	}
+}
+
+country_event = {
+	id = 140050
+	title = "Vassal Refuses to Reform"
+	desc = "Our Vassal has refused to from their government"
+	picture = "meeting3"
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "End the program of reforms"
+		clr_country_flag = spread_the_revolution_among_vassals
+	}
+	
+	option = {
+		name = "Make an Exception"
+		FROM = {
+		country_event = 140051
+		}
+	}
+	
+option = {
+		name = "Enforce the Reform through War!"
+		
+	}
+}
+

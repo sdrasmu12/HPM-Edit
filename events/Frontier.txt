@@ -1,0 +1,475 @@
+#Frontier Events
+
+province_event = {
+	id = 140000
+	title = " Frontiers Open For Settlement 1"
+	desc = " Frontiers Open 1 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { has_province_modifier = frontier }	
+		NOT = { continent = europe }
+		owner = {
+			NOT = { 
+				OR = {
+					any_owned_province = {  
+						has_province_modifier = frontier
+					}
+					capital_scope = { continent = europe } 
+				}
+			}
+		}		
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = frontier
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140001
+	title = " Frontiers Open For Settlement 2"
+	desc = " Frontiers Open 2 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 } 
+		NOT = { has_province_modifier = frontier }
+		NOT = {	has_province_modifier = frontier_2 }
+		owner = {
+			any_owned_province = {  
+						has_province_modifier = frontier
+					}
+			NOT = { 
+					any_owned_province = {  
+						has_province_modifier = frontier_2
+					}
+				}
+			}
+		NOT = { 
+			owner = {
+				capital_scope = { continent = europe}
+			}
+		}	
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = frontier_2
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140002
+	title = " Frontiers Open For Settlement 3"
+	desc = " Frontiers Open 3 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 } 
+		NOT = { has_province_modifier = frontier }
+		NOT = {	has_province_modifier = frontier_2 }
+		NOT = {	has_province_modifier = frontier_3 }
+		owner = {
+			any_owned_province = {  
+						has_province_modifier = frontier
+					}
+			any_owned_province = {  
+						has_province_modifier = frontier_2
+					}
+			NOT = { 
+					any_owned_province = {  
+						has_province_modifier = frontier_3
+					}
+				}
+			}
+		NOT = { 
+			owner = {
+				capital_scope = { continent = europe}
+			}
+		}	
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = frontier_3
+					duration = 3650
+				}
+		
+		}
+}	
+
+province_event = {
+	id = 140003
+	title = " Frontiers Open For Settlement 4"
+	desc = " Frontiers Open 4 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { 
+			OR = { has_province_modifier = frontier
+					has_province_modifier = frontier_2
+					has_province_modifier = frontier_3
+					has_province_modifier = frontier_4
+			}
+		}		
+		owner = {
+			AND = { 
+				any_owned_province = { has_province_modifier = frontier }
+				any_owned_province = { has_province_modifier = frontier_2 }
+				any_owned_province = { has_province_modifier = frontier_3 }
+			}
+			NOT = { 
+				OR = {
+					any_owned_province = {  
+						has_province_modifier = frontier_4
+					}
+					capital_scope = { continent = europe } 
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = frontier_4
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140004
+	title = " Frontiers Open For Settlement 5"
+	desc = " Frontiers Open 5 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { 
+			OR = { has_province_modifier = frontier
+					has_province_modifier = frontier_2
+					has_province_modifier = frontier_3
+					has_province_modifier = frontier_4
+					has_province_modifier = frontier_5
+			}
+		}
+		owner = {
+			AND = { 
+				any_owned_province = { has_province_modifier = frontier }
+				any_owned_province = { has_province_modifier = frontier_2 }
+				any_owned_province = { has_province_modifier = frontier_3 }
+				any_owned_province = { has_province_modifier = frontier_4 }
+			}
+			NOT = { 
+				capital_scope = { continent = europe } 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = frontier_5
+					duration = 3650
+				}
+		}
+}	
+
+
+province_event = {
+	id = 140005
+	title = " Colonial Frontiers Open For Settlement 1"
+	desc = " Colonial Frontiers Open 1 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { has_province_modifier = colonial_frontier }	
+		NOT = { continent = europe }
+		owner = {
+			NOT = { 
+				any_owned_province = {  
+					has_province_modifier = colonial_frontier
+				}
+			}
+			capital_scope = { continent = europe } 
+			}
+				
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = colonial_frontier
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140006
+	title = " Colonial Frontiers Open For Settlement 2"
+	desc = " Colonial Frontiers Open 2 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { 
+			OR = { has_province_modifier = colonial_frontier
+					has_province_modifier = colonial_frontier_2
+			}
+		}	
+		owner = {
+			any_owned_province = { has_province_modifier = colonial_frontier }
+					
+			NOT = { 
+				any_owned_province = {  
+						has_province_modifier = colonial_frontier_2
+					}
+			}
+			capital_scope = { continent = europe } 		
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = colonial_frontier_2
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140007
+	title = " Colonial Frontiers Open For Settlement 3"
+	desc = " Colonial Frontiers Open 3 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { 
+			OR = { has_province_modifier = colonial_frontier
+					has_province_modifier = colonial_frontier_2
+					has_province_modifier = colonial_frontier_3
+			}
+		}		
+		owner = {
+			AND = { 
+				any_owned_province = { has_province_modifier = colonial_frontier }
+				any_owned_province = { has_province_modifier = colonial_frontier_2 }
+				capital_scope = { continent = europe } 
+			}
+			NOT = { 
+					any_owned_province = {  has_province_modifier = colonial_frontier_3 }	
+				}
+			}
+		}
+
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = colonial_frontier_3
+					duration = 3650
+				}
+		
+		}
+}	
+
+province_event = {
+	id = 140008
+	title = " Colonial Frontiers Open For Settlement 4"
+	desc = " Colonial Frontiers Open 4 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { 
+			OR = { has_province_modifier = colonial_frontier
+					has_province_modifier = colonial_frontier_2
+					has_province_modifier = colonial_frontier_3
+					has_province_modifier = colonial_frontier_4
+			}
+		}		
+		owner = {
+			AND = { 
+				any_owned_province = { has_province_modifier = colonial_frontier }
+				any_owned_province = { has_province_modifier = colonial_frontier_2 }
+				any_owned_province = { has_province_modifier = colonial_frontier_3 }
+				capital_scope = { continent = europe } 
+			}
+			NOT = { 
+					any_owned_province = {  
+						has_province_modifier = colonial_frontier_4
+					}
+
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = colonial_frontier_4
+					duration = 3650
+				}
+		}
+}	
+
+province_event = {
+	id = 140009
+	title = " Colonial Frontiers Open For Settlement 5"
+	desc = " Colonial Frontiers Open 5 "
+	
+	trigger = {
+		life_rating = 30
+		NOT = {	total_pops = 5000 }
+		NOT = { has_province_modifier = colonial_frontier }
+		NOT = {	has_province_modifier = colonial_frontier_2 }
+		NOT = {	has_province_modifier = colonial_frontier_3 }
+		NOT = {	has_province_modifier = colonial_frontier_4 }
+		NOT = {	has_province_modifier = colonial_frontier_5 }
+		owner = {
+			AND = { 
+				any_owned_province = { has_province_modifier = colonial_frontier }
+				any_owned_province = { has_province_modifier = colonial_frontier_2 }
+				any_owned_province = { has_province_modifier = colonial_frontier_3 }
+				any_owned_province = { has_province_modifier = colonial_frontier_4 }
+				capital_scope = { continent = europe } 
+			}
+		}
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 10
+			NOT = {	
+			total_pops = 5000
+			}
+		}
+	}
+	
+	option = {
+		name = "It is a frontier"
+		add_province_modifier = {
+					name = colonial_frontier_5
+					duration = 3650
+				}
+		}
+}	
+

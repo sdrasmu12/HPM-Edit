@@ -1,0 +1,1207 @@
+#general promote mtth, same for all pops
+promotion_chance = {
+	factor = 0.25
+	
+	group = {
+		modifier = {
+			factor = 0.03
+			literacy = 0.05
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.1 
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.2
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.3
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.4
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.5
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.6
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.7
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.8
+		}
+		modifier = {
+			factor = 0.03
+			literacy = 0.9
+		}
+	}
+	modifier = {
+			factor = -5
+			strata = rich
+		}
+	group = {
+		modifier = {
+			factor = -0.05
+			militancy = 9
+		}
+		modifier = {
+			factor = -0.05
+			militancy = 8
+		}
+		modifier = {
+			factor = -0.05
+			militancy = 7
+		}
+	}
+	
+	modifier = {
+		factor = -0.1
+		not = { religion = this }
+	}
+	
+	modifier = {
+		factor = -0.1
+		state_scope = { is_colonial = yes }
+		NOT = { primary_culture = THIS }
+	}
+	
+	modifier = {
+		factor = -0.04
+		not = { culture = this }
+	}
+	
+	modifier = {
+		factor = 0.04
+		culture = this 
+	}
+	
+	modifier = {
+		factor = -0.1
+		state_scope = { is_slave = yes }
+	}
+	
+	modifier = {
+		factor = -100
+		location = { NOT = { controlled_by = owner } }
+	}
+	
+	group = {
+	modifier = {
+		factor = -0.06
+		NOT = {
+			is_culture_group = this
+		}	
+		NOT = {
+			OR = {
+				AND = {
+					country = {
+						OR = {
+							primary_culture = north_german 
+							primary_culture = south_german 
+							primary_culture = ashkenazi 
+							primary_culture = dutch 
+							primary_culture = flemish 
+							primary_culture = wallonian 
+							primary_culture = swiss 
+							primary_culture = swedish 
+							primary_culture = danish 
+							primary_culture = norwegian 
+							primary_culture = icelandic 
+							primary_culture = finnish 
+							primary_culture = british 
+							primary_culture = irish 
+							primary_culture = north_italian 
+							primary_culture = south_italian 
+							primary_culture = spanish 
+							primary_culture = catalan 
+							primary_culture = portuguese 
+							primary_culture = french 
+							primary_culture = croat 
+							primary_culture = serb 
+							primary_culture = bulgarian 
+							primary_culture = albanian 
+							primary_culture = slovene 
+							primary_culture = bosniak 
+							primary_culture = hungarian 
+							primary_culture = polish 
+							primary_culture = czech 
+							primary_culture = slovak 
+							primary_culture = russian 
+							primary_culture = ukrainian 
+							primary_culture = lithuanian 
+							primary_culture = latvian 
+							primary_culture = estonian 
+							primary_culture = greek 
+							primary_culture = georgian 
+							primary_culture = armenian
+							primary_culture = yankee 
+							primary_culture = dixie 
+							primary_culture = texan 
+							primary_culture = australian 
+							primary_culture = boer 
+							primary_culture = anglo_canadian 
+							primary_culture = french_canadian 
+							primary_culture = mexican 
+							primary_culture = central_american 
+							primary_culture = caribeno 
+							primary_culture = north_andean 
+							primary_culture = south_andean 
+							primary_culture = platinean 
+							primary_culture = brazilian 
+						}
+					}
+					OR = {
+						is_culture_group = germanic
+						is_culture_group = beneluxian 
+						is_culture_group = pan_swiss 
+						is_culture_group = scandinavian 
+						is_culture_group = british 
+						is_culture_group = italian 
+						is_culture_group = iberian 
+						is_culture_group = french 
+						is_culture_group = south_slavic 
+						is_culture_group = hungarian_culture_group 
+						is_culture_group = polish_culture_group 
+						is_culture_group = czecho_slovak_culture_group 
+						is_culture_group = east_slavic 
+						is_culture_group = baltic 
+						is_culture_group = levantine 
+						is_culture_group = american_cultures 
+						is_culture_group = neo_european_cultures 
+						is_culture_group = latin_american_cultures 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = maghrebi 
+							primary_culture = misri 
+							primary_culture = mashriqi 
+							primary_culture = bedouin
+							primary_culture = turkish 
+							primary_culture = azerbaijani
+							primary_culture = persian 
+							primary_culture = uzbek 
+							primary_culture = kirgiz 
+							primary_culture = pashtun 
+							primary_culture = baluchi
+							primary_culture = tatar 
+						}
+					}
+					OR = {
+						is_culture_group = turko_semitic 
+						is_culture_group = iranian_turanian 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = vietnamese 
+							primary_culture = khmer 
+							primary_culture = malay 
+							primary_culture = filipino 
+							primary_culture = javan 
+							primary_culture = thai 
+							primary_culture = lao 
+							primary_culture = burmese  
+							primary_culture = japanese 
+							primary_culture = manchu 
+							primary_culture = beifaren 
+							primary_culture = nanfaren 
+							primary_culture = korean 
+							primary_culture = zhuang 
+						}
+					}
+					OR = {
+						is_culture_group = southeast_asian 
+						is_culture_group = east_asian 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = afro_antillean 
+							primary_culture = hausa
+							primary_culture = bakongo 
+							primary_culture = african_minor 
+							primary_culture = amhara 
+							primary_culture = swahili 
+							primary_culture = malagasy
+							primary_culture = zulu
+						}
+					}
+					OR = {
+						is_culture_group = african_diaspora_cultures 
+						is_culture_group = west_african 
+						is_culture_group = central_african 
+						is_culture_group = east_african 
+						is_culture_group = southern_african 
+					}
+				}
+			}
+		}
+	}
+	}
+	group = {
+		modifier = {
+			factor = 0.1
+			life_needs = 0.9
+	
+		}
+		modifier = {
+			factor = 0.1
+			life_needs = 0.8 
+		}
+		modifier = {
+			factor = 0.1
+			life_needs = 0.7
+			strata = poor
+		}
+	}
+
+	
+	modifier = {
+			factor = 0.05
+			everyday_needs = 0.3
+			strata = poor
+	}
+	modifier = {
+			factor = 0.1
+			everyday_needs = 0.6
+			strata = poor
+	}
+	modifier = {
+			factor = 0.1
+			everyday_needs = 0.9
+			strata = poor
+	}
+	modifier = {
+			factor = 0.2
+			luxury_needs = 0.1
+			strata = poor
+	}
+	modifier = {
+			factor = 0.05
+			everyday_needs = 0.9
+			strata = middle
+	}
+	modifier = {
+			factor = 0.1
+			luxury_needs = 0.1
+			strata = middle
+	}
+	modifier = {
+			factor = 0.1
+			luxury_needs = 0.5
+			strata = middle
+	}
+	group = {
+		modifier = {
+			factor = -0.2
+			cash_reserves = 0.2
+		}
+		modifier = {
+			factor = 0.1
+			cash_reserves = 0.4
+		}
+		modifier = {
+			factor = 0.1
+			cash_reserves = 0.6
+		}
+		modifier = {
+			factor = 0.2
+			cash_reserves = 0.8
+		}
+	}
+	
+	
+}
+
+demotion_chance = {
+	factor = 1
+	modifier = {
+		factor = -0.1
+		not = { religion = this }
+		strata = poor
+	}
+
+	modifier = {
+		factor = -0.1
+		state_scope = { is_colonial = yes }
+		strata = poor
+	}
+
+	modifier = {
+		factor = -0.1
+		country = { 
+		OR = {
+		slavery = yes_slavery
+		slavery = freedom_of_womb
+		debt_law = serfdom
+			}
+		}
+	}
+	modifier = {
+		factor = -0.05
+		state_scope = { is_slave = yes }
+	}
+	modifier = {
+		factor = -0.1
+		not = { culture = this }
+		strata = poor
+	}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.1 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.15 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.2 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.3 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.4 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.5 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.6 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.7 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.8 }
+		}
+		modifier = {
+			factor = -0.02
+			not = { literacy = 0.9 }
+		}
+
+	group = {
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.9 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.8 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.7 }
+		}
+	}
+		modifier = {
+			factor = -0.1
+			not = { consciousness = 4 }
+			strata = poor
+		}
+
+
+	group = {
+		modifier = {
+			factor = 0.1
+			not = { luxury_needs = 1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { luxury_needs = 0.9 }
+		}
+	}
+		modifier = {
+			factor = 0.5
+			strata = middle
+			state_scope = { is_colonial = yes }
+			not = { culture = this }			
+		}
+	group = {
+		modifier = {
+			factor = -0.1
+			everyday_needs = 0.9
+			strata = middle
+			state_scope = { is_colonial = no }
+		}
+		modifier = {
+			factor = -0.1
+			everyday_needs = 0.8 
+			strata = middle
+			state_scope = { is_colonial = no }
+		}
+		modifier = {
+			factor = -0.1
+			everyday_needs = 0.7 
+			strata = middle
+			state_scope = { is_colonial = no }
+		}
+	}
+	group = {
+		modifier = {
+			factor = 0.5
+			not = { life_needs = 0.3 }
+			strata = middle
+		}
+		modifier = {
+			factor = 0.5
+			not = { life_needs = 0.2 }
+			strata = middle
+		}
+		modifier = {
+			factor = 0.5
+			not = { life_needs = 0.1 }
+			strata = middle
+		}
+	}
+		modifier = {
+			factor = 0.2
+			not = { life_needs = 0.1 }
+			strata = middle
+		}
+	group = {
+		modifier = {
+			factor = 0.1
+			unemployment = 0.1
+		}
+		modifier = {
+			factor = 0.1
+			unemployment = 0.2
+		}
+		modifier = {
+			factor = 0.5
+			unemployment = 0.3
+			location = { controlled_by = owner }
+		}		
+		
+	}
+	modifier = {
+		factor = -100
+		location = { NOT = { controlled_by = owner } }
+	}
+}
+
+#general migration chance mtth, same for all pops
+migration_chance = {
+	factor = 1
+	
+	group = {
+		modifier = {
+			factor = -0.2
+			militancy = 5
+			political_movement = no
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 6
+			political_movement = no
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 7
+			political_movement = no
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 8
+			political_movement = no
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 9
+			political_movement = no
+		}
+	}
+	
+	modifier = {
+		factor = -0.3
+		is_accepted_culture = no
+		is_primary_culture = no
+		has_culture_core = yes
+		OR = {
+			country = { citizens_rights = primary_culture_voting}
+			country = { citizens_rights = culture_voting_only }
+		}
+	}
+	
+	group = {
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.8 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.7 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+	}
+
+	group = {
+		modifier = {
+			factor = 1
+			unemployment = 0.1
+			is_accepted_culture = yes
+		}
+		modifier = {
+			factor = 1
+			unemployment = 0.2
+			is_accepted_culture = yes
+		}
+		modifier = {
+			factor = 1
+			unemployment = 0.3
+			is_accepted_culture = yes
+		}
+		modifier = {
+			factor = 1
+			unemployment = 0.4
+			location = { controlled_by = owner }
+			is_accepted_culture = yes
+		}		
+		modifier = {
+			factor = 1
+			unemployment = 0.5
+			location = { controlled_by = owner }
+			is_accepted_culture = yes
+		}		
+		modifier = {
+			factor = 1
+			unemployment = 0.6
+			location = { controlled_by = owner }
+			is_accepted_culture = yes
+		}
+	}
+}
+
+#general colonial migration mtth, same for all pops
+colonialmigration_chance = {
+	factor = 0.25
+	
+	group = {
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.8 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.7 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+	}
+	modifier = {
+			factor = 0.2
+			not = { religion = animist }
+			not = { religion = this }
+			country = { religious_policy = moralism }
+	}
+	
+	modifier = {
+			factor = 0.2
+			is_primary_culture = no
+			country = { citizens_rights = primary_culture_only }
+	}
+	
+	modifier = {
+			factor = 0.1
+			is_accepted_culture = no
+			is_primary_culture = no
+			country = { citizens_rights = culture_voting_only }
+	}
+	
+	modifier = {
+			factor = 0.1
+			not = { religion = animist }
+			not = { religion = this }
+			country = { religious_policy = pluralism }
+	}
+	modifier = {
+			factor = 0.5
+			country = { penal_system = colonial_transportation }
+			militancy = 5
+	}
+
+	group = {
+		modifier = {
+			factor = 0.3
+			unemployment = 0.1
+		}
+		modifier = {
+			factor = 0.3
+			unemployment = 0.2
+		}
+		modifier = {
+			factor = 0.3
+			unemployment = 0.3
+		}
+		
+	}
+	
+	modifier = {
+		factor = 0.1
+		location = {
+			owner = { 
+				any_owned_province = {
+					has_province_modifier = colonial_frontier
+				}
+			}
+		}
+		not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+	}
+	modifier = {
+		factor = 0.1
+		location = {
+			owner = { 
+				any_owned_province = {
+					has_province_modifier = colonial_frontier_2
+				}
+			}
+		}
+		not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+	}
+	modifier = {
+		factor = 0.1
+		location = {
+			owner = { 
+				any_owned_province = {
+					has_province_modifier = colonial_frontier_3
+				}
+			}
+		}
+		not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+	}
+	modifier = {
+		factor = 0.1
+		location = {
+			owner = { 
+				any_owned_province = {
+					has_province_modifier = colonial_frontier_4
+				}
+			}
+		}
+		not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+	}
+	modifier = {
+		factor = 0.1
+		location = {
+			owner = { 
+				any_owned_province = {
+					has_province_modifier = colonial_frontier_5
+				}
+			}
+		}
+		not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+	}
+}
+
+#general emigration chance
+emigration_chance = {
+	factor = 0.5
+
+	group = {
+
+		modifier = {
+			factor = 0.2
+			militancy = 5
+			political_movement = no
+		}
+		modifier = {
+			factor = 0.2
+			militancy = 6
+			political_movement = no
+		}
+		modifier = {
+			factor = 0.2
+			militancy = 7
+			political_movement = no
+		}
+		modifier = {
+			factor = 0.2
+			militancy = 8
+			political_movement = no
+		}
+		modifier = {
+			factor = 0.2
+			militancy = 9
+			political_movement = no
+		}
+	}
+
+	group = {
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.9 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.8 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.1
+			not = { life_needs = 0.7 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.2
+			not = { life_needs = 0.6 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.2
+			not = { life_needs = 0.5 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+		modifier = {
+			factor = 0.3
+			not = { life_needs = 0.4 }
+			not = { everyday_needs = 0.1 }
+			not = { luxury_needs = 0.1 }
+		}
+	}
+	
+	modifier = {
+			factor = 0.2
+			is_primary_culture = no
+			country = { citizens_rights = primary_culture_only }
+	}
+	
+	modifier = {
+			factor = 0.1
+			is_accepted_culture = no
+			is_primary_culture = no
+			country = { citizens_rights = culture_voting_only }
+	}
+	modifier = {
+		factor = 0.2
+		country = { religious_policy = moralism }
+		not = { religion = this }
+	}
+	modifier = {
+		factor = 0.1
+		country = { religious_policy = pluralism }
+		not = { religion = this }
+	}
+	modifier = {
+		factor = 0.2
+		country = { citizenship_policy = residency }
+		not = { culture = this }
+	}
+	modifier = {
+		factor = -2.0
+		state_scope = { is_colonial = yes }
+		is_accepted_culture = yes
+	}	
+	
+}
+
+#general assimilation mtth, same for all pops
+assimilation_chance = {
+	factor = 1
+
+	group = {
+		modifier = {
+			factor = 0.1
+			literacy = 0.4
+		}
+		modifier = {
+			factor = 0.1
+			literacy = 0.5
+		}
+		modifier = {
+			factor = 0.1
+			literacy = 0.6
+		}
+		modifier = {
+			factor = 0.1
+			literacy = 0.7
+		}
+		modifier = {
+			factor = 0.1
+			literacy = 0.8
+		}
+	}
+
+	modifier = {
+    	factor = -20
+		has_culture_core = yes
+	}
+	
+	modifier = {
+		factor = 2
+			is_accepted_culture = no
+		}
+
+	group = {
+		modifier = {
+			factor = 0.2
+			luxury_needs = 0.9
+		}
+		modifier = {
+			factor = 0.2
+			luxury_needs = 0.7
+		}
+		modifier = {
+			factor = 0.2
+			luxury_needs = 0.5
+		}
+		modifier = {
+			factor = 0.2
+			luxury_needs = 0.3
+		}
+		modifier = {
+			factor = 0.2
+			luxury_needs = 0.1
+		}
+	}
+
+	group = {
+		modifier = {
+			factor = -0.2
+			militancy = 7
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 8
+		}
+		modifier = {
+			factor = -0.2
+			militancy = 9
+		}
+	}
+
+	modifier = {
+		factor = -1
+		is_accepted_culture = yes
+	}
+
+
+	group = {
+		modifier = {
+			factor = 0.05
+			NOT = { unemployment = 0.1 }
+		}
+		modifier = {
+			factor = 0.05
+			NOT = { unemployment = 0.05 }
+		}
+	}
+	
+	group = {
+	modifier = {
+		factor = -5.0
+		NOT = {
+			is_culture_group = this
+		}	
+		NOT = {
+			OR = {
+				AND = {
+					country = {
+						OR = {
+							primary_culture = north_german 
+							primary_culture = south_german 
+							primary_culture = ashkenazi 
+							primary_culture = dutch 
+							primary_culture = flemish 
+							primary_culture = wallonian 
+							primary_culture = swiss 
+							primary_culture = swedish 
+							primary_culture = danish 
+							primary_culture = norwegian 
+							primary_culture = icelandic 
+							primary_culture = finnish 
+							primary_culture = british 
+							primary_culture = irish 
+							primary_culture = north_italian 
+							primary_culture = south_italian 
+							primary_culture = spanish 
+							primary_culture = catalan 
+							primary_culture = portuguese 
+							primary_culture = french 
+							primary_culture = croat 
+							primary_culture = serb 
+							primary_culture = bulgarian 
+							primary_culture = albanian 
+							primary_culture = slovene 
+							primary_culture = bosniak 
+							primary_culture = hungarian 
+							primary_culture = polish 
+							primary_culture = czech 
+							primary_culture = slovak 
+							primary_culture = russian 
+							primary_culture = ukrainian 
+							primary_culture = lithuanian 
+							primary_culture = latvian 
+							primary_culture = estonian 
+							primary_culture = greek 
+							primary_culture = georgian 
+							primary_culture = armenian
+							primary_culture = yankee 
+							primary_culture = dixie 
+							primary_culture = texan 
+							primary_culture = australian 
+							primary_culture = boer 
+							primary_culture = anglo_canadian 
+							primary_culture = french_canadian 
+							primary_culture = mexican 
+							primary_culture = central_american 
+							primary_culture = caribeno 
+							primary_culture = north_andean 
+							primary_culture = south_andean 
+							primary_culture = platinean 
+							primary_culture = brazilian 
+						}
+					}
+					OR = {
+						is_culture_group = germanic
+						is_culture_group = beneluxian 
+						is_culture_group = pan_swiss 
+						is_culture_group = scandinavian 
+						is_culture_group = british 
+						is_culture_group = italian 
+						is_culture_group = iberian 
+						is_culture_group = french 
+						is_culture_group = south_slavic 
+						is_culture_group = hungarian_culture_group 
+						is_culture_group = polish_culture_group 
+						is_culture_group = czecho_slovak_culture_group 
+						is_culture_group = east_slavic 
+						is_culture_group = baltic 
+						is_culture_group = levantine 
+						is_culture_group = american_cultures 
+						is_culture_group = neo_european_cultures 
+						is_culture_group = latin_american_cultures 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = maghrebi 
+							primary_culture = misri 
+							primary_culture = mashriqi 
+							primary_culture = bedouin
+							primary_culture = turkish 
+							primary_culture = azerbaijani
+							primary_culture = persian 
+							primary_culture = uzbek 
+							primary_culture = kirgiz 
+							primary_culture = pashtun 
+							primary_culture = baluchi
+							primary_culture = tatar 
+						}
+					}
+					OR = {
+						is_culture_group = turko_semitic 
+						is_culture_group = iranian_turanian 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = vietnamese 
+							primary_culture = khmer 
+							primary_culture = malay 
+							primary_culture = filipino 
+							primary_culture = javan 
+							primary_culture = thai 
+							primary_culture = lao 
+							primary_culture = burmese  
+							primary_culture = japanese 
+							primary_culture = manchu 
+							primary_culture = beifaren 
+							primary_culture = nanfaren 
+							primary_culture = korean 
+							primary_culture = zhuang 
+						}
+					}
+					OR = {
+						is_culture_group = southeast_asian 
+						is_culture_group = east_asian 
+					}
+				}
+				AND = {
+					country = {
+						OR = {
+							primary_culture = afro_antillean 
+							primary_culture = hausa
+							primary_culture = bakongo 
+							primary_culture = african_minor 
+							primary_culture = amhara 
+							primary_culture = swahili 
+							primary_culture = malagasy
+							primary_culture = zulu
+						}
+					}
+					OR = {
+						is_culture_group = african_diaspora_cultures 
+						is_culture_group = west_african 
+						is_culture_group = central_african 
+						is_culture_group = east_african 
+						is_culture_group = southern_african 
+					}
+				}
+			}
+		}
+	}
+	}
+}
+
+#general conversion mtth, same for all pops
+conversion_chance = {
+	factor = 0.1
+
+	modifier = {
+		factor = -100
+		NOT = { location = { controlled_by = owner } }
+	}
+	
+	modifier = {
+		factor = -2
+		state_scope = { is_colonial = yes }
+	}
+	
+	modifier = {
+		factor = -2
+		OR = {
+			has_pop_religion = jewish
+			has_pop_religion = shiite
+			has_pop_religion = sunni
+		}
+	}
+	
+	modifier = {
+		factor = -2.2
+		has_pop_religion = mormon
+	}
+	
+	modifier = {
+		factor = 3
+		has_pop_religion = animist
+		location = { continent = africa }
+	}
+	
+	modifier = {
+		factor = 1.1
+		country = { government = theocracy }
+	}
+	
+	modifier = {
+		factor = 2
+		country = { religious_policy = moralism }
+	}
+	modifier = {
+		factor = 1.1
+		country = { religious_policy = pluralism }
+	}
+	modifier = {
+		factor = -3
+		country = { religious_policy = pro_atheism }
+	}
+	modifier = {
+		factor = -1.1
+		country = { religious_policy = secularized }
+	}
+	
+	group = {
+		modifier = {
+			factor = 0.2
+			not = { luxury_needs = 0.9 }
+		}
+		modifier = {
+			factor = 0.2
+			not = { luxury_needs = 0.7 }
+		}
+		modifier = {
+			factor = 0.2
+			not = { luxury_needs = 0.5 }
+		}
+	}
+
+	group = {
+		modifier = {
+			factor = 0.05
+			not = { life_needs = 0.9 }
+		}
+		modifier = {
+			factor = 0.05
+			not = { life_needs = 0.8 }
+		}
+		modifier = {
+			factor = 0.05
+			not = { life_needs = 0.7 }
+		}
+	}
+
+	modifier = {
+		factor = 0.15
+		not = { culture = this }
+	}
+
+	group = {
+		modifier = {
+			factor = 0.05
+			unemployment = 0.1
+		}
+		modifier = {
+			factor = 0.05
+			unemployment = 0.2
+		}
+		modifier = {
+			factor = 0.05
+			unemployment = 0.3
+		}
+	}
+}
