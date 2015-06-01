@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = PEU_conservative
 upper_house = {
@@ -47,7 +45,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

@@ -1,5 +1,5 @@
 color = { 194  140  86 }
-graphical_culture = Generic
+graphical_culture = FrenchGC
 
 party = {
 	name = "QUE_liberal"
@@ -45,7 +45,7 @@ party = {
 
 party = {
 	name = "QUE_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -101,7 +101,7 @@ party = {
 
 party = {
 	name = "QUE_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

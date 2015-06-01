@@ -9,54 +9,54 @@ POR = {
 #North America
 MEX = {
 	value = 75		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 UCA = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 
 #South America
 ECU = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 PEU = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 BOL = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 CHL = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 PRG = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 CLM = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 BRZ = {
 	value = 100		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 URU = {
 	value = 75		#relation
-	level = 3		#3=cordial, 4 = friendly, 5 sphere
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
 
@@ -461,4 +461,20 @@ navy = {
 	}
 }
 
-
+leader = {
+	name = "José Ramón Rodil"
+	type = land
+	date = 1825.8.20
+	background = aristocrat
+	personality = stalwart
+	prestige = 0.1
+	}
+	
+leader = {
+	name = "Jerónimo Valdés"
+	type = sea
+	date = 1820.12.14
+	background = politician
+	personality = impulsive
+	prestige = 0.05
+	}

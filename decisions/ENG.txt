@@ -197,11 +197,9 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			
 			ENG_2068 = { add_core = RHO }
-			
-			ENG_2071 = {
-				add_core = RHO
+			ENG_2071 = { add_core = RHO }
+			any_owned = { limit = { is_core = RHO }
 				add_province_modifier = {
 					name = colonial_exploitation
 					duration = 1095
@@ -344,45 +342,6 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
-	create_kashmir = {
-	picture = create_kashmir
-		potential = {
-			OR = {
-				tag = ENG
-				tag = ENL
-			}
-			owns = 1225
-			NOT = {
-				has_country_flag = created_kashmir
-				exists = KAS
-				owns = 1227
-			}
-		}
-		
-		allow = {
-			war = no
-			owns = 1225
-		}
-		
-		effect = {
-			set_country_flag = created_kashmir
-			prestige = 5
-			release_vassal = KAS
-			diplomatic_influence = {
-				who = KAS
-				value = 200
-			}
-			relation = {
-				who = KAS
-				value = 100
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	
 	trucial_protectorate = {
 		picture = map_arabia
@@ -416,8 +375,8 @@ political_decisions = {
 	
 	aden_protectorate = {
 		picture = aden_protectorate
+		alert = no
 		potential = {
-			YEM = { exists = no }
 			is_greater_power = yes
 			NOT = { is_culture_group = arab }
 			OR = {
@@ -435,34 +394,38 @@ political_decisions = {
 		
 		allow = {
 			war = no
+			LHJ = { exists = no }
+			owns = 1412
 			1173 = {
 				OR = {
 					owned_by = THIS
 					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+					KTH = { exists = no }
 				}
 			}
 			1175 = {
 				OR = {
 					owned_by = THIS
 					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+					MHR = { exists = no }
 				}
 			}
 			1176 = {
 				OR = {
 					owned_by = THIS
 					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+					FDL = { exists = no }
 				}
 			}
 			1177 = {
 				OR = {
 					owned_by = THIS
 					owner = { in_sphere = THIS }
-				}
-			}
-			1412 = {
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+					MHR = { exists = no }
 				}
 			}
 			YEM = { exists = no }
@@ -473,7 +436,10 @@ political_decisions = {
 			prestige = 5
 			any_country = {
 				limit = {
-					in_sphere = THIS
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
 					exists = yes
 					OR = {
 						tag = KTH
@@ -484,39 +450,11 @@ political_decisions = {
 					ai = yes
 				}
 				annex_to = THIS
-				all_core = { add_core = YEM }
-				all_core = { remove_core = LHJ }
-				all_core = { remove_core = KTH }
-				all_core = { remove_core = FDL }
-				all_core = { remove_core = MHR }
-				
 			}
-			any_owned = { limit = {
-				OR = {
-				is_core = LHJ
-				is_core = FDL
-				is_core = KTH
-				is_core = MHR
-				}
-					}
-				add_core = YEM
-				remove_core = LHJ
-				remove_core = KTH
-				remove_core = FDL
-				remove_core = MHR
-			}
-			any_owned = { limit = { is_core = YEM }
-				secede_province = YEM
-				}
-			create_vassal = YEM
-			create_alliance = YEM
-			YEM = {
-			civilized = yes
-			capital = 1412 }
-			diplomatic_influence = {
-				who = YEM
-				value = 300
-			}
+			LHJ = { all_core = { add_core = YEM remove_core = LHJ } }
+			FDL = { all_core = { add_core = YEM remove_core = FDL } }
+			KTH = { all_core = { add_core = YEM remove_core = KTH } }
+			MHR = { all_core = { add_core = YEM remove_core = MHR } }
 		}
 	}
 	
@@ -526,14 +464,17 @@ political_decisions = {
 			is_greater_power = yes
 			owns = 1908
 			is_canal_enabled = 2
+			OR = {
+				year = 1900
+				ATJ = { exists = no }
+			}
 			NET = {
 				owns = 1909
 				owns = 1413
 				NOT = { owns = 1910 }
+				NOT = { owns = 1405 }
 			}
-			NOT = {
-				has_country_flag = gold_coast_treaty
-			}
+			NOT = { has_country_flag = gold_coast_treaty }
 		}
 		
 		allow = {
@@ -708,7 +649,7 @@ political_decisions = {
 		}
 		
 		allow = {
-			MAK = { average_militancy = 4 }
+			MAK = { average_militancy = 3 }
 		}
 		
 		effect = {
@@ -764,7 +705,7 @@ political_decisions = {
 		}
 		
 		allow = {
-			SIN = { average_militancy = 4 }
+			SIN = { average_militancy = 3 }
 		}
 		
 		effect = {
@@ -828,5 +769,152 @@ political_decisions = {
 		}
 	ai_will_do = { factor = 1 }
 	}
+	
+	durand_line = {
+		picture = mortimer_durand
+		potential = {
+			tag = ENG
+			is_greater_power = yes
+			neighbour = AFG
+			any_owned_province = { is_core = AFG }
+			AFG = { exists = yes }
+			NOT = { has_country_flag = durand_line }
+			NOT = { year = 1910 }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			NOT = { year = 1910 }
+			NOT = { relation = { who = AFG value = 100 } }
+		}
+		
+		effect = {
+			set_country_flag = durand_line
+			AFG = { country_event = 3697010 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	cede_aden_to_yemen = {
+		picture = aden_protectorate
+		alert = no
+		potential = {
+			owns = 1412
+			NOT = { tag = YEM }
+			YEM = { exists = yes }
+			neighbour = THIS
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			badboy = -2
+			1412 = { secede_province = YEM }
+			relation = { who = YEM value = 200 }
+			diplomatic_influence = { who = YEM value = 100 }
+			YEM = { capital = 1412 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	unite_north_yemen_existing = {
+		picture = aden_protectorate
+		potential = {
+			OR = {
+				NOT = { 1178 = { is_core = YEM } }
+				NOT = { 1179 = { is_core = YEM } }
+				NOT = { 1180 = { is_core = YEM } }
+			}			
+			NOT = { tag = NYE }
+			NYE = { exists = yes }
+			OR = {
+				tag = YEM
+				YEM = {
+					exists = yes
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+						}
+					}
+				}
+			}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			NYE = {
+				all_core = { 
+					OR = {
+						owned_by = THIS 
+						owner = { in_sphere = THIS }
+						owner = { vassal_of = THIS }
+					}
+				}
+			}
+			OR = {
+				tag = YEM
+				YEM = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			NYE = { all_core = { add_core = YEM } }
+			YEM = { inherit = NYE }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	unite_yemeni_colonies = {
+		picture = aden_protectorate
+		potential = {
+			has_global_flag = created_aden_protectorate
+			OR = {
+				NOT = { 1178 = { is_core = YEM } }
+				NOT = { 1179 = { is_core = YEM } }
+				NOT = { 1180 = { is_core = YEM } }
+			}
+			OR = {
+				any_owned_province = { is_core = YEM }
+				any_owned_province = { is_core = NYE }
+				NYE = { in_sphere = THIS }
+				NYE = { vassal_of = THIS }
+			}
+			YEM = { exists = no }
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			YEM = { all_core = { owned_by = THIS } }
+			NYE = {
+				all_core = { 
+					OR = {
+						owned_by = THIS 
+						owner = { in_sphere = THIS }
+						owner = { vassal_of = THIS }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			NYE = { all_core = { add_core = YEM } }
+			1178 = { secede_province = THIS }
+			1179 = { secede_province = THIS }
+			1180 = { secede_province = THIS }
+			YEM = { capital = 1178 }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
 }
-

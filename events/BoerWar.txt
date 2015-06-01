@@ -13,7 +13,10 @@ country_event = {
 	trigger = {
 		tag = ENG
 		NOT = { has_global_flag = great_boer_trek }
+		NOT = { has_country_flag = boer_accepted }
 	}
+	
+	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		days = 5
@@ -47,6 +50,7 @@ country_event = {
 			has_country_flag = attack_the_laagers
 			has_country_flag = make_peace_with_the_laagers
 		}
+		NOT = { has_country_flag = boer_accepted }
 	}
 	
 	mean_time_to_happen = {
@@ -203,9 +207,11 @@ country_event = {
 	option = {
 		name = "EVT98206OPTA"
 		release = NAL
-		NAL = {
-			all_core = { add_core = THIS }
-		}
+		casus_belli ={
+				target = NAL
+				type = conquest_any
+				months = 60
+			}
 		relation = { who = NAL value = -100 }
 		NAL = { prestige = -30 }
 		any_pop = {
@@ -275,6 +281,8 @@ country_event = {
 	trigger = {
 		tag = ENG
 		war = no
+		owns = 2087
+		NOT = { has_country_flag = boer_accepted }
 		NOT = { has_country_flag = annexation_of_natal }
 		NAL = {
 			exists = yes
@@ -383,7 +391,6 @@ country_event = {
 	option = {
 		name = "EVT98212OPTB"
 		civilized = yes
-		all_core = { add_core = FROM }
 		FROM = { inherit = THIS }	
 		FROM = {
 			any_owned = { 
@@ -414,9 +421,11 @@ country_event = {
 	option = {
 		name = "EVT98213OPTA"
 		diplomatic_influence = { who = FROM value = -200 }
-		FROM = {
-			all_core = { add_core = THIS }
-		}
+		casus_belli ={
+				target = NAL
+				type = conquest_any
+				months = 60
+			}
 		ai_chance = {
 			factor = 80
 		}
@@ -451,7 +460,9 @@ country_event = {
 	trigger = {
 		civilized = yes
 		owns = 2093
+		owns = 2087
 		year = 1845
+		NOT = { has_country_flag = boer_accepted }
 		NOT = {
 			ORA = { exists = yes }
 			has_global_flag = orange_river_sovereignty
@@ -604,6 +615,7 @@ country_event = {
 		civilized = yes
 		owns = 2093
 		year = 1845
+		NOT = { has_country_flag = boer_accepted }
 		NOT = {
 			TRN = { exists = yes }
 			has_global_flag = transvaal_sovereignty
@@ -705,26 +717,22 @@ country_event = {
 		2107 = {
 			change_province_name = "Klerksdorp"
 			secede_province = THIS
-			remove_core = MAT
 			add_core = TRN
 			add_core = SAF
 		}
 		2108 = {
-			remove_core = MAT
 			add_core = TRN
 			add_core = SAF
 		}
 		2109 = {
 			change_province_name = "Lydenburg"
 			secede_province = THIS
-			remove_core = MAT
 			add_core = TRN
 			add_core = SAF
 		}
 		2110 = { 
 			secede_province = THIS
 			remove_core = GAZ
-			remove_core = MAT
 			add_core = TRN
 			add_core = SAF
 		}
@@ -735,8 +743,14 @@ country_event = {
 			state_scope = { is_slave = yes }
 		}
 		TRN = {
+			country_event = 95517
 			relation = { who = ORA value = 100 }
 			relation = { who = NAL value = 200 }
+			any_pop = {
+				limit = { type = artisans }
+				pop_type = soldiers
+				
+			}
 			any_pop = {
 				limit = { has_pop_culture = boer }
 				literacy = 0.15
@@ -790,6 +804,7 @@ province_event = {
 	desc = "EVTDESC98225"
 
 	trigger = {
+		NOT = { has_country_flag = boer_accepted }
 		has_province_modifier = boer_exodus
 		ORA = { exists = yes }
 		TRN = { exists = yes }
@@ -861,6 +876,7 @@ province_event = {
 	desc = "EVTDESC98225"
 
 	trigger = {
+		NOT = { has_country_flag = boer_accepted }
 		has_province_modifier = boer_exodus
 		ORA = { exists = yes }
 		TRN = { exists = yes }
@@ -1029,6 +1045,7 @@ country_event = {
 	
 	trigger = {
 		is_greater_power = yes
+		NOT = { has_country_flag = boer_accepted }
 		any_neighbor_country = {
 			has_country_modifier = witwatersrand_gold_rush
 			part_of_sphere = no
@@ -1165,10 +1182,12 @@ country_event = {
 
 	option = {
 		name = "EVT98241OPTA"
-		FROM = {
-			all_core = { add_core = THIS }
-			create_alliance = THIS
-		}
+		casus_belli ={
+				target = FROM
+				type = conquest_any
+				months = 60
+			}
+		FROM = { create_alliance = THIS }
 		any_country = {
 			limit = { war_with = FROM }
 			relation = {
@@ -1203,9 +1222,11 @@ country_event = {
 	option = {
 		name = "EVT98241OPTB"
 		prestige = -5
-		FROM = {
-			all_core = { add_core = THIS }
-		}
+		casus_belli ={
+				target = FROM
+				type = conquest_any
+				months = 60
+			}
 		relation = {
 			who = FROM
 			value = -50
@@ -1272,6 +1293,21 @@ country_event = {
 		name = "EVT98245OPTA"
 		set_global_flag = first_boer_war
 		badboy = 3
+		casus_belli = {
+				target = TRN
+				type = conquest_any
+				months = 60
+			}
+		casus_belli = {
+				target = NAL
+				type = conquest_any
+				months = 60
+			}
+		casus_belli = {
+				target = ORA
+				type = conquest_any
+				months = 60
+			}
 		random_country = {
 			limit = {
 				tag = SAF
@@ -1285,7 +1321,6 @@ country_event = {
 				name = small_country_draft
 				duration = 1095
 			}
-			all_core = { add_core = THIS }
 		}
 		diplomatic_influence = {
 			who = TRN
@@ -1297,7 +1332,6 @@ country_event = {
 				tag = ORA
 				exists = yes
 			}
-			all_core = { add_core = THIS }
 			leave_alliance = THIS
 			THIS = {
 				diplomatic_influence = {
@@ -1311,7 +1345,6 @@ country_event = {
 				tag = NAL
 				exists = yes
 			}
-			all_core = { add_core = THIS }
 			leave_alliance = THIS
 			THIS = {
 				diplomatic_influence = {
@@ -1323,7 +1356,7 @@ country_event = {
 		war = {
 			target = TRN
 			attacker_goal = {
-				casus_belli = annex_core_country
+				casus_belli = conquest_any
 			}
 			defender_goal = {
 				casus_belli = humiliate
@@ -1374,7 +1407,6 @@ country_event = {
 
 	option = {
 		name = "EVT98246OPTA"
-		all_core = { add_core = FROM }
 		relation = {
 			who = TRN
 			value = 200
@@ -1388,7 +1420,7 @@ country_event = {
 			war = {
 				target = THIS
 				attacker_goal = {
-					casus_belli = annex_core_country
+					casus_belli = conquest_any
 				}
 				defender_goal = {
 					casus_belli = humiliate
@@ -1455,9 +1487,26 @@ country_event = {
 	option = {
 		name = "EVT98247OPTB"
 		prestige = -25
-		SAF = {
-			all_core = { add_core = THIS }
-		}
+		casus_belli ={
+				target = NAL
+				type = conquest_any
+				months = 60
+			}
+		casus_belli ={
+				target = TRN
+				type = conquest_any
+				months = 60
+			}
+		casus_belli ={
+				target = ORA
+				type = conquest_any
+				months = 60
+			}
+		casus_belli ={
+				target = SAF
+				type = conquest_any
+				months = 60
+			}
 		random_country = {
 			limit = {
 				war_with = THIS
@@ -1761,14 +1810,10 @@ country_event = {
 		leave_alliance = XHO
 		diplomatic_influence = { who = XHO value = -200 }
 		relation = { who = XHO value = -200 }
-		2098 = { add_core = THIS }
-		2099 = { add_core = THIS }
-		2100 = { add_core = THIS }
-		2104 = { add_core = THIS }
 		war = {
 			target = XHO
 			attacker_goal = {
-				casus_belli = annex_core_country
+				casus_belli = conquest_any
 			}
 		}
 		ai_chance = {
@@ -1814,7 +1859,6 @@ country_event = {
 		prestige = 5
 		treasury = -10000
 		2083 = {
-			add_core = SAF
 			secede_province = THIS
 		}
 		ai_chance = {

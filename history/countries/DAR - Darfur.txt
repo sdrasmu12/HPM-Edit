@@ -1,15 +1,16 @@
 capital = 1841
 primary_culture = fur
+culture = african_minor
 religion = sunni
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_order
-literacy = 0
+nationalvalue = nv_tradition
+literacy = 0.01
 non_state_culture_literacy = 0
 
 # Political reforms
 slavery = yes_slavery
-upper_house_composition = party_appointed
+upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = no_meeting
 press_rights = state_press
@@ -30,9 +31,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = DAR_conservative
 upper_house = {
@@ -45,8 +44,9 @@ upper_house = {
 	communist = 0
 }
 
-foreign_weapons = no_foreign_weapons
+foreign_weapons = yes_foreign_weapons
 # Technologies
+flintlock_rifles = 1
 
 # Inventions
 

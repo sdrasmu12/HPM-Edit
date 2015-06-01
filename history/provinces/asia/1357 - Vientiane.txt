@@ -2,6 +2,6 @@ owner = SIA
 controller = SIA
 add_core = SIA
 add_core = WIA
+add_core = LUA
 trade_goods = grain
-life_rating = 30
- 
+life_rating = 35

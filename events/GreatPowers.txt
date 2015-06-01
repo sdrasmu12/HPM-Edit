@@ -43,9 +43,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 12
+		months = 200
 		modifier = {
-			factor = 0.5
+			factor = 0.9
 			part_of_sphere = no
 		}
 		modifier = {
@@ -1171,7 +1171,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA19045"
-		any_pop = {
+		any_pop = { limit = { NOT = { literacy = 0.6 } }
 			militancy = 1
 		}
 	}
@@ -1343,9 +1343,15 @@ country_event = {
 	
 	trigger = {
 	tag = USA
-	NOT = { government = democracy }
 	has_country_modifier = the_statue_of_liberty
+	OR = {
+		NOT = { government = democracy }
+		AND = {
+			has_global_flag = disunited_states
+			has_global_flag = second_american_civil_war
+			}
 		}
+	}
 		
 	mean_time_to_happen = { months = 1 }
 	
@@ -1353,10 +1359,6 @@ country_event = {
 	option = {
 		name = "EVTOPTA19301"
 		remove_country_modifier = the_statue_of_liberty
-		
-		232 = {
-			remove_province_modifier = gateway_to_america
-		}
 	}
 }
 
@@ -1478,6 +1480,7 @@ country_event = {
 		war = no
 		is_greater_power = no
 		part_of_sphere = yes
+		NOT = { government = theocracy }
 		any_core = {
 			NOT = { owned_by = THIS }
 			empty = no
@@ -1645,11 +1648,6 @@ country_event = {
 			add_casus_belli = {
 				target = THIS
 				type = free_allied_cores
-				months = 75
-			}
-			add_casus_belli = {
-				target = THIS
-				type = cut_down_to_size
 				months = 75
 			}
 		}
@@ -2080,6 +2078,63 @@ country_event = {
 		remove_country_modifier = neutrality
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+#Titanic Sinks
+country_event = {
+	id = 81002213
+	title = "EVTNAME81002213"
+	desc = "EVTDESC81002213"
+	news = yes
+	news_desc_long = "EVTDESC81002213_NEWS_LONG"
+	news_desc_medium = "EVTDESC81002213_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC81002213_NEWS_SHORT"
+	picture = "titanic_sinks"
+	
+	trigger = {
+		has_country_flag = titanic_sinks
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT81002213OPTA"
+		clr_country_flag = titanic_sinks
+		prestige = -25
+		any_pop = { consciousness = 1 }
+	}
+}
+
+#Titanic Doesn't Sink
+country_event = {
+	id = 81002214
+	title = "EVTNAME81002214"
+	desc = "EVTDESC81002214"
+	news = yes
+	news_desc_long = "EVTDESC81002214"
+	news_desc_medium = "EVTDESC81002214"
+	news_desc_short = "EVTDESC81002214"
+	picture = "titanic_arrives"
+	
+	trigger = {
+		has_country_flag = titanic_arrives
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT81002214OPTA"
+		clr_country_flag = titanic_arrives
+		prestige = 25
+		random_country = {
+			limit = { capital_scope = { continent = north_america } }
+			relation = { who = THIS value = 50 }
 		}
 	}
 }

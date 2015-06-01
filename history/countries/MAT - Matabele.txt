@@ -4,13 +4,13 @@ culture = shona
 religion = animist
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_order
+nationalvalue = nv_tradition
 literacy = 0.01
 non_state_culture_literacy = 0
 
 # Political reforms
 slavery = yes_slavery
-upper_house_composition = party_appointed
+upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = no_meeting
 press_rights = state_press
@@ -31,9 +31,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = MAT_conservative
 upper_house = {
@@ -46,7 +44,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 #Starting Consciousness
 consciousness = 0

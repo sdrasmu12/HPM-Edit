@@ -1,13 +1,25 @@
+GON = {
+	value = -200
+}
+
+SHW = {
+	value = -200
+}
+
+TIG = {
+	value = -200
+}
+
+KAF = {
+	value = -200
+}
+
 TUR = {
 	value = 50
 }
 
 EGY = {
 	value = 60
-}
-
-GEL = {
-	value = 50
 }
 
 AWS = {
@@ -18,25 +30,6 @@ HAR = {
 	value = 75
 }
 
-MAJ = {
-	value = 20
-}
-
-GON = {
-	value = 20
-}
-
-SHW = {
-	value = 20
-}
-
-TIG = {
-	value = 20
-}
-
-KAF = {
-	value = 20
-}
 
 army = {
 	name = "Army of the Warsangali Sultanate"

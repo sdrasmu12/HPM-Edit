@@ -1,5 +1,12 @@
 #Relations
 
+FDL = {
+	value = -200		#relation
+}
+
+MHR = {
+	value = -200		#relation
+}
 
 LHJ = {
 	value = 0		#relation
@@ -15,12 +22,6 @@ army = {
 	location = 1173
 	regiment = {
 		name= "1. Brigade"
-		type = irregular
-		home = 1173
-	}
-
-	regiment = {
-		name= "2. Brigade"
 		type = irregular
 		home = 1173
 	}

@@ -116,6 +116,12 @@
 		religion = sunni
 		size = 10150
 	}
+	
+	farmers = {
+		culture = kurdish
+		religion = yazidi
+		size = 8000
+	}
 
 	clergymen = {
 		culture = assyrian
@@ -231,6 +237,12 @@
 		culture = kurdish
 		religion = sunni
 		size = 11325
+	}
+	
+	farmers = {
+		culture = kurdish
+		religion = yazidi
+		size = 1325
 	}
 
 	clergymen = {
@@ -442,6 +454,12 @@
 		culture = turkish
 		religion = sunni
 		size = 3075
+	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 100
 	}
 
 	aristocrats = {

@@ -7,6 +7,7 @@ government = presidential_dictatorship
 plurality = 15.0
 nationalvalue = nv_order
 literacy = 0.09
+non_state_culture_literacy = 0.09
 civilized = yes
 prestige = 1
 is_releasable_vassal = no
@@ -34,9 +35,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 
 ruling_party = BOL_conservative
@@ -78,7 +77,6 @@ oob = "BOL_oob.txt"
 	plurality = 50
 	literacy = 0.10
 	non_state_culture_literacy = 0.09
-	 
 }
 1861.1.1 = {
 # Technologies

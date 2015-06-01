@@ -5,11 +5,11 @@ government = absolute_monarchy
 plurality = 25.0
 nationalvalue = nv_order
 literacy = 0.45
-non_state_culture_literacy = 0.25
+non_state_culture_literacy = 0.3
 civilized = yes
 prestige = 10
 
-# Political reforms - Sardinia Piedmont
+# Political reforms
 slavery = no_slavery
 upper_house_composition = appointed
 vote_franschise = none_voting
@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = four_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = SAR_conservative
 upper_house = {
@@ -47,7 +45,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

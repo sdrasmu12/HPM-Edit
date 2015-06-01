@@ -39,6 +39,9 @@ political_decisions = {
 			HUN = {
 				all_core = { add_core = KUK }
 			}
+			CRO = {
+				all_core = { add_core = KUK }
+			}
 			any_pop = {
 				limit = { has_pop_culture = hungarian }
 				militancy = -4

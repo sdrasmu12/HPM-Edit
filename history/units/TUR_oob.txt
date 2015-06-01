@@ -5,8 +5,33 @@ PER = {
 	level = 3		#3=cordial, 4 = friendly, 5 sphere
 	influence_value = 0
 }
+
 QNG ={
 	level = 0
+}
+
+BTL = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
+}
+
+BHT = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
+}
+
+BNB = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
+}
+
+BDN = {
+	value = 125		#relation
+	level = 5		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
 }
 
 #Middle East
@@ -55,12 +80,12 @@ SER = {
 }
 MOL = {
 	value = 125
-	level = 5
+	level = 4
 	influence_value = 0
 }
 WAL = {
 	value = 125
-	level = 5
+	level = 4
 	influence_value = 0
 }
 
@@ -314,17 +339,17 @@ army = {
 
 army = {
 	name = "Army of Arabia"
-	location = 925
+	location = 923
 	regiment = {
 		name= "12. Piyade Tümeni"
 		type = infantry
-		home = 925
+		home = 923
 	}
 
 	regiment = {
 		name= "13. Piyade Tümeni"
 		type = infantry
-		home = 925
+		home = 923
 	}
 
 	regiment = {
@@ -515,3 +540,20 @@ navy = {
 
 }
 
+leader = {
+	name = "Omer Vrioni"
+	type = land
+	date = 1820.1.1
+	background = rising_star
+	personality = skilled
+	prestige = 0.1
+	}
+
+leader = {
+	name = "Husrev Pasha"
+	type = sea
+	date = 1820.1.1
+	background = politician
+	personality = smart_p
+	prestige = 0.15
+	}

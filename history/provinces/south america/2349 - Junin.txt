@@ -4,7 +4,6 @@ add_core = SBA
 add_core = ARC
 trade_goods = cattle
 life_rating = 35
- 
 1861.1.1 = { 
 	owner = ARG
 	controller = ARG
@@ -12,4 +11,3 @@ life_rating = 35
 	remove_core = ARC
 	remove_core = SBA
 	}
-	

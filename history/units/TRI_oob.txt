@@ -20,7 +20,7 @@ army = {
 }
 
 army = {
-	name = "Taureg"
+	name = "Tuareg"
 	location = 1743
 	regiment = {
 		name= "1.Ihajenem"
@@ -29,3 +29,11 @@ army = {
 	}
 }
 
+leader = {
+	name = "Ali II Karamanli"
+	type = land
+	date = 1836.1.1
+	background = aristocrat
+	personality = mediocre
+	}
+	

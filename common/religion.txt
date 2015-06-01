@@ -56,6 +56,14 @@ jewish_group = {
 	}
 }
 
+yazidi_group = {
+	yazidi = {
+		icon = 16
+		color = { 0.4 0.0 1.0 }
+
+	}
+}
+
 eastern = {
 	mahayana = {
 	

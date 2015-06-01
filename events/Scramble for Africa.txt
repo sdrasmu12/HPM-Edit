@@ -34,7 +34,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 3
+		months = 6
 		modifier = {
 			factor = 0.8
 			capital = 549
@@ -923,6 +923,7 @@ country_event = {
 	picture = "sudan_question"
 	
 	trigger = {
+		war = no
 		is_sphere_leader_of = EGY
 		has_global_flag = berlin_conference
 		has_global_flag = mahdist_revolt
@@ -997,13 +998,19 @@ country_event = {
 			}
 		}
 		FROM = {
-			any_owned = { 
-				limit = { is_core = SUD }
+			any_owned = {
+				limit = { 
+					OR = {
+					is_core = SUD 
+					is_core = ETH
+					}
+				}
 		secede_province = THIS 
 			}
 		money = 50000
-		research_points = 25000
+		research_points = 2500
 		}
+		SUD = { all_core = { remove_core = DAR remove_core = SHK } }
 		relation = {
 			who = EGY
 			value = 100

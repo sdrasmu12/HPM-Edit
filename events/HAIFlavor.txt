@@ -160,9 +160,10 @@ country_event = {
 		any_owned = { limit = { is_core = DOM }
 		remove_core = HAI
 		remove_province_modifier = nationalist_agitation
-			any_pop = {
-		militancy = -9
-		consciousness = -9
+		HAI = { remove_accepted_culture = caribeno }
+		any_pop = {
+			militancy = -9
+			consciousness = -9
 			}
 		}
 	}

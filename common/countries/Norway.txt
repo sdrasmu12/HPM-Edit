@@ -214,7 +214,7 @@ party = {
 
 party = {
 	name = "NOR_communist" #Communists
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 1919.1.1
 
 	ideology = communist

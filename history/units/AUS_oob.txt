@@ -1,5 +1,16 @@
 #Sphere of Influence
 
+MOL = {
+	value = 125
+	level = 3
+	influence_value = 0
+}
+WAL = {
+	value = 125
+	level = 3
+	influence_value = 0
+}
+
 #German Minors
 BAD = {	
 	value = 125
@@ -417,6 +428,15 @@ leader = {
 	date = 1836.1.1
 	background = amateur
 	personality = pessimist
+	prestige = 0
+	}
+	
+leader = {
+	name = "Joseph Radetzky von Radetzmo"
+	type = land
+	date = 1820.1.1
+	background = innovative_tactician
+	personality = brilliant
 	prestige = 0
 	}
 

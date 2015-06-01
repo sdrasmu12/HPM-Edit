@@ -2214,7 +2214,13 @@
 	farmers = {
 		culture = south_italian
 		religion = catholic
-		size = 38025
+		size = 33211
+	}
+	
+	farmers = {
+		culture = catalan
+		religion = catholic
+		size = 4814
 	}
 
 }

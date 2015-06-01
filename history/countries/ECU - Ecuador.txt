@@ -1,5 +1,6 @@
 capital = 2279
 primary_culture = north_andean
+culture = amazonian
 religion = catholic
 government = democracy
 plurality = 25.0
@@ -32,9 +33,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = ECU_liberal
 last_election = 1834.8.8
@@ -48,7 +47,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

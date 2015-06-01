@@ -1,3 +1,7 @@
+PRG = {
+	value = -200
+}
+
 leader = {
 	name = "Bento Gonçalves"
 	type = land

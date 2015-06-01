@@ -30,9 +30,7 @@ school_reforms = low_schools
 conscription = one_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = NOR_conservative
 last_election = 1833.1.1
@@ -46,7 +44,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 #Technologies
 post_napoleonic_thought = 1

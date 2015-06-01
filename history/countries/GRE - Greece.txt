@@ -3,8 +3,8 @@ primary_culture = greek
 religion = orthodox
 government = absolute_monarchy
 plurality = 25.0
-nationalvalue = nv_productivity
-literacy = 0.22
+nationalvalue = nv_order
+literacy = 0.15
 civilized = yes
 prestige = 5
 
@@ -28,12 +28,10 @@ pensions = no_pensions
 school_reforms = no_schools
 
 # New Reforms
-conscription = no_draft
+conscription = four_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = GRE_conservative
 upper_house = {
@@ -46,7 +44,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

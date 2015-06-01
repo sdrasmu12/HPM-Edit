@@ -1,4 +1,4 @@
-color = { 47 91 18 }
+color = { 57 105 49 }
 proletarian_dictatorship = { 200 10 10 }
 graphical_culture = RussianGC
 
@@ -32,7 +32,7 @@ party = {
 
 party = {
 	name = "RUS_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 1903.1.1
 
 	ideology = communist
@@ -116,7 +116,7 @@ party = {
 
 party = {
 	name = "RUS_socialist_2"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 1881.1.1
 
 	ideology = socialist

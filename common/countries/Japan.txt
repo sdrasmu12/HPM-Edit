@@ -1,5 +1,6 @@
 #color = { 194  53  60 }
-color = { 194  123  47 } 
+color = { 232  26  63 } 
+absolute_monarchy = { 194  123  47 }
 proletarian_dictatorship = { 199  67  44 }
 democracy = { 244  121  158 }
 fascist_dictatorship = { 248 51 22 }
@@ -93,7 +94,7 @@ party = {
 
 party = {
 	name = "JAP_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -121,7 +122,7 @@ party = {
 
 party = {
 	name = "JAP_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

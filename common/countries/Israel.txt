@@ -78,7 +78,7 @@ party = {
 
 party = {
 	name = "ISR_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

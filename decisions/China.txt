@@ -89,10 +89,7 @@ political_decisions = {
 				owner = {
 					any_owned = {
 						limit = {
-							OR = {
-								region = TIB_1587
-								region = NEP_1326
-							}
+							region = TIB_1591
 						}
 						secede_province = TIB
 					}
@@ -122,12 +119,9 @@ political_decisions = {
 			}
 			CHI_1468 = { remove_core = CHI }
 			CHI_1465 = { remove_core = CHI }
-			1469 = { remove_core = CHI }
 			CHI_1082 = { add_core = MCK }
 			CHI_1479 = { add_core = MCK }
 			CHI_1552 = { add_core = MCK }
-			1081 = { add_core = MCK }
-			2697 = { add_core = MCK }
 			1533 = { add_core = MCK }
 		}
 		
@@ -1369,7 +1363,7 @@ political_decisions = {
 			OR = {
 				NOT = { prestige = 25 }
 				has_recently_lost_war = yes
-				NOT = { money = 100 }
+				NOT = { money = 10000 }
 			}
 		}
 		
@@ -1389,5 +1383,109 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 		}
+	}
+	
+	annex_the_kumul = {
+	picture = self_strengthening_movement
+		potential = {
+			NOT = { has_global_flag = kumul_over }
+			civilized = yes
+			KML = {
+				exists = yes
+				ai = yes 
+				is_vassal = no
+			}
+			OR = {
+				tag = XIN
+				neighbour = KML
+				AND = {
+					OR = {
+						XIN = { exists = no }
+						XIN = { exists = yes NOT = { neighbour = KML } }
+						}
+					neighbour = KML
+					is_culture_group = east_asian
+					}
+				}
+			}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = kumul_over
+			badboy = 2
+			inherit = KML
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	claim_tibet = {
+	picture = tibet_capital
+		potential = {
+			OR = {
+				tag = CHI
+				tag = TPG
+			}
+			neighbour = TIB
+			NOT = { is_our_vassal = TIB }
+			NOT = { 1587 = { is_core = CHI } }
+		}
+		
+		allow = {
+			war = no
+			war_policy = jingoism
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			TIB = { all_core = { add_core = CHI add_core = THIS } }
+			badboy = 1
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	heavenly_capital = {
+	picture = heavenly_seal
+		potential = {
+			tag = TPG
+			NOT = { has_global_flag = heavenly_capital_decreted }
+		}
+		
+		allow = {
+			owns = 2221
+		}
+		
+		effect = {
+			prestige = 1
+			set_global_flag = heavenly_capital_decreted
+			2221 = { change_province_name = "Tianjing" }
+			capital = 2221
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	abolish_heavenly_capital = {
+	picture = heavenly_seal
+		potential = {
+			NOT = { tag = TPG }
+			is_culture_group = east_asian
+			has_global_flag = heavenly_capital_decreted
+		}
+		
+		allow = {
+			owns = 2221
+		}
+		
+		effect = {
+			clr_global_flag = heavenly_capital_decreted
+			2221 = { change_province_name = "Nanjing" }
+		}
+		
+		ai_will_do = { factor = 1 }
 	}
 }

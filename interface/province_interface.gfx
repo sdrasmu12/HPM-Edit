@@ -94,9 +94,9 @@ spriteTypes = {
 		noOfFrames = 7
 	}
 	spriteType = {
-		name = "GFX_province_telegraph_strip"
-		textureFile = "gfx\\interface\\province_telegraph_strip.dds"
-		noOfFrames = 7
+		name = "GFX_province_illumination_strip"
+		textureFile = "gfx\\interface\\province_illumination_strip.dds"
+		noOfFrames = 3
 	}
 	spriteType = {
 		name = "GFX_province_expanding"
@@ -311,11 +311,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_terrainimg_coastal_desert"
-		texturefile = "gfx\\interface\\terrain_coastal_desert.tga"
+		name = "GFX_terrainimg_semidesert"
+		texturefile = "gfx\\interface\\terrain_semidesert.tga"
 		norefcount = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_terrainimg_arctic"
 		texturefile = "gfx\\interface\\terrain_arctic.tga"

@@ -202,4 +202,85 @@ political_decisions = {
 			}
 		}
 	}
+	
+	the_moroccan_question = {
+	picture = moroccan_partition
+		potential = {
+			OR = {
+				tag = SPA
+				tag = SPC
+			}
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			owns = 1689
+			NOT = { has_country_flag = moroccan_question }
+			MOR = {
+				ai = yes
+				exists = yes
+				part_of_sphere = yes
+				NOT = { in_sphere = THIS }
+			}
+			has_global_flag = berlin_conference
+			1774 = { empty = yes }
+			1773 = { empty = yes }
+			1696 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						tag = MOR
+						is_sphere_leader_of = MOR
+					}
+				}
+			}
+			1695 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						tag = MOR
+						is_sphere_leader_of = MOR
+					}
+				}
+			}
+			1687 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						tag = MOR
+						is_sphere_leader_of = MOR
+					}
+				}
+			}
+			1686 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						tag = MOR
+						is_sphere_leader_of = MOR
+					}
+				}
+			}
+			1688 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						tag = MOR
+						is_sphere_leader_of = MOR
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = moroccan_question
+			MOR = { sphere_owner = { country_event = 971700 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
 }

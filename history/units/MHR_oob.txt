@@ -1,5 +1,12 @@
 #Relations
 
+FDL = {
+	value = -200		#relation
+}
+
+KTH = {
+	value = -200		#relation
+}
 
 ENG = {
 	value = 0		#relation

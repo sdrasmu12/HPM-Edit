@@ -1135,10 +1135,14 @@ country_event = {
 	
 	option = {
 		name = "EVT33038OPTA"
-			any_owned = { limit = { is_core = THIS }
-				add_core = NGF
-				remove_core = THIS
+		any_owned = { limit = { is_core = THIS }
+			add_core = NGF
 				}
+		random_country = { limit = { NOT = { primary_culture = south_german } tag = THIS }
+		any_owned = { limit = { is_core = THIS }
+			remove_core = THIS
+				}
+			}
 		annex_to = NGF
 		ai_chance = {
 			factor = 80
@@ -1233,14 +1237,19 @@ country_event = {
 			}
 		}
 	
+	fire_only_once = yes
+	
 	mean_time_to_happen = { days = 5 }
 	
 	option = {
 		name = "EVT33038OPTA"
 		NGF = { set_country_flag = formed_on_rhine_crisis }
-		any_owned = { limit = { is_core = GER }
-				add_core = NGF
-				remove_core = THIS
+		any_owned = {
+			limit = { 
+				is_core = GER 
+				}
+			add_core = NGF
+			remove_core = THIS
 				}
 		change_tag = NGF
 		all_core = {  limit = { is_core = PRU }
@@ -1288,4 +1297,60 @@ country_event = {
 			}
 		}
 	}
+
+#The Imperial Compromise
+#country_event = {
+#	id = 330039
+#	title = "EVTNAME330039"
+#	desc = "EVTDESC330039"
+#	picture = "danishgovernment"
+#		
+#	trigger = {
+#		tag = GER
+#		BAV_599 = { owned_by = THIS }
+#		BAV_595 = { owned_by = THIS }
+#		SAX_558 = { owned_by = THIS }
+#		owns = 539
+#		owns = 528
+#		}
+#		
+#	fire_only_once = yes
+#	
+#	mean_time_to_happen = { days = 1 }
+#	
+#	option = {
+#		name = "EVT330039OPTA"
+#		BAV_599 = { add_core = BAV }
+#		BAV_595 = { add_core = BAV }
+#		SAX_558 = { add_core = SAX }
+#		539 = { add_core = BRE }
+#		528 = { add_core = HAM }
+#	}
+#}
+
+
+#Germany LR fixing
+country_event = {
+	id = 33040
+	title = "EVTNAME33040"
+	desc = "EVTDESC33040"
+	picture = "german_rhine"
+
+	trigger = {
+		tag = GER
+		is_greater_power = yes
+		owns = 549
+		total_pops = 60000000
+		year = 1890
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 24 }
+	
+	option = {
+		name = "EVT33040OPTA"
+		any_owned = { limit = { is_core = GER life_rating = 40 } life_rating = -5 }
+	}
+}
 

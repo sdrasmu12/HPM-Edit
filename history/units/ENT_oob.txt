@@ -1,3 +1,6 @@
+USA = {
+	value = -200
+}
 URU = {
 	value = 200
 }

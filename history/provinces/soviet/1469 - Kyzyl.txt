@@ -1,15 +1,6 @@
-owner = MGL
-controller = MGL
-add_core = ALT
+owner = TNT
+controller = TNT
 add_core = TNT
 add_core = MGL
-add_core = CHI
 trade_goods = coal
 life_rating = 35
- 
-1861.1.1 = {
-	owner = RUS
-	controller = RUS
-	add_core = RUS
-	colonial = 2
-}

@@ -721,7 +721,7 @@ political_decisions = {
 			}
 			NOT = {
 				war_policy = jingoism
-				has_country_flag = recognized_puerto_rico
+				has_country_flag = recognized_cuba
 				war_with = CUB
 				any_owned_province = { is_core = CUB }
 			}
@@ -732,7 +732,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_country_flag = recognized_puerto_rico
+			set_country_flag = recognized_cuba
 			prestige = 5
 			relation = { who = CUB value = 100 }
 			diplomatic_influence = { who = CUB value = 100 }
@@ -766,7 +766,7 @@ political_decisions = {
 			}
 			NOT = {
 				war_policy = jingoism
-				has_country_flag = recognized_puerto_rico
+				has_country_flag = recognized_phillipines
 				war_with = PHL
 				any_owned_province = { is_core = PHL }
 			}
@@ -777,7 +777,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_country_flag = recognized_puerto_rico
+			set_country_flag = recognized_phillipines
 			prestige = 5
 			relation = { who = PHL value = 100 }
 			diplomatic_influence = { who = PHL value = 100 }

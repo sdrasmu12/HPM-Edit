@@ -2,5 +2,4 @@ owner = ECU
 controller = ECU
 add_core = ECU
 trade_goods = fish
-life_rating = 20
- 
+life_rating = 30

@@ -4,4 +4,3 @@ add_core = KAL
 add_core = HND
 trade_goods = wool
 life_rating = 32
- 

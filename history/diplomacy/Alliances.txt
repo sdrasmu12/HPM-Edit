@@ -1,30 +1,25 @@
 #Circassia and Caucasiam Imamate
 alliance = {
+	first = SWI
+	second = NCT
+	start_date = 1815.1.1
+	end_date = 1857.1.1
+}
+
+#Circassia and Caucasiam Imamate
+alliance = {
 		first = CIR 
 		second = DAG 
 		start_date =  1835.1.1
-		end_date = 1936.1.1
-	}
+		end_date = 1838.1.1
+}
 	
-alliance = {
-		first = KBO 
-		second = DAM 
-		start_date =  1835.1.1
-		end_date = 1936.1.1
-	}
-	
-alliance = {
-		first = BUK 
-		second = KOK 
-		start_date =  1835.1.1
-		end_date = 1936.1.1
-	}	
-
+#Morrocan-Algerian
 alliance = {
 		first = MOR 
 		second = ALD 
 		start_date =  1835.1.1
-		end_date = 1936.1.1
+		end_date = 1838.1.1
 	}
 #########UK and Puppets
 alliance = {
@@ -159,6 +154,14 @@ alliance = {
 	start_date = 1835.1.1
 	end_date = 1911.1.1
 }
+
+#Russia/Transcaucasia
+alliance = {
+	first = RUS
+	second = TCA
+	start_date = 1835.1.1
+	end_date = 1881.1.1
+}
 #France/Papal States
 alliance = {
 	first = FRA
@@ -173,3 +176,26 @@ alliance = {
 	start_date = 1835.1.1
 	end_date = 1911.1.1
 }
+
+alliance = {
+		first = QNG 
+		second = KML 
+		start_date =  1835.1.1
+		end_date = 1936.1.1
+	}
+	
+alliance = {
+		first = QNG 
+		second = TNT 
+		start_date =  1835.1.1
+		end_date = 1936.1.1
+	}
+
+#Siam/Champassak
+alliance = {
+	first = SIA
+	second = CHK
+	start_date = 1835.1.1
+	end_date = 1911.1.1
+}
+

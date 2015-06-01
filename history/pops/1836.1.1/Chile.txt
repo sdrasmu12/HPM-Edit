@@ -348,7 +348,7 @@
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = south_andean
 		religion = catholic
@@ -386,7 +386,7 @@
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = south_andean
 		religion = catholic

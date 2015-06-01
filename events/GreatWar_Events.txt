@@ -2223,7 +2223,7 @@ country_event = {
 	news_desc_long = "EVTDESC96010_NEWS_LONG"
 	news_desc_medium = "EVTDESC96010_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC96010_NEWS_SHORT"
-	picture = "greatpowers"
+	picture = "treaty_of_versailles"
 	major = yes
 
 	trigger = {
@@ -2324,7 +2324,10 @@ country_event = {
 				}
 			}
 			PRU_690 = { remove_core = THIS }
-			PRU_701 = { remove_core = THIS }
+			PRU_701 = {
+				remove_core = THIS
+				add_core = PZN
+			}
 			684 = { remove_core = THIS }
 			685 = { remove_core = THIS }
 		}
@@ -2494,6 +2497,15 @@ country_event = {
 			country_event = 96060
 		}
 		
+		#Give Eupen-Malmedy to Belgium
+		random_country = {
+			limit = { 
+				owns = 395 
+				NOT = { tag = THIS }
+				}
+			country_event = 96091
+			}
+		
 		#if France has no truce, add Rhineland cores
 		random_country = {
 			limit = {
@@ -2523,6 +2535,9 @@ country_event = {
 			696 = { add_core = POL }
 			683 = { add_core = POL }
 			682 = { add_core = POL }
+			684 = { add_core = POL }
+			685 = { add_core = POL }
+			2584 = { add_core = POL }
 		}
 		
 		random_country = {
@@ -2535,6 +2550,9 @@ country_event = {
 			696 = { add_core = PLC }
 			683 = { add_core = PLC }
 			682 = { add_core = PLC }
+			684 = { add_core = PLC }
+			685 = { add_core = PLC }
+			2584 = { add_core = PLC }
 		}
 
 		random_country = {
@@ -3076,6 +3094,7 @@ country_event = {
 					is_core = LAT
 					is_core = LIT
 					is_core = EST
+					is_core = UBD
 				}
 			}
 			remove_core = RUS
@@ -3273,6 +3292,11 @@ country_event = {
 					tag = SIB
 					tag = URA
 					tag = YAK
+					tag = DAG
+					tag = CIR
+					tag = CHY
+					tag = KRL
+					tag = ABK
 				}
 				any_core = { owned_by = THIS }
 				exists = no
@@ -3355,6 +3379,56 @@ country_event = {
 				exists = no
 				any_core = { owned_by = THIS }
 			}
+			government = democracy
+			
+			country_event = 96060
+		}
+		
+		#If Tajikistan does not exist, release it 
+		any_country = {
+			limit = {
+				tag = TAJ
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			government = democracy
+			
+			country_event = 96060
+		}
+		
+		#If Kyrgyzstan does not exist, release it 
+		any_country = {
+			limit = {
+				tag = KYR
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			government = democracy
+			
+			country_event = 96060
+		}
+		
+		#If Uzbekistan does not exist, release it 
+		any_country = {
+			limit = {
+				tag = UZB
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			government = democracy
+			
+			country_event = 96060
+		}
+		
+		#If Turkmenistan does not exist, release it 
+		any_country = {
+			limit = {
+				tag = TKM
+				exists = no
+				any_core = { owned_by = THIS }
+			}
+			government = democracy
+			
 			country_event = 96060
 		}
 		
@@ -4831,17 +4905,8 @@ country_event = {
 		#prestige hit
 		prestige_factor = -0.5
 		
-		#re-establish Occitan and Breton cores
-		FRA_420 = { add_core = BRT }
-		FRA_448 = { add_core = OCC }
-		FRA_451 = { add_core = OCC }
-		FRA_455 = { add_core = OCC }
-		FRA_458 = { add_core = OCC }
-		FRA_461 = { add_core = OCC }
-		465 = { add_core = OCC }
-		466 = { add_core = OCC }
-		FRA_467 = { add_core = OCC }
-		472 = { add_core = OCC }
+		#re-establish Breton cores and release them
+		FRA_420 = { add_core = BRT secede_province = BRT }
 		
 		#remove cores from Alsace-Lorraine if Germany has a truce	
 		random_country = {
@@ -4890,22 +4955,45 @@ country_event = {
 			}
 			FRA_412 = { secede_province = BAV }
 		}
-
-		#Add Italian cores, if Italy is in a truce
+		
+		#Remove French Cores if they already have a truce with Italy/Sardinia-Piedmont
+		
 		random_country = {
 			limit = {
 				is_culture_group = italian
 				truce_with = THIS
+				owns = 465
+				owns = 466
+				owns = 472
+				owns = 473
+			}
+			465 = { remove_core = FRA }
+			466 = { remove_core = FRA }
+			472 = { remove_core = FRA }
+			473 = { remove_core = FRA }
+			
+		}
+
+		#Add Italian cores, if Italy is in a truce
+		random_country = {
+			limit = {
+				tag = ITA
+				truce_with = THIS
 			}
 			SAR_466 = {
 				add_core = ITA
-				remove_core = FRA
+				secede_province = ITA
 			}
 			472 = {
 				add_core = ITA
-				remove_core = FRA
+				secede_province = ITA
 			}
-			473 = { add_core = ITA }
+			473 = { add_core = ITA secede_province = ITA }
+			
+			454 = { secede_province = ITA }
+			469 = { secede_province = ITA }
+			470 = { secede_province = ITA }
+			471 = { secede_province = ITA }
 		}
 		random_country = {
 			limit = {
@@ -4913,28 +5001,32 @@ country_event = {
 				NOT = { exists = ITA }
 				truce_with = THIS
 			}
-			SAR_466 = { add_core = SAR }
-			472 = { add_core = SAR }
-			473 = { add_core = SAR }
+			SAR_466 = { add_core = SAR secede_province = SAR }
+			472 = { add_core = SAR secede_province = SAR }
+			473 = { add_core = SAR secede_province = SAR }
+			
+			454 = { secede_province = SAR }
+			469 = { secede_province = SAR }
+			470 = { secede_province = SAR }
+			471 = { secede_province = SAR }
 		}
-
+		
+		
 		#Add Belgian cores, if Belgium/Flanders is in a truce
 		random_country = {
 			limit = {
+				owns = 387
+				owns = 392
+				NOT = { owns = 400 }
+				NOT = { owns = 405 }
 				OR = {
 					tag = BEL
+					tag = NET
 					tag = FLA
 				}
 				truce_with = THIS
 			}
-			399 = {
-				add_core = BEL
-				add_core = FLA
-			}
-			400 = {
-				add_core = BEL
-				add_core = FLA
-			}
+			country_event = 96093
 		}
 
 		#Add Spanish cores, if Spain is in a truce
@@ -4943,18 +5035,18 @@ country_event = {
 				tag = SPA
 				truce_with = THIS
 			}
-			457 = { add_core = SPA }
-			460 = { add_core = SPA }
-			464 = { add_core = SPA }
+			457 = { add_core = SPA secede_province = SPA }
+			460 = { add_core = SPA secede_province = SPA }
+			464 = { add_core = SPA secede_province = SPA }
 		}
 		random_country = {
 			limit = {
 				tag = SPC
 				truce_with = THIS
 			}
-			457 = { add_core = SPC }
-			460 = { add_core = SPC }
-			464 = { add_core = SPC }
+			457 = { add_core = SPC secede_province = SPC }
+			460 = { add_core = SPC secede_province = SPC }
+			464 = { add_core = SPC secede_province = SPC }
 		}
 		
 		#if any Congress Poland cores owned, re-add cores to Russia
@@ -5049,6 +5141,7 @@ country_event = {
 			leave_alliance = THIS
 			country_event = 96015
 		}
+			
 
 		#release non-existing countries		
 		any_country = {
@@ -5081,43 +5174,6 @@ country_event = {
 			country_event = 96012
 		}
 
-		#if Germany has a truce, release Occitania as a vassal
-		random_country = {
-			limit = {
-				tag = GER
-				truce_with = THIS
-				THIS = { owns = 467 }
-				OCC = { exists = no }
-			}
-			THIS = {
-				any_owned = {
-					limit = { is_core = OCC }
-					secede_province = GER
-				}
-			}
-			release_vassal = OCC
-			diplomatic_influence = {
-				who = OCC
-				value = 200
-			}
-			THIS = {
-				diplomatic_influence = {
-					who = OCC
-					value = -200
-				}
-			}
-		}
-		
-		#If Germany not in a truce, release Occitania
-		any_country = {
-			limit = {
-				tag = OCC
-				exists = no
-				any_core = { owned_by = THIS }
-				GER = { NOT = { truce_with = THIS } }
-			}
-			country_event = 96060
-		}
 
 		#give cores to any non-allied country
 		any_country = {
@@ -5130,6 +5186,16 @@ country_event = {
 			country_event = 96013
 		}
 
+		#Miquelon goes to the owner of Newfoundland
+		random_country = { 
+			limit = {
+				owns = 74
+				NOT = { owns = 77 }
+				NOT = { tag = FRA }
+			}
+			country_event = 96092
+		}
+		
 		#give colonies without cores to truce GP's
 		random_owned = {
 			limit = {
@@ -7335,14 +7401,15 @@ country_event = {
 		political_reform = non_socialist
 		political_reform = gerrymandering
 		political_reform = non_secret_ballots
-		clr_country_flag = tory_election_win
-		clr_country_flag = socialist_election_win
-		set_country_flag = liberal_election_win
-		clr_country_flag = communist_election_win
-		clr_country_flag = fascist_election_win
-		clr_country_flag = reactionary_election_win
-		clr_country_flag = anarcho_liberal_election_win
-		clr_country_flag = social_liberal_election_win
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		set_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		
 		random_country = {
 			limit = {
 				is_sphere_leader_of = THIS
@@ -7410,17 +7477,17 @@ country_event = {
 		political_reform = state_press
 		political_reform = state_controlled
 		political_reform = underground_parties
-
-
-
-		clr_country_flag = tory_election_win
-		clr_country_flag = socialist_election_win
-		clr_country_flag = liberal_election_win
-		clr_country_flag = communist_election_win
-		clr_country_flag = fascist_election_win
-		clr_country_flag = reactionary_election_win
-		clr_country_flag = anarcho_liberal_election_win
-		clr_country_flag = social_liberal_election_win
+		political_reform = primary_culture_only
+		political_reform = mandatory_service
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		set_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		
 		random_country = {
 			limit = {
 				is_sphere_leader_of = THIS
@@ -7510,23 +7577,22 @@ country_event = {
 		political_reform = state_press
 		political_reform = state_controlled
 		political_reform = underground_parties
-
-
-
 		social_reform = good_minimum_wage
 		social_reform = eight_hours
 		social_reform = good_subsidies
 		social_reform = good_pensions
 		social_reform = good_health_care
 		nationalize = yes
-		clr_country_flag = tory_election_win
-		clr_country_flag = socialist_election_win
-		clr_country_flag = liberal_election_win
-		clr_country_flag = communist_election_win
-		clr_country_flag = fascist_election_win
-		clr_country_flag = reactionary_election_win
-		clr_country_flag = anarcho_liberal_election_win
-		clr_country_flag = social_liberal_election_win
+
+		set_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		
 		random_country = {
 			limit = {
 				is_sphere_leader_of = THIS
@@ -7695,4 +7761,76 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = 96091
+	title = "EVTNAME96091" #Eupen Malmedy goes to the owner of Liege
+	desc = "EVTDESC96091"
+	picture = "eupen_malmedy_lost"
 	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT96091OPTA"
+		396 = { 
+			add_core = THIS
+			secede_province = THIS 
+			remove_core = PRU
+			remove_core = NGF
+			remove_core = GER
+			}
+		
+	}
+}
+#Miquelon goes to the owner of newfoundland
+country_event = {
+	id = 96092
+	title = "EVTNAME96092" 
+	desc = "EVTDESC96092"
+	picture = "greatpowers"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT96092OPTA"
+		77 = { secede_province = THIS add_core = CAN }
+	}
+}
+
+
+#Dutch/Belgium gets a piece of France
+country_event = {
+	id = 96093
+	title = "EVTNAME96093" 
+	desc = "EVTDESC96093"
+	picture = "greatpowers"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT96093OPTA"
+			399 = {
+				add_core = THIS
+				add_core = FLA
+				secede_province = THIS
+			}
+			400 = {
+				add_core = THIS
+				add_core = FLA
+				secede_province = THIS
+			}
+			401 = {
+				add_core = THIS
+				add_core = FLA
+				secede_province = THIS
+			}
+			404 = {
+				add_core = THIS
+				secede_province = THIS
+			}
+			405 = {
+				add_core = THIS
+				secede_province = THIS
+			}
+		}
+	}

@@ -3,7 +3,7 @@ primary_culture = ukrainian
 religion = orthodox
 government = absolute_monarchy
 plurality = 0.02
-nationalvalue = nv_autocracy
+nationalvalue = nv_order
 literacy = 0.15
 civilized = yes
 
@@ -30,9 +30,7 @@ school_reforms = no_schools
 conscription = four_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = DON_conservative
 upper_house = {

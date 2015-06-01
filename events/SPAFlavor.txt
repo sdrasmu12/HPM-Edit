@@ -2835,6 +2835,29 @@ country_event = {
 			}
 		}
 	}
+	
+	option = {
+		name = "EVT37735OPTB"
+		remove_country_modifier = national_instability
+		add_country_modifier = {
+			name = national_confusion
+			duration = 365
+		}		
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 6
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = 1
+			}
+			scaled_militancy = {
+				ideology = liberal
+				factor = -3
+			}
+		}
+	}
 }
 
 #Treaty of Paris, if USA is winning the war with Spain
@@ -3329,101 +3352,6 @@ country_event = {
 		}
 	}
 }
-#Hispanic-Moroccan War of 1859
-country_event = {
-	id = 37745
-	title = "EVTNAME37745" #Moroccan Border Dispute
-	desc = "EVTDESC37745"
-	picture = "administration"
-	
-	fire_only_once = yes
-	
-	trigger = {
-		OR = {
-			tag = SPA
-			tag = SPC
-		}
-		OR = {
-			nationalism_n_imperialism = 1
-			year = 1865
-		}
-		owns = 1689
-		MOR = {
-			neighbour = THIS
-			part_of_sphere = no
-			NOT = { truce_with = THIS }
-			war = no
-		}
-		war = no
-		NOT = {
-			has_global_flag = berlin_conference
-			num_of_revolts = 1
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 24
-	}
-	
-	option = {
-		name = "EVT37745OPTA"
-		FRA = {
-			diplomatic_influence = { who = MOR value = -100 }
-			relation = { who = MOR value = -100 }
-			leave_alliance = MOR
-			casus_belli = {
-				target = MOR
-				type = add_to_sphere
-				months = 120
-			}
-		}
-		badboy = 5
-		relation = { who = MOR value = -100 }
-		leave_alliance = MOR
-		casus_belli = {
-			target = MOR
-			type = cut_down_to_size
-			months = 12
-		}
-		war = {
-			target = MOR
-			attacker_goal = {
-				casus_belli = cut_down_to_size
-			}
-		}
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 0
-				badboy = 0.8
-			}
-		}
-	}
-	
-	option = {
-		name = "EVT37745OPTB"
-		prestige = 5
-		badboy = -2
-		FRA = {
-			diplomatic_influence = { who = MOR value = -100 }
-			relation = { who = MOR value = -100 }
-			leave_alliance = MOR
-			casus_belli = {
-				target = MOR
-				type = add_to_sphere
-				months = 120
-			}
-		}
-		relation = { who = MOR value = 50 }
-		random_owned = {
-			limit = {
-				owner = { is_greater_power = yes }
-			}
-			owner = { diplomatic_influence = { who = MOR value = 100 } }
-		}
-		ai_chance = { factor = 20 }
-	}
-}
 	
 #events regarding the Chincha Islands War
 country_event = {
@@ -3433,7 +3361,7 @@ country_event = {
 	picture = "arrested"
 	
 	trigger = {
-		capital_scope = { continent = south_america }
+		capital_scope = { continent = north_america }
 		owns = 2297
 		war = no
 		is_disarmed = no
@@ -3549,7 +3477,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 0.95
 			modifier = {
 				factor = 0.1
 				tag = SPC
@@ -3582,7 +3510,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 0.05
 		}
 	}
 }
@@ -3612,7 +3540,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 30
+			factor = 40
 			modifier = {
 				factor = 0.1
 				tag = SPC
@@ -3658,7 +3586,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 70
+			factor = 60
 		}
 	}
 }
@@ -4031,6 +3959,17 @@ country_event = {
 		
 	option = {
 		name = "EVT97167OPTA"
+		prestige = -2
+		FRA = {
+			diplomatic_influence = { who = MOR value = -100 }
+			relation = { who = MOR value = -100 }
+			leave_alliance = MOR
+			casus_belli = {
+				target = MOR
+				type = add_to_sphere
+				months = 120
+			}
+		}
 		MOR = { define_general = {
 				name = "Sultan Muhammad IV"
 				personality = coolminded
@@ -4048,8 +3987,8 @@ country_event = {
 		set_country_flag = the_spanish_moroccan_war
 		 casus_belli = {
 			target = MOR
-			type = cut_down_to_size
-			months = 3650
+			type = humiliate
+			months = 100
 			}
 		1689 = { add_province_modifier = {
 				name = nationalist_agitation
@@ -4064,12 +4003,30 @@ country_event = {
 				}
 			}
 		ai_chance = {
-			factor = 0.9
+			factor = 05
+			modifier = { 
+				factor = 100
+				MOR = {
+				part_of_sphere = yes
+				NOT = { in_sphere = THIS }
+					}
+				}
 			}
 		}
 	option = {
 		name = "EVT97167OPTB"
-		prestige = -5
+		prestige = -2
+		set_country_flag = the_spanish_moroccan_war
+		FRA = {
+			diplomatic_influence = { who = MOR value = -100 }
+			relation = { who = MOR value = -100 }
+			leave_alliance = MOR
+			casus_belli = {
+				target = MOR
+				type = add_to_sphere
+				months = 120
+			}
+		}
 		diplomatic_influence = {
 			who = MOR
 			value = -200
@@ -4092,7 +4049,72 @@ country_event = {
 				}	}
 			}
 			ai_chance = {
-			factor = 0.1
+			factor = 01
+			}
+		}
+		
+	option = {
+		name = "EVT98641OPTB"
+		prestige = -1
+		FRA = {
+			diplomatic_influence = { who = MOR value = -100 }
+			relation = { who = MOR value = -100 }
+			leave_alliance = MOR
+			casus_belli = {
+				target = MOR
+				type = add_to_sphere
+				months = 120
+			}
+		}
+		MOR = { define_general = {
+				name = "Sultan Muhammad IV"
+				personality = coolminded
+				background = aristocrat
+				}
+			}
+		relation = {
+			who = MOR
+			value = -100
+			}
+		diplomatic_influence = {
+			who = MOR
+			value = -200
+		}
+		 casus_belli = {
+			target = MOR
+			type = humiliate
+			months = 1825
+			}
+		war = {
+			target = MOR
+				attacker_goal = {
+					casus_belli = humiliate
+					}
+				defender_goal = {
+					casus_belli = acquire_core_state
+			}
+		 }
+		1689 = { add_province_modifier = {
+				name = nationalist_agitation
+				duration = 365
+				}
+			any_pop = {
+				random_list = {
+						34 = { }
+						33 = { }
+						33 = { reduce_pop = 0.99 }
+					}
+				}
+			}
+		ai_chance = {
+			factor = 100
+			modifier = { 
+				factor = 0
+				MOR = {
+				part_of_sphere = yes
+				NOT = { in_sphere = THIS }
+					}
+				}
 			}
 		}
 	}
@@ -4111,16 +4133,17 @@ country_event = {
 			tag = SPA
 			tag = SPC
 			}
-			MOR = {
-				owns = 1695
-				civilized = no
-				is_disarmed = yes
-				war = no
-				has_recently_lost_war = yes
-				}
+		truce_with = MOR
+		MOR = {
+			owns = 1695
+			civilized = no
+			war = no
+			has_recently_lost_war = yes
+		}
 		NOT = {
-		year = 1880
-		owns = 1695 }
+			year = 1880
+			owns = 1695 
+			}
 		}
 		
 	mean_time_to_happen = { days = 2 }
@@ -4129,9 +4152,8 @@ country_event = {
 		name = "EVT97168PTA"
 		clr_country_flag = the_spanish_moroccan_war
 		1695 = { secede_province = THIS }
-		1689 = {
-		add_core = THIS
-		remove_core = MOR }
+		1689 = { remove_core = MOR }
+		any_owned = { limit = { is_core = MOR NOT = { province_id = 1695 } NOT = { province_id = 1689 } } secede_province = MOR }
 		ai_chance = {
 			factor = 0.8
 			}
@@ -4143,7 +4165,7 @@ country_event = {
 			who = MOR
 			value = -150
 			}
-		badboy = 12
+		badboy = 4
 		MOR = {
 			any_owned = {
 			limit = { region = MOR_1694 }
@@ -4154,7 +4176,7 @@ country_event = {
 			factor = 0.1
 				modifier = {
 					factor = 0
-					badboy = 10
+					badboy = 0.5
 				}
 			}
 		}
@@ -4182,3 +4204,86 @@ country_event = {
 			}
 		}
 	}
+	
+country_event = {
+	id = 971700
+	title = "EVTNAME971700" #The Moroccan Question
+	desc = "EVTDESC971700"
+	picture = "tangier_photo"
+
+	is_triggered_only = yes
+		
+	option = {
+		name = "EVT971700OPTA"
+		badboy = -1
+		relation = { who = FROM value = 50 }
+		FROM = { country_event = 971710 }
+		ai_chance = { 
+			factor = 90 
+			modifier = {
+				factor = 40
+				NOT = { relation = { who = FROM value = 0 } }
+			}
+		}
+	}
+	option = {
+		name = "EVT971700OPTB"
+		relation = { who = FROM value = -150 }
+		FROM = {
+			leave_alliance = THIS
+			end_military_access = THIS
+			casus_belli = {
+				target = THIS
+				type = take_from_sphere
+				months = 36
+			}
+			casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 36
+			}
+		}
+		random_country = {
+			limit = { is_greater_power = yes }
+			relation = { who = THIS value = -75 }
+			casus_belli = {
+				target = THIS
+				type = cut_down_to_size
+				months = 36
+			}
+		}
+		diplomatic_influence = { who = FROM value = -400 }
+		ai_chance = { factor = 10 }
+		}
+	}
+	
+country_event = {
+	id = 971710
+	title = "EVTNAME971710" #The Partition of Morocco
+	desc = "EVTDESC971710"
+	picture = "tangier_photo"
+
+	is_triggered_only = yes
+		
+	option = {
+		name = "EVT97171OPTA"
+		1773 = { secede_province = THIS add_core = MOR }
+		1774 = { secede_province = THIS add_core = MOR }
+		1696 = { secede_province = THIS change_province_name = "Tarfaya" }
+		1687 = { secede_province = THIS }
+		1688 = { secede_province = THIS }
+		1695 = { secede_province = THIS }
+		1686 = { secede_province = THIS }
+		
+		FROM = { inherit = MOR }
+		
+		1686 = { secede_province = MOR }
+		MOR = { civilized = yes nationalvalue = nv_autocracy capital = 1686 government = hms_government prestige = -50 }
+		FROM = {
+			create_vassal = MOR
+			create_alliance = MOR
+			diplomatic_influence = { who = MOR value = 400 }
+		}
+		THIS = { diplomatic_influence = { who = MOR value = 50 } }
+	}
+}

@@ -7,10 +7,8 @@ life_rating = 35
 1861.1.1 = {
 	owner = ENG
 	controller = ENG
-	remove_core = CHI
-	colonial = 2
-}
-1861.1.1 = { 
+	add_core = ENG
 	fort = 1
 	naval_base = 1
+	colonial = 2
 }

@@ -4,4 +4,3 @@ add_core = CRO
 add_core = DLM
 trade_goods = fish
 life_rating = 35
- 

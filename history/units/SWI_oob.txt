@@ -4,6 +4,10 @@ SAR = {
 	value = 125
 }
 
+NCT = { 
+	value = 200
+}
+
 army = {
 	name = "Landwehr I"
 	location = 603

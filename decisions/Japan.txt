@@ -634,6 +634,16 @@ political_decisions = {
 				limit = {
 					tag = KOR
 					ai = yes
+					civilized = no
+				}
+				annex_to = THIS
+			}
+			
+			random_country = {
+				limit = {
+					tag = KOR
+					ai = yes
+					civilized = yes
 				}
 				civilized = no
 				annex_to = THIS
@@ -642,12 +652,10 @@ political_decisions = {
 			random_country = {
 				limit = {
 					tag = KOR
-					ai = yes
+					exists = no
 				}
 				civilized = yes
-				annex_to = THIS
 			}
-			
 			
 			random_country = {
 				limit = {
@@ -691,17 +699,9 @@ political_decisions = {
 		}
 		
 		allow = {
-			OR = {
-			government = fascist_dictatorship
-			AND = {
-			government = absolute_monarchy
-			ruling_party_ideology = reactionary
-			nationalism_n_imperialism = 1
 			war = no
 			war_policy = jingoism
 			is_greater_power = yes
-				}
-			}
 		}
 		
 		effect = {
@@ -1148,6 +1148,7 @@ political_decisions = {
 			}
 			exists = RYU
 			NOT = { has_global_flag = ryukyu_inherited }
+			RYU = { ai = yes }
 		}
 
 		allow = {

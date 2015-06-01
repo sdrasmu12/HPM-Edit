@@ -3,8 +3,8 @@ primary_culture = caribeno
 culture = afro_caribeno
 religion = catholic
 government = presidential_dictatorship
-plurality = 30
-nationalvalue = nv_liberty
+plurality = 25
+nationalvalue = nv_order
 literacy = 0.1
 civilized = yes
 
@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = DOM_conservative_3
 upper_house = {
@@ -73,7 +71,6 @@ nonstate_consciousness = 0
 	oob = "/1861/DOM_oob.txt"
 	plurality = 50
 	literacy = 0.17
-	 
 }
 1861.1.1 = {
 # Technologies

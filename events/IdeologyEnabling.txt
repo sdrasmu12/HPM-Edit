@@ -12,10 +12,10 @@ country_event = {
 	picture = "Socialism"
 	
 	trigger = {
-		NOT = { is_ideology_enabled = socialist }
-		invention = karl_marx
-		invention = friedrich_engels
-		year = 1845
+		NOT = {
+			is_ideology_enabled = socialist 
+		}
+		year = 1860
 		civilized = yes
 		literacy = 0.4
 		OR = {
@@ -38,16 +38,9 @@ country_event = {
 		months = 250
 		
 		modifier = {
-			factor = 0.9
+			factor = 0.5
 			invention = pierre_joseph_proudhon
 		}
-		
-		modifier = {
-			factor = 0.8
-			invention = karl_marx
-			invention = friedrich_engels
-		}
-		
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -92,17 +85,13 @@ country_event = {
 		NOT = {
 			is_ideology_enabled = communist 
 		}
-		is_ideology_enabled = socialist
-		the_historical_theory = 1
-		invention = karl_marx
-		invention = friedrich_engels
-		year = 1860
+		year = 1870
 		civilized = yes
 		literacy = 0.5
 		OR = {
-			planned_economy = 10
-			pro_atheism = 10
-			pro_military = 15
+			planned_economy = 5
+			pro_atheism = 5
+			pro_military = 10
 			unemployment = 0.2
 			AND = {
 				NOT = {
@@ -118,11 +107,6 @@ country_event = {
 
 	mean_time_to_happen = {
 		months = 300
-		
-		modifier = {
-			factor = 0.4
-			the_historical_theory = 1
-			}
 		
 		modifier = {
 			factor = 0.5
@@ -187,14 +171,13 @@ country_event = {
 		NOT = {
 			is_ideology_enabled = anarcho_liberal 
 		}
-		year = 1840
-		invention = pierre_joseph_proudhon
+		year = 1848
 		civilized = yes
 		literacy = 0.65
 		OR = {
-			laissez_faire = 15
-			pluralism = 10
-			anti_military = 20
+			laissez_faire = 10
+			pluralism = 15
+			anti_military = 15
 			political_reform_want = 0.5
 			unemployment = 0.2
 		}
@@ -230,17 +213,19 @@ country_event = {
 		NOT = {
 			is_ideology_enabled = fascist 
 		}
-		invention = the_doctrine_of_fascism
+		great_wars_enabled = yes
 		year = 1900
 		literacy = 0.65
 		civilized = yes
 		OR = {
-			interventionism = 25
-			secularized = 25
+			interventionism = 20
+			secularized = 20
 			jingoism = 5
 			residency = 5
 			social_reform_want = 0.5
 			unemployment = 0.2
+			revanchism = 0.25
+			has_country_flag = dismantling_treaty
 		}
 	}
 	

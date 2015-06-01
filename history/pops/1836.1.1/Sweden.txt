@@ -162,7 +162,7 @@
 	labourers = {
 		culture = swedish
 		religion = protestant
-		size = 6250
+		size = 6050
 	}
 
 	artisans = {
@@ -174,7 +174,7 @@
 	farmers = {
 		culture = sami
 		religion = protestant
-		size = 2000
+		size = 2200
 	}
 
 	farmers = {

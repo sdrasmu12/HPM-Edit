@@ -133,7 +133,7 @@
 	artisans = {
 		culture = bambara
 		religion = animist
-		size = 3900
+		size = 2400
 	}
 
 	soldiers = {

@@ -46,7 +46,7 @@ party = {
 party = {
 	name = "CHI_reactionary"
 	start_date = 1830.1.1
-	end_date = 1921.1.1
+	end_date = 1936.1.1
 
 	ideology = reactionary
 
@@ -115,7 +115,7 @@ party = {
 
 party = {
 	name = "CHI_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist

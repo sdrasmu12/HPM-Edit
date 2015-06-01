@@ -30,6 +30,8 @@ country_event = {
 		GXI = { all_core = { add_core = CHI } }
 		GNG = { all_core = { add_core = CHI } }
 		FJN = { all_core = { add_core = CHI } }
+		KML = { all_core = { add_core = CHI } }
+		add_country_modifier = { name = global_baby_boom duration = 3650 }
 		prestige = 10
 		remove_country_modifier = educational_reform
 		remove_country_modifier = military_reform
@@ -63,6 +65,7 @@ country_event = {
 					tag = GXI
 					tag = GNG
 					tag = FJN
+					tag = KML
 				}
 			}
 			leave_alliance = THIS
@@ -84,6 +87,7 @@ country_event = {
 					tag = GXI
 					tag = GNG
 					tag = FJN
+					tag = KML
 				}
 			}
 			country_event = { id=90901 days=0 }
@@ -186,6 +190,7 @@ country_event = {
 			name = taiping_draft
 			duration = 365
 		}
+		add_country_modifier = { name = global_baby_boom duration = 730 }
 		prestige = 10
 		remove_country_modifier = educational_reform
 		remove_country_modifier = military_reform

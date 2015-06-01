@@ -71,8 +71,8 @@ political_decisions = {
 			}
 			capital = 664
 			RUS = {
-				relation = { who = THIS value = 300 }
-				diplomatic_influence = { who = THIS value = 100 }
+				relation = { who = THIS value = 200 }
+				diplomatic_influence = { who = THIS value = 50 }
 			}
 			any_country = {
 				limit = { in_sphere = RUS }
@@ -90,6 +90,10 @@ political_decisions = {
 			NOT = {
 				exists = ROM
 				is_culture_group = pan_romanian
+				AND = {
+					tag = TUR
+					any_owned_province = { is_core = ROM }
+					}
 			}
 			OR = {
 				any_owned_province = {
@@ -344,6 +348,10 @@ political_decisions = {
 				}
 				annex_to = THIS
 			}
+			random_country = { 
+				limit = { is_culture_group = czecho_slovak_culture_group part_of_sphere = no is_vassal = no }
+				country_event = 98650
+				}
 		}
 
 		ai_will_do = {
@@ -655,6 +663,7 @@ political_decisions = {
 				exists = YUG
 				is_culture_group = south_slavic
 				has_global_flag = yugoslavia_formed
+				tag = TUR
 			}
 			OR = {
 				tag = FRA
@@ -712,6 +721,12 @@ political_decisions = {
 			set_global_flag = yugoslavia_formed
 			prestige = 20
 			badboy = 2
+			SER = { all_core = { add_core = YUG } }
+			MON = { all_core = { add_core = YUG } }
+			CRO = { all_core = { add_core = YUG } }
+			BOS = { all_core = { add_core = YUG } }
+			SLO = { all_core = { add_core = YUG } }
+			TUR_853 = { add_core = YUG }
 			any_country = {
 				limit = {
 					OR = {
@@ -751,31 +766,6 @@ political_decisions = {
 					secede_province = THIS
 				}
 			}
-			SER = { all_core = { add_core = YUG } }
-			MON = { all_core = { add_core = YUG } }
-			CRO = { all_core = { add_core = YUG } }
-			BOS = { all_core = { add_core = YUG } }
-			SLO = { all_core = { add_core = YUG } }
-			random_owned = {
-				limit = { is_core = ALB }
-				ALB = { all_core = { add_core = YUG } }
-			}
-			random_owned = {
-				limit = { is_core = BUL }
-				BUL = { all_core = { add_core = YUG } }
-			}
-			any_owned = {
-				limit = {
-					is_core = THIS
-					is_core = YUG
-					OR = {
-						is_core = SER
-						is_core = BOS
-						is_core = CRO
-					}
-				}
-				remove_core = THIS
-			}
 			any_owned = {
 				limit = {
 					is_core = THIS
@@ -787,7 +777,7 @@ political_decisions = {
 			create_alliance = YUG
 			diplomatic_influence = {
 				who = YUG
-				value = 300
+				value = 400
 			}
 			any_country = {
 				limit = {
@@ -822,14 +812,17 @@ political_decisions = {
 	albania_in_yugoslavia = {
 		picture = map_balkans
 		potential = {
+			tag = YUG
 			OR = {
-				YUG = { vassal_of = THIS }
-				tag = YUG
+				ALB = { vassal_of = THIS }
+				ALB = { in_sphere = THIS }
 			}
 			NOT = { has_global_flag = albania_in_yugoslavia }
 		}
 		allow = {
 			war = no
+			OR = {
+			ALB = { vassal_of = THIS }
 			ALB = {
 				all_core = {
 					OR = {
@@ -837,6 +830,7 @@ political_decisions = {
 						owner = {
 							in_sphere = THIS
 							war = no
+							}
 						}
 					}
 				}
@@ -846,19 +840,23 @@ political_decisions = {
 			set_global_flag = albania_in_yugoslavia
 			prestige = 5
 			ALB = { all_core = { add_core = YUG } }
-			any_owned = {
+			YUG = { inherit = ALB }
+			any_country = {
 				limit = {
-					is_core = ALB
-					NOT = { owned_by = YUG }
+					in_sphere = THIS
+					war = no
+					any_owned_province = { is_core = ALB }
 				}
-				secede_province = YUG
+				any_owned = {
+					limit = { is_core = ALB }
+					secede_province = THIS
+				}
 			}
-			random_country = {
-				limit = {
-					tag = ALB
-					exists = yes
+			THIS = {
+				any_owned = {
+					limit = { is_core = ALB }
+					secede_province = YUG
 				}
-				annex_to = YUG
 			}
 		}
 	}
@@ -1741,6 +1739,91 @@ political_decisions = {
 
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	
+	bulgaria_in_yugoslavia = {
+		picture = map_balkans
+		potential = {
+			tag = YUG
+			OR = {
+				BUL = { vassal_of = THIS }
+				BUL = { in_sphere = THIS }
+			}
+			NOT = { has_global_flag = bulgaria_in_yugoslavia }
+		}
+		allow = {
+			war = no
+			OR = {
+			ALB = { vassal_of = THIS }
+			BUL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+							war = no
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = bulgaria_in_yugoslavia
+			prestige = 5
+			BUL = { all_core = { add_core = YUG } }
+			YUG = { inherit = BUL }
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					war = no
+					any_owned_province = { is_core = BUL }
+				}
+				any_owned = {
+					limit = { is_core = BUL }
+					secede_province = THIS
+				}
+			}
+			THIS = {
+				any_owned = {
+					limit = { is_core = BUL }
+					secede_province = YUG
+				}
+			}
+			}
+		}
+		
+	croatian_indepence = {
+		picture = croatian_indepence
+		potential = {
+			tag = CRO
+			any_neighbor_country = { have_core_in = CRO }
+			NOT = { has_country_flag = first_croat_indepence }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			AUS_771 = { owned_by = THIS }
+			OR = {
+			 AUS_780 = { owned_by = THIS }
+			 AUS_777 = { owned_by = THIS }
+			}
+		}
+		
+		effect = {
+			set_country_flag = first_croat_indepence
+			any_country = { limit = { have_core_in = CRO }
+				 casus_belli = {
+					target = CRO
+					type = make_puppet
+					months = 6
+				}
+			}
+			CRO = { all_core = { remove_core = HUN } }
+			CRO = { all_core = { remove_core = AUS } }
+			CRO = { all_core = { remove_core = KUK } }
 		}
 	}
 }

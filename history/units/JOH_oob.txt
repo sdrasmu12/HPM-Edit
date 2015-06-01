@@ -1,3 +1,7 @@
+ENG = {
+	value = -200
+}
+
 army = {
 	name = "Army of the Sultan of Johore"
 	location = 1390

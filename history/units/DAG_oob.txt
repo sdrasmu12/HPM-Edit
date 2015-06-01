@@ -37,21 +37,16 @@ army = {
 		type = cavalry
 		home = 1057
 	}
-	
-	regiment = {
-		name= "7. Cavalry"
-		type = cavalry
-		home = 1054
-	}
+
 	
 leader = {
 	name = "Imam Shamil"
 	picture = arab_general_4
 	type = land
 	date = 1836.1.1
-	background = nationalist
+	background = school_of_defense
 	personality = implacable
-	
+	prestige = 0.9
 	}
 }
 

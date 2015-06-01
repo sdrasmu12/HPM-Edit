@@ -43,7 +43,7 @@
 		religion = mahayana
 		size = 945725
 	}
-	
+
 	serfs = {
 		culture = beifaren
 		religion = mahayana
@@ -227,7 +227,7 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
@@ -301,19 +301,19 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
@@ -491,19 +491,19 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
@@ -547,13 +547,13 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
@@ -585,7 +585,7 @@
 		religion = mahayana
 		size = 20900
 	}
-	
+
 	bureaucrats = {
 		culture = beifaren
 		religion = mahayana
@@ -615,7 +615,7 @@
 		religion = mahayana
 		size = 900900
 	}
-	
+
 	serfs = {
 		culture = beifaren
 		religion = mahayana
@@ -647,7 +647,7 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = beifaren
 		religion = mahayana
@@ -705,13 +705,13 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = manchu
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = manchu
 		religion = mahayana
@@ -1019,7 +1019,7 @@
 		religion = mahayana
 		size = 11000
 	}
-	
+
 	artisans = {
 		culture = nanfaren
 		religion = mahayana
@@ -3387,7 +3387,13 @@
 	farmers = {
 		culture = zhuang
 		religion = animist
-		size = 383325
+		size = 373325
+	}
+	
+	farmers = {
+		culture = zhuang
+		religion = protestant
+		size = 10000
 	}
 	
 	serfs = {
@@ -3435,7 +3441,13 @@
 	farmers = {
 		culture = yue
 		religion = mahayana
-		size = 283975
+		size = 282975
+	}
+	
+	farmers = {
+		culture = yue
+		religion = protestant
+		size = 1000
 	}
 
 	aristocrats = {
@@ -3465,7 +3477,13 @@
 	farmers = {
 		culture = miao
 		religion = animist
-		size = 59225
+		size = 58225
+	}
+	
+	farmers = {
+		culture = miao
+		religion = protestant
+		size = 1000
 	}
 }
 #Pangle (1424000/356000 POPS)
@@ -6464,9 +6482,15 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 443300
+		size = 442800
 	}
 
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 5000
+	}
+	
 	aristocrats = {
 		culture = beifaren
 		religion = mahayana
@@ -6524,7 +6548,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 284525
+		size = 284325
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = protestant
+		size = 2000
 	}
 
 	bureaucrats = {
@@ -6708,7 +6738,13 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 1216650
+		size = 1215650
+	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 1000
 	}
 
 	aristocrats = {
@@ -6738,7 +6774,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 176550
+		size = 175550
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = protestant
+		size = 1000
 	}
 }
 #Shanghai (268000/71000 POPS)
@@ -6770,7 +6812,13 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 61000
+		size = 69500
+	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 500
 	}
 }
 #Suzhou (4968000/1242000 POPS)
@@ -7276,7 +7324,13 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 502375
+		size = 501375
+	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 1000
 	}
 	
 	serfs = {
@@ -7318,7 +7372,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 186575
+		size = 185575
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = protestant
+		size = 1000
 	}
 }
 #Jiangxi Region (25864000)
@@ -11819,7 +11879,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 200450
+		size = 199450
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = mahayana
+		size = 1000
 	}
 	
 	serfs = {
@@ -12007,7 +12073,13 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 51875
+		size = 51675
+	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 200
 	}
 }
 #Jiaxing (344000/86000 POPS)
@@ -12039,7 +12111,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 43675
+		size = 43175
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = protestant
+		size = 500
 	}
 
 	aristocrats = {
@@ -12069,7 +12147,13 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 34625
+		size = 34525
+	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 100
 	}
 }
 #Jinhua (2064000/516000 POPS)
@@ -12217,7 +12301,13 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 151975
+		size = 151475
+	}
+	
+	farmers = {
+		culture = beifaren
+		religion = protestant
+		size = 500
 	}
 
 	aristocrats = {
@@ -12247,8 +12337,15 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 111025
+		size = 109525
 	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 500
+	}
+	
 }
 #Shaoxing (872000/218000 POPS)
 1609 = {
@@ -12309,8 +12406,15 @@
 	farmers = {
 		culture = nanfaren
 		religion = mahayana
-		size = 118325
+		size = 118025
 	}
+	
+	farmers = {
+		culture = nanfaren
+		religion = protestant
+		size = 300
+	}
+	
 }
 #Taizhou (1684000/421000 POPS)
 1610 = {

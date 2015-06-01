@@ -21,7 +21,7 @@ political_decisions = {
 				all_core = { remove_core = BUK }
 			}
 			KHI = {
-				all_core = { remove_core = KHI }
+				all_core = { remove_core = KHI add_core = KHI }
 			}
 			1193 = { add_core = UZB } #Kyzylorda
 			1192 = { add_core = UZB } #Nukus
@@ -61,7 +61,7 @@ political_decisions = {
 			set_global_flag = uzbekistan_created
 			prestige = 10
 			BUK = {
-				all_core = { remove_core = BUK }
+				all_core = { remove_core = BUK add_core = UZB }
 			}
 			KHI = {
 				all_core = { remove_core = KHI }
@@ -74,7 +74,7 @@ political_decisions = {
 			1201 = { add_core = UZB } #Khojand
 			1199 = { add_core = UZB } #Samarkand
 			1197 = { add_core = UZB } #Shymkent
-			1195 = { add_core = UZB } #Tashkent
+			1195 = { add_core = UZB } #Tashkent	
 			1202 = { add_core = UZB } #Kokand
 			change_tag = UZB
 			capital = 1195
@@ -102,7 +102,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = kyrgyzstan_created
 			KOK = {
-				all_core = { remove_core = KOK }
+				all_core = { remove_core = KOK add_core = KYR }
 			}
 			prestige = 10
 			1190 = { add_core = KYR } #Naryn

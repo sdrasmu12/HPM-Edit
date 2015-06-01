@@ -2,7 +2,7 @@ SPA = {
 	value = 75
 }
 USA = {
-	value = 75
+	value = -50
 }
 RGS = {
 	value = 150

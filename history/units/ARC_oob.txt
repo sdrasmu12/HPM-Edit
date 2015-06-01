@@ -38,6 +38,10 @@ BRZ = {
 	value = -100
 }
 
+USA = {
+	value = -50
+}
+
 army = {
 	name = "Ejército de la Confederación"
 	location = 2379

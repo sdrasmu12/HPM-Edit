@@ -200,7 +200,7 @@
 	farmers = {
 		culture = yankee
 		religion = protestant
-		size = 29
+		size = 7
 	}
 }
 #Wake (60/15 POPS)

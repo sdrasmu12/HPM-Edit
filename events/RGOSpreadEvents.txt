@@ -198,6 +198,13 @@ province_event = {
 	trigger = {
 		NOT = { has_province_modifier = local_electricity }
 		owner = { invention = electrical_lighting }
+		has_building = public_illumination
+		has_pop_type = labourers
+		OR = {
+			NOT = { trade_goods = tropical_wood }
+			NOT = { trade_goods = timber }
+			NOT = { trade_goods = rubber }
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -368,7 +375,14 @@ province_event = {
 	option = {
 		name = "EVTOPTA29901"
 		state_scope = {
-			any_owned = {
+			any_owned = { limit = { 
+				has_pop_type = labourers 
+				OR = {
+					NOT = { trade_goods = tropical_wood }
+					NOT = { trade_goods = timber }
+					NOT = { trade_goods = rubber }
+					}
+				}
 				add_province_modifier = {
 					name = local_electricity
 					duration = -1
@@ -377,6 +391,7 @@ province_event = {
 		}
 	}
 }
+
 
 # Nitroglycerin
 province_event = {

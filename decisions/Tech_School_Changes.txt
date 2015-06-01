@@ -12,8 +12,10 @@ political_decisions = {
 				ruling_party_ideology = reactionary
 				ruling_party_ideology = fascist
 			}
-			jingoism = 5
-			pro_military = 5
+			OR = {
+				jingoism = 3
+				pro_military = 3
+			}
 			military_score = 100
 			prestige = 45
 		}
@@ -41,8 +43,10 @@ political_decisions = {
 				ruling_party_ideology = liberal
 				ruling_party_ideology = anarcho_liberal
 			}
-			pro_military = 5
-			laissez_faire = 5
+			OR = {
+				pro_military = 3
+				laissez_faire = 3
+			}
 			prestige = 45
 			military_score = 100
 			total_amount_of_ships = 30
@@ -70,8 +74,10 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = communist
 			}
-			pacifism = 5
-			secularized = 5
+			OR = {
+				pacifism = 3
+				secularized = 3
+			}
 			prestige = 45
 			average_consciousness = 4
 		}
@@ -97,8 +103,10 @@ political_decisions = {
 				ruling_party_ideology = liberal
 				ruling_party_ideology = anarcho_liberal
 			}
-			laissez_faire = 5
-			free_trade = 5
+			OR = {
+				laissez_faire = 3
+				free_trade = 3
+			}
 			prestige = 45
 			industrial_score = 100
 		}
@@ -125,8 +133,10 @@ political_decisions = {
 				ruling_party_ideology = socialist
 				ruling_party_ideology = communist
 			}
-			interventionism = 5
-			protectionism = 5
+			OR = {
+				interventionism = 3
+				protectionism = 3
+			}
 			prestige = 45
 			industrial_score = 100
 		}
@@ -162,6 +172,28 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 0
+		}
+	}
+	
+	encourage_the_skoda_works = {
+		picture = skoda_works
+		potential = {
+			NOT = { tech_school = czech_tech_school }
+			is_culture_group = czecho_slovak_culture_group
+		}
+		
+		allow = {
+			advanced_metallurgy = 1
+			iron_breech_loaded_artillery = 1
+			state_n_government = 1
+			industrial_score = 150
+			owns = 629
+			629 = { state_scope = { has_building = steel_factory } }
+		}
+		
+		effect = {
+			tech_school = czech_tech_school
+			prestige = 5
 		}
 	}
 }

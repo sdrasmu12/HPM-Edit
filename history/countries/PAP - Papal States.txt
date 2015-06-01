@@ -12,7 +12,7 @@ prestige = 5
 
 # Political reforms
 slavery = no_slavery
-upper_house_composition = party_appointed
+upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = yes_meeting
 press_rights = state_press
@@ -33,9 +33,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 set_country_flag = theocratic_government
 
@@ -50,7 +48,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

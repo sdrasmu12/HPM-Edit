@@ -588,7 +588,7 @@ country_event = {
 				in_sphere = RUS
 			}
 			modifier = {
-				factor = 5
+				factor = 0.05
 				NOT = { in_sphere = RUS }
 				part_of_sphere = yes
 			}
@@ -1794,7 +1794,12 @@ country_event = {
 		clr_global_flag = trying_to_expel_the_manchus
 		prestige = 5
 		1082 = { poor_strata = { limit = { culture = manchu }
-			move_pop = 1554
+			random_list = {
+				34 = { reduce_pop = 0.9 }
+				33 = { reduce_pop = 0.8 }
+				33 = { reduce_pop = 0.7 }
+				}
+				move_pop = 1554
 			}
 			any_pop = { limit = { culture = manchu }
 				militancy = 7
@@ -1817,9 +1822,15 @@ country_event = {
 					}
 		remove_province_modifier = nationalist_agitation
 		}
+		
 		1083 = { poor_strata = { limit = { culture = manchu }
-			move_pop = 2617
-			}
+				random_list = {
+				34 = { reduce_pop = 0.9 }
+				33 = { reduce_pop = 0.8 }
+				33 = { reduce_pop = 0.7 }
+					}
+				move_pop = 1554
+				}
 			any_pop = { limit = { culture = manchu }
 				militancy = 7
 				consciousness = 9
@@ -1841,8 +1852,74 @@ country_event = {
 					}
 			remove_province_modifier = nationalist_agitation
 		}
+		
 		1084 = { poor_strata = { limit = { culture = manchu }
-			move_pop = 1085
+			random_list = {
+				34 = { reduce_pop = 0.9 }
+				33 = { reduce_pop = 0.8 }
+				33 = { reduce_pop = 0.7 }
+				}
+				move_pop = 1553
+			}
+			any_pop = { limit = { culture = manchu }
+				militancy = 7
+				consciousness = 9
+			}
+			random_pop = {
+			limit = {
+			culture = manchu
+			OR = {
+				pop_type = artisans
+				pop_type = clergymen
+				pop_type = bureaucrats
+					}
+				}
+			pop_type = labourers
+			}
+		add_province_modifier = {
+					name = colonial_recruitment
+					duration = 1095
+				}
+		remove_province_modifier = nationalist_agitation
+		}
+		
+		1085 = { poor_strata = { limit = { culture = manchu }
+			random_list = {
+				34 = { reduce_pop = 0.9 }
+				33 = { reduce_pop = 0.8 }
+				33 = { reduce_pop = 0.7 }
+				}
+				move_pop = 1553
+			}
+			any_pop = { limit = { culture = manchu }
+				militancy = 7
+				consciousness = 9
+			}
+			random_pop = {
+			limit = {
+			culture = manchu
+			OR = {
+				pop_type = artisans
+				pop_type = clergymen
+				pop_type = bureaucrats
+					}
+				}
+			pop_type = labourers
+			}
+		add_province_modifier = {
+					name = colonial_recruitment
+					duration = 1095
+				}
+		remove_province_modifier = nationalist_agitation
+		}
+		
+		2617 = { poor_strata = { limit = { culture = manchu }
+			random_list = {
+				34 = { reduce_pop = 0.9 }
+				33 = { reduce_pop = 0.8 }
+				33 = { reduce_pop = 0.7 }
+				}
+				move_pop = 1553
 			}
 			any_pop = { limit = { culture = manchu }
 				militancy = 7
@@ -1893,4 +1970,477 @@ country_event = {
 		1083 = { remove_province_modifier = nationalist_agitation }
 		1084 = { remove_province_modifier = nationalist_agitation }
 	}
+}
+#Finland is not a russia puppet anymore and selects a new government
+country_event = {
+	
+	id = 32534
+	title = "EVTNAME32534"
+	desc = "EVTDESC32534"
+	picture = "finnish_diet"
+	
+	trigger = {
+		tag = FIN
+		is_vassal = no
+		war = no
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+	}
+	
+	fire_only_once = yes
+		
+	mean_time_to_happen = { months = 3 }
+	
+	option = {
+		name = "EVT32534OPTA"
+		government = hms_government
+		ai_chance = { factor = 30 }
+	}
+	
+	option = {
+		name = "EVT32534OPTB"
+		government = democracy
+		ai_chance = { factor = 70 }
+	}
+}
+
+#1841 Rebellion in Guria
+province_event = {
+	
+	id = 32535
+	title = "EVTNAME32535"
+	desc = "EVTDESC32535"
+	
+	trigger = {
+		is_core = GEO
+		year = 1840
+		OR = {
+			average_consciousness = 4
+			average_militancy = 2
+		}
+		NOT = { year = 1860 }
+	}
+	
+	fire_only_once = yes
+	
+	allow_multiple_instances = no
+		
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVT32535OPTA"
+		any_pop = { 
+			limit = {
+				has_pop_culture = georgian
+				}
+			militancy = 9
+			reduce_pop = 0.99
+		}
+	}
+}
+
+#Renaming central asia and removing cores
+country_event = {
+	
+	id = 32536
+	title = "EVTNAME32536"
+	desc = "EVTDESC32536"
+	picture = "storm_of_samarkand"
+	
+	trigger = {
+		tag = RUS
+		owns = 1186
+		owns = 1187
+		owns = 1188
+		owns = 1193
+		owns = 2606
+		owns = 1190
+		owns = 1192
+		owns = 1194
+		owns = 2612
+	}
+	
+	fire_only_once = yes
+	
+		
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVT32536OPTA"
+			2606 = { change_province_name = "Zhambyl" remove_core = RUS }
+			1193 = { change_province_name = "Perovsk" remove_core = RUS }
+			1188 = { change_province_name = "Taldy-Kurgan" remove_core = RUS }
+			1186 = { change_province_name = "Verniy" remove_core = RUS }
+			1187 = { change_province_name = "Semipalatinsk" remove_core = RUS }
+			1190 = { remove_core = RUS }
+			1194 = { remove_core = RUS }
+			1192 = { remove_core = RUS }
+			2612 = { remove_core = RUS }
+			1186 = { state_scope = { change_region_name = "Semireche" } }
+	}
+}
+
+#Mysticism in Russia
+country_event = {
+	
+	id = 32537
+	title = "EVTNAME32537"
+	desc = "EVTDESC32537"
+	picture = "mysticism_in_russia"
+	
+	trigger = {
+		tag = RUS
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+			}
+		year = 1870
+		average_consciousness = 3
+		average_militancy = 1
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { 
+		months = 200 
+		
+		modifier = {
+			factor = 0.9
+			year = 1875
+			}
+			
+		modifier = {
+			factor = 0.6
+			year = 1885
+			}
+		modifier = {
+			factor = 0.1
+			year = 1895
+			}
+	}
+	
+	option = {
+		name = "EVT32537OPTA"
+			any_pop = {
+				militancy = -1
+				consciousness = -6 
+				dominant_issue = {
+					value = moralism
+					factor = 0.1
+					}
+			}
+			random = { chance = 75 set_country_flag = come_see_me_grigori }
+		ai_chance = { factor = 80 }
+	}
+	
+	option = {
+		name = "EVT32537OPTB"
+			any_pop = {
+				militancy = 1
+				consciousness = 6
+				dominant_issue = {
+					value = pluralism
+					factor = 0.1
+					}
+			}
+			random = { chance = 25 set_country_flag = come_see_me_grigori }
+		ai_chance = { factor = 20 }
+	}
+}
+
+
+#The Rise of Grigori
+country_event = {
+	
+	id = 32538
+	title = "EVTNAME32538"
+	desc = "EVTDESC32538"
+	picture = "orthodox_priests"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = come_see_me_grigori
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+			}
+		year = 1900
+	}
+
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVT32538OPTA"
+		set_country_flag = grigori_arrived
+		clr_country_flag = come_see_me_grigori
+		clr_country_flag = grigori_is_here
+		any_pop = { limit = { strata = rich } consciousness = -2 militancy = -1 }
+	}
+}
+
+#Grigori influence on court
+country_event = {
+	
+	id = 32539
+	title = "EVTNAME32539"
+	desc = "EVTDESC32539"
+	picture = "grigori_in_court"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = grigori_arrived
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+			}
+		NOT = { year = 1930 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 36 }
+	
+	option = {
+		name = "EVT32539OPTA"
+		clr_country_flag = grigori_arrived
+		set_country_flag = grigori_in_power
+		any_pop = { limit = { strata = rich } consciousness = 3 }
+		ai_chance = { factor = 80 }
+	}
+	
+	option = {
+		name = "EVT32539OPTB"
+		clr_country_flag = grigori_arrived
+		random_list = {
+			50 = { set_country_flag = grigori_in_power }
+			50 = { set_country_flag = grigori_will_be_exiled }
+		}
+	}
+}
+
+#Grigori exiled
+country_event = {
+	
+	id = 32540
+	title = "EVTNAME32540"
+	desc = "EVTDESC32540"
+	picture = "look_into_my_eyes_child"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = grigori_will_be_exiled
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+			}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVT32540OPTA"
+		set_country_flag = grigori_exiled
+		clr_country_flag = grigori_arrived
+		clr_country_flag = grigori_will_be_exiled
+		prestige = -2
+	}
+}
+
+#Grigori Assumes Power
+country_event = {
+	
+	id = 32541
+	title = "EVTNAME32541"
+	desc = "EVTDESC32541"
+	picture = "grigori_cartoons"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = grigori_in_power
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		war = yes
+		war_exhaustion = 5
+		NOT = { year = 1930 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVT32541OPTA"
+		set_country_flag = tsar_in_the_front
+		clr_country_flag = grigori_in_power
+		war_exhaustion = -5
+	}
+}
+
+
+#The Telegram
+country_event = {
+	
+	id = 32542
+	title = "EVTNAME32542"
+	desc = "EVTDESC32542"
+	picture = "look_into_my_eyes_child"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = tsar_in_the_front
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		NOT = { year = 1930 }
+		war = yes
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 4 }
+	
+	option = {
+		name = "EVT32542OPTA"
+		random_list = {
+			50 = { set_country_flag = rasputin_killed_by_nobles }
+			25 = { set_country_flag = rasputin_killed_by_peasants }
+			25 = { set_country_flag = rasputin_survived }
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT32542OPTB"
+		random_list = {
+			50 = { set_country_flag = rasputin_killed_by_peasants }
+			25 = { set_country_flag = rasputin_killed_by_nobles }
+			25 = { set_country_flag = rasputin_survived } 
+		}
+	}
+}
+
+
+#Killed by Nobles
+country_event = {
+	
+	id = 32543
+	title = "EVTNAME32543"
+	desc = "EVTDESC32543"
+	picture = "yusupov_palace"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = rasputin_killed_by_nobles
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		NOT = { year = 1930 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 12 }
+	
+	option = {
+		name = "EVT32543OPTA"
+		clr_country_flag = rasputin_killed_by_nobles
+		set_global_flag = rasputing_prophecy
+		any_pop = { consciousness = -2 militancy = 1 }
+		war_exhaustion = 20
+		}
+}
+
+#Killed by Peasants
+country_event = {
+	
+	id = 32544
+	title = "EVTNAME32544"
+	desc = "EVTDESC32544"
+	picture = "grigori_blessing"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = rasputin_killed_by_peasants
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		average_militancy = 1
+		NOT = { year = 1930 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 12 }
+	
+	option = {
+		name = "EVT32543OPTA"
+		clr_country_flag = rasputin_killed_by_peasants
+		any_pop = { limit = { pop_majority_ideology = communist } reduce_pop = 0.95 militancy = 7 }
+		any_pop = {
+			consciousness = 2
+			militancy = -1 
+			
+			ideology = {
+				factor = -0.2
+				value = communist
+				}
+				
+			ideology = {
+				factor = 0.2 
+				value = conservative
+				}
+			}
+		
+		}
+}
+
+#Survived
+country_event = {
+	
+	id = 32545
+	title = "EVTNAME32545"
+	desc = "EVTDESC32545"
+	picture = "grigori_hospital"
+	
+	trigger = {
+		tag = RUS
+		has_country_flag = rasputin_survived
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		NOT = { year = 1930 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 12 }
+	
+	option = {
+		name = "EVT32545OPTA"
+		clr_country_flag = rasputin_survived
+		any_pop = { consciousness = -1 militancy = -1 }		
+		}
 }

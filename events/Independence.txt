@@ -10,6 +10,8 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
 		NOT = {
 			exists = HUN
 			has_country_flag = no_hungary_independence
@@ -253,6 +255,8 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
 		NOT = {
 			exists = LOM
 			has_country_flag = no_lombardy_independence
@@ -477,6 +481,9 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
+		NOT = { tag = YUG }
 		NOT = {
 			exists = CRO
 			has_country_flag = no_croatia_independence
@@ -705,6 +712,9 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
+		NOT = { tag = YUG }
 		NOT = {
 			exists = SLO
 			has_country_flag = no_slovene_independence
@@ -933,6 +943,9 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
+		NOT = { tag = CZH }
 		NOT = {
 			exists = BOH
 			has_country_flag = no_bohemia_independence
@@ -1154,6 +1167,9 @@ country_event = {
 	picture = "Budapest"
 
 	trigger = {
+		NOT = { tag = KUK }
+		NOT = { tag = AUS }
+		NOT = { tag = CZH }
 		NOT = {
 			exists = SLV
 			has_country_flag = no_slovakia_independence
@@ -1607,6 +1623,7 @@ country_event = {
 	picture = "Ottoman"
 
 	trigger = {
+		NOT = { tag = YUG }
 		NOT = {
 			exists = BUL
 			has_country_flag = no_bulgaria_independence
@@ -1827,6 +1844,7 @@ country_event = {
 	picture = "Ottoman"
 
 	trigger = {
+		NOT = { tag = YUG }
 		NOT = {
 			exists = ALB
 			has_country_flag = no_albania_independence
@@ -2041,6 +2059,7 @@ country_event = {
 	picture = "Ottoman"
 
 	trigger = {
+		NOT = { tag = YUG }
 		NOT = {
 			exists = BOS
 			has_country_flag = no_bosnia_independence
@@ -2755,6 +2774,7 @@ country_event = {
 
 	trigger = {
 		tag = SWE
+		NOT = { tag = SCA }
 		any_state = {
 			any_owned_province = {
 				is_core = NOR
@@ -2862,6 +2882,7 @@ country_event = {
 
 	trigger = {
 		tag = SWE
+		NOT = { tag = SCA }
 		any_state = {
 			any_owned_province = {
 				is_core = NOR
@@ -2975,6 +2996,7 @@ country_event = {
 	trigger = {
 		year = 1900
 		tag = SWE
+		NOT = { tag = SCA }
 		any_state = {
 			any_owned_province = {
 				is_core = FIN
@@ -3071,6 +3093,7 @@ country_event = {
 	major = yes
 
 	trigger = {
+		NOT = { tag = SCA }
 		year = 1900
 		tag = SWE
 		any_state = {
@@ -3518,6 +3541,7 @@ country_event = {
 	picture = "danishgovernment"
 
 	trigger = {
+		NOT = { tag = SCA }
 		war = no
 		is_our_vassal = NOR
 		revolution_n_counterrevolution = 1
@@ -3588,14 +3612,6 @@ country_event = {
 				government = democracy
 			}
 			modifier = {
-				factor = 0.5
-				war_policy = jingoism
-			}
-			modifier = {
-				factor = 0.75
-				war_policy = pro_military
-			}
-			modifier = {
 				factor = 1.25
 				war_policy = anti_military
 			}
@@ -3641,14 +3657,6 @@ country_event = {
 			modifier = {
 				factor = 0.5
 				government = democracy
-			}
-			modifier = {
-				factor = 1.5
-				war_policy = jingoism
-			}
-			modifier = {
-				factor = 1.25
-				war_policy = pro_military
 			}
 			modifier = {
 				factor = 0.75

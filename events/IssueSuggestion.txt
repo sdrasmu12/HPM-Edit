@@ -1275,6 +1275,7 @@ country_event = {
 		civilized = yes
 		safety_regulations = no_safety
 		trinket_safety = 1
+		industrial_score = 1
 	}
 	
 	mean_time_to_happen = {
@@ -1333,6 +1334,7 @@ country_event = {
 	trigger = {
 		civilized = yes
 		safety_regulations = trinket_safety
+		industrial_score = 1
 	}
 	
 	mean_time_to_happen = {
@@ -1385,6 +1387,7 @@ country_event = {
 		civilized = yes
 		safety_regulations = low_safety
 		social_reform_want = 0.2
+		industrial_score = 1
 	}
 	
 	mean_time_to_happen = {
@@ -1454,6 +1457,7 @@ country_event = {
 	trigger = {
 		civilized = yes
 		safety_regulations = acceptable_safety
+		industrial_score = 1
 	}
 	
 	mean_time_to_happen = {

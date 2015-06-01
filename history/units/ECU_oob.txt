@@ -1,3 +1,7 @@
+USA = {
+	value = -50
+}
+
 army = {
 	name = "Ejército de Ecuador"
 	location = 2279

@@ -439,7 +439,7 @@ country_event = {
 			add_casus_belli = {
 				target = THIS
 				type = place_in_the_sun
-				months = 12
+				months = 36
 			}
 		}
 		random_country = {
@@ -481,7 +481,7 @@ country_event = {
 						country = CUB
 						state_province_id = 2209
 					}
-					call_ally = yes
+					call_ally = no
 				}
 			}
 		}
@@ -498,7 +498,7 @@ country_event = {
 						casus_belli = release_puppet
 						country = CUB
 					}
-					call_ally = yes
+					call_ally = no
 				}
 			}
 		}
@@ -515,7 +515,7 @@ country_event = {
 						country = CUB
 						state_province_id = 2209
 					}
-					call_ally = yes
+					call_ally = no
 				}
 			}
 		}
@@ -532,7 +532,7 @@ country_event = {
 						casus_belli = release_puppet
 						country = CUB
 					}
-					call_ally = yes
+					call_ally = no
 				}
 			}
 		}

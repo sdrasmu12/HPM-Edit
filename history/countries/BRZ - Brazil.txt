@@ -1,18 +1,20 @@
 capital = 2447
 primary_culture = brazilian
+culture =  amazonian
+culture = guarani
 religion = catholic
 government = hms_government
 plurality = 15.0
-nationalvalue = nv_equality
+nationalvalue = nv_liberty
 literacy = 0.08
 non_state_culture_literacy = 0.01
 civilized = yes
-prestige = 4
+prestige = 2
 
 # Political reforms
 slavery = yes_slavery
-upper_house_composition = state_equal_weight
-vote_franschise = wealth_weighted_voting
+upper_house_composition = appointed
+vote_franschise = wealth_voting
 public_meetings = yes_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
@@ -32,9 +34,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = BRZ_conservative
 last_election = 1835.1.1
@@ -48,7 +48,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1
@@ -62,7 +61,6 @@ guild_based_production = 1
 classicism_n_early_romanticism = 1
 late_enlightenment_philosophy = 1
 enlightenment_thought = 1
-piston_steam_engine = 1
 publishing_industry = 1
 
 # Inventions

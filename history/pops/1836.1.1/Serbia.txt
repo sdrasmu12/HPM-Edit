@@ -776,6 +776,18 @@
 		religion = sunni
 		size = 100
 	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
+	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
+	}
 
 	farmers = {
 		culture = turkish

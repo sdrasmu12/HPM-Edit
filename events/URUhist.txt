@@ -393,16 +393,20 @@ country_event = {
 		
 	mean_time_to_happen = { months = 6 }
 
-	immediate = {
-	create_alliance = CRT
-		relation = {
-			who = CRT
-			value = 400
-			}
-		}
 	
 	option = {
 		name = "EVTOPT600063A"      #TO WAR
+		random_country = { 
+		limit = {
+			exists = yes
+			tag = CRT
+		}
+		create_alliance = URU
+		relation = {
+			who = URU
+			value = 400
+			}
+		}
 		ARC = { country_event = 600065 	}
 		set_country_flag = war_on_rosas
 		clr_country_flag = corrientes_is_ready_for_war
@@ -421,12 +425,6 @@ country_event = {
 			defender_goal = {
 				casus_belli = cut_down_to_size
 				}
-			call_ally = no
-			}
-		war = {
-		attacker_goal = {
-			casus_belli = humiliate
-			}	
 			call_ally = yes
 			}
 			
@@ -450,7 +448,7 @@ country_event = {
 	}
 		option = {
 			name = "EVTOPT600063B"		#back down from war
-			CRT = { country_event = 600064 }
+			random_country = { limit = { exists = yes tag = CRT } country_event = 600064 }
 			clr_country_flag = corrientes_is_ready_for_war
 			clr_country_flag = rivera_is_true_president
 			clr_country_flag = oribe_is_true_president
@@ -477,6 +475,17 @@ country_event = {
 		
 		option = {
 			name = "EVTOPT600063C"		#bid our time
+			random_country = { 
+				limit = { 
+					exists = yes
+					tag = CRT
+				}
+				create_alliance = URU
+			relation = {
+				who = URU
+				value = 400
+				}
+			}
 			clr_country_flag = corrientes_is_ready_for_war
 			clr_country_flag = rivera_is_true_president
 			clr_country_flag = oribe_is_true_president

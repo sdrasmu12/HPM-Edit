@@ -37,9 +37,7 @@ school_reforms = low_schools
 conscription = mandatory_service
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 
 
@@ -106,6 +104,7 @@ foreign_investment = {
 	MEC = 7500
 	SAX = 7500
 	HAN = 10000
+	NCT = 10000
 }
 
 # Political reforms

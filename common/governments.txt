@@ -12,8 +12,6 @@ proletarian_dictatorship = {
 	flagType = communist
 }
 
-
-
 presidential_dictatorship = {
 	#which ideology of parties.
 	reactionary = yes

@@ -3,9 +3,9 @@ primary_culture = hakka
 culture = yue
 culture = malay
 religion = mahayana
-government = democracy
+government = presidential_dictatorship
 plurality = 0.0
-nationalvalue = nv_productivity
+nationalvalue = nv_tradition
 literacy = 0.03
 non_state_culture_literacy = 0.01
 
@@ -17,7 +17,7 @@ public_meetings = yes_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
 voting_system = first_past_the_post
-political_parties = non_secret_ballots
+political_parties = harassment
 
 # Social Reforms
 wage_reform = no_minimum_wage
@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = LAN_conservative
 upper_house = {
@@ -47,7 +45,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 admin_reform = yes_admin_reform
 

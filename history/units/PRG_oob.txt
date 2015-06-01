@@ -2,7 +2,7 @@ SPA = {
 	value = 100
 }
 USA = {
-	value = 50
+	value = -400
 }
 BRZ = {
 	value = -250
@@ -32,6 +32,9 @@ SBA = {
 	value = -250
 }
 
+RGS = {
+	value = -200
+}
 
 
 army = {
@@ -52,24 +55,6 @@ army = {
 	regiment = {
 		name= "3.3ra División de Infantería"
 		type = infantry
-		home = 2339
-	}
-	
-	regiment = {
-		name= "4.4ra División de Infantería"
-		type = infantry
-		home = 2339
-	}
-	
-	regiment = {
-		name= "5.5ra División de Infantería"
-		type = infantry
-		home = 2339
-	}
-	
-	regiment = {
-		name= "8.2ra División de Artillería"
-		type = artillery
 		home = 2339
 	}
 

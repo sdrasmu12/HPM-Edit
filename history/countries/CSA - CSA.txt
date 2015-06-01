@@ -144,9 +144,7 @@ school_reforms = no_schools
 conscription = mandatory_service
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = CSA_conservative
 upper_house = {
@@ -162,7 +160,6 @@ upper_house = {
 1861.1.1 = {
 	oob = "/1861/CSA_oob.txt"
 	set_country_flag = 1861CSAstart
-	 
 }
 1861.1.1 = {
 

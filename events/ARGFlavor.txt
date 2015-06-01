@@ -48,7 +48,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA46600" 
-		prestige = 5
+		prestige = 2
 		any_pop = {
 			consciousness = 1
 			militancy = -1

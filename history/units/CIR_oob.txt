@@ -17,7 +17,7 @@ army = {
 	regiment = {
 		name= "3. Brigade"
 		type = infantry
-		home = 1050
+		home = 1056
 	}
 	
 	regiment = {
@@ -41,7 +41,7 @@ army = {
 	regiment = {
 		name= "7. Cavalry"
 		type = cavalry
-		home = 1050
+		home = 1056
 	}
 
 	leader = {

@@ -3,7 +3,7 @@ primary_culture = polish
 religion = catholic
 government = democracy
 plurality = 25.0
-nationalvalue = nv_liberty
+nationalvalue = nv_productivity
 literacy = 0.6
 non_state_culture_literacy = 0.4
 civilized = yes
@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = KRA_conservative
 last_election = 1836.1.1
@@ -48,7 +46,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1

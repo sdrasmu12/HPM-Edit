@@ -607,7 +607,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 90
 			modifier = {
 				factor = 0.25
 				war = yes
@@ -765,7 +765,20 @@ country_event = {
 			}
 			secede_province = USA
 		}
-		USA = { country_event = 44826 }
+		random_country = {
+			limit = {
+				tag = USA
+				ai = no
+				}
+			country_event = 44826
+		}
+		random_country = {
+			limit = {
+				tag = USA
+				ai = yes
+				}
+			country_event = 44828
+		}
 		ai_chance = {
 			factor = 90
 		}
@@ -799,6 +812,35 @@ country_event = {
 		name = "EVT44826OPTA"
 		prestige = 20
 		treasury = -100000
+		diplomatic_influence = {
+			who = FROM
+			value = 400
+		}
+		relation = {
+			who = FROM
+			value = 200
+		}
+	}
+}
+
+country_event = {
+
+	id = 44828
+	title = "EVTNAME44826" #Mexico Agrees
+	desc = "EVTDESC44826"
+	news = yes
+	news_title = "EVTNAME44825"
+	news_desc_long = "EVTDESC44826_NEWS_LONG"
+	news_desc_medium = "EVTDESC44826_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44826_NEWS_SHORT"
+	picture = "treaty"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT44826OPTA"
+		prestige = 20
+		add_tax_relative_income = -0.1
 		diplomatic_influence = {
 			who = FROM
 			value = 400

@@ -1,29 +1,67 @@
 political_decisions = {
-	declare_republic_of_neuchatel = {
+
+	integrate_neuchatel = {
+		picture = declare_republic_of_neuchatel
 		potential = {
 			tag = SWI
-			owns = 608
-			608 = {
-				is_core = PRU
+			NCT = { exists = yes vassal_of = SWI }
+			OR = {
+				has_country_flag = neuchatel_crisis_escalated
+				year = 1860
 			}
 		}
+		
 		allow = {
-			prestige = 1
-			romanticism = 1
+			war = no
+			NCT = { war = no }
+			PRU = { NOT = { casus_belli = NCT } }
+			NGF = { NOT = { casus_belli = NCT } }
+			GER = { NOT = { casus_belli = NCT } }
 		}
+		
 		effect = {
-			prestige = 5
+			clr_country_flag = neuchatel_crisis_escalated
+			any_country = { clr_country_flag = neuchatel_crisis_escalated }
+			any_country = { limit = { has_country_flag = supports_switzerland } leave_alliance = SWI clr_country_flag = supports_switzerland }
+			release = NCT
+			inherit = NCT
 			608 = {
-				remove_core = PRU
 				remove_core = NGF
 				remove_core = GER
-			}
-			relation = {
-				who = PRU
-				value = 20
+				remove_core = PRU
+				remove_core = NCT
 			}
 		}
+		ai_will_do = { factor = 1 }
 	}
+	
+	integrate_neuchatel_prussia = {
+		picture = declare_republic_of_neuchatel
+		potential = {
+			OR = {
+				tag = PRU
+				tag = GER
+				tag = NGF
+			}
+			has_country_flag = neuchatel_crisis_escalated
+		}
+		
+		allow = {
+			war = no
+			NCT = { war = no }
+			NCT = { exists = yes NOT = { vassal_of = SWI } in_sphere = THIS }
+		}
+		
+		effect = {
+			clr_country_flag = neuchatel_crisis_escalated
+			any_country = { clr_country_flag = neuchatel_crisis_escalated }
+			any_country = { limit = { has_country_flag = supports_switzerland } leave_alliance = SWI clr_country_flag = supports_switzerland }
+			inherit = NCT
+			608 = { remove_core = NCT }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
 	call_geneva_convention = {
 		potential = {
 			tag = SWI

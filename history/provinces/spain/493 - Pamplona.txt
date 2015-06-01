@@ -4,9 +4,6 @@ add_core = SPA
 add_core = BSQ
 trade_goods = fruit
 life_rating = 35
- 
-revolt = {
-type = carlist_rebels
-controller = yes
-}
+
+
 1861.1.1 = { railroad = 3 }

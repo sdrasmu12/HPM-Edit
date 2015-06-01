@@ -1,11 +1,65 @@
 ;;;;;;;;;;;;;;;;;;;;x,,,,,
+emigration_boom;Emigration Boom;;;;;;;;;;;;;;;;;;x,,,,
+emigration_boom;Changing life conditions in our country are stimulating a big relocation of our people.;;;;;;;;;;;;;;;;;;x,,,,
+gold_rush_country;Gold Rush;;;;;;;;;;;;;;;;;;x,,,,
+gold_rush_country_desc;Our country is experiencing a gold rush leading people from all over the old world to flock to our country.;;;;;;;;;;;;;;;;;;x,,,,
+global_baby_boom;Baby Boom;;;;;;;;;;;;;;;;;;x,,,,
+global_baby_boom_desc;Improvements in life conditions in our country are leading to a country-wide baby boom.;;;;;;;;;;;;;;;;;;x,,,,
+political_education;Ideological Education;;;;;;;;;;;;;;;;;;x,,,,
+political_education_desc;Education in our country is full blown ideological indoctrination, and has severe changes every time our leader changes. Universal public education is thus enforced and alphabetization is a priority, but at the cost of free thinking.;;;;;;;;;;;;;;;;;;x,,,,
+cult_of_personality;Cult of Personality;;;;;;;;;;;;;;;;;;x,,,,
+cult_of_personality_desc;A cult of personality arises when an individual uses mass media, propaganda, or other methods, to create an idealized, heroic, and at times, worshipful image, often through unquestioning flattery and praise.;;;;;;;;;;;;;;;;;;x,,,,
+totalitarian_system;Totalitarianism;;;;;;;;;;;;;;;;;;x,,,,
+totalitarian_system_desc;Totalitarianism is a political system in which the state holds total authority over the society and seeks to control all aspects of public and private life wherever possible.;;;;;;;;;;;;;;;;;;x,,,,
+the_terror;The Terror;;;;;;;;;;;;;;;;;;x,,,,
+the_terror_desc;To overcome our enemies we must have our own militarism. We must carry along with 90 percent out of the total population of our country. As for the rest, we have nothing to say to them. They must be annihilated.;;;;;;;;;;;;;;;x,,,,
+silver_age;A Silver Age;;;;;;;;;;;;x,,,,
+silver_age_desc;Our most excellent leader will take us through a time of trouble to a better tomorrow.;;;;;;;;;;;;;;;;;;;;;;;;x,,,,
+chinese_foreign_training;Foreign Training in China;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+chinese_foreign_weapons;Western Weapons in China;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+chinese_foreign_officers;Foreign Officers in China;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+chinese_foreign_artillery;Western Artillery in China;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+pandemic_influenza_immunity;Influenza Free;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+pandemic_influenza_immunity_desc;A Pandemic of Influenza ravages our country, but this small isolated community is immune to it, thank to its remote location.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+population_resettlement;Population Resettlement;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+population_resettlement_desc;Our nation is working on the integration of a region by resettling our citizens.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+trade_city;Trade City;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+trade_city_desc;Located in this province is an important trade city, a hub of trade of the region, enjoying much economic prosperity.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+peacetime_mobilization;Peace Time Mobilization;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+peacetime_mobilization_desc;Conscripts are being drafted left and right and our poor are being trained and prepared to fight, yet there's no war. This large disruption in the country's daily life is making our pops tired and our neighbors wary.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tribute_received;Tribute Received;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tribute_received_desc;One of our vassals paid their due tribute to us.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tribute_paid;Tribute Paid;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tribute_paid_desc;We have to share part of our earnings with our overlord over the time period and as suck we are poorer from that.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+islamic_law;Islamic Law;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+islamic_law_desc;Islamic law is now the basis law code of our society. It deals with several topics including: crime, politics, and economics, as well as personal matters such as sexual intercourse, hygiene, diet, prayer, everyday etiquette and fasting.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+deportation_underway;Deportation;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+deportation_underway_desc;People from different ethnicities are being "encouraged" to move out of this country.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+treaty_port;Treaty Port;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+treaty_port_desc;This port was ceded to a foreign administration and it's a hub of trade from China to the rest of the world.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+drained_marsh;Drained Marsh;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+drained_marsh_desc;This marshland was drained and as a result it is more habitable.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+backed_down_on_promise;Backed Down on Promises;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+backed_down_on_promise_desc;Our government broke one or more important promises to our population.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+highlander_raids;Highlander Raids;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+highlander_raids_desc;Highlander raiders are looting our provinces in numbers.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+jewish_farms;Jewish Farmlands;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+jewish_farms_desc;Jews who immigrated to Israel purchased land that was mostly semi-arid, although much had been rendered untillable by deforestation, soil erosion and neglect. They set about clearing rocky fields, constructing terraces, draining swampland, reforesting, counteracting soil erosion, and washing salty land. Since independence, the total area under cultivation has increased from 408,000 acres (1,650 km2) to 1,070,000 acres (4,300 km2), while the number of agricultural communities has increased from 400 to 725. Agricultural production has expanded 16 times, three times more than population growth.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+monument_under_construction;Monument Under Construction;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+monument_under_construction_desc;We are building a monument to celebrate our nation greatness.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+recently_built_city;Recently Built City;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+recently_built_city_desc;The capital of this province was recently built by the government, moving a lot of workers to the region to  build a city with modern infrastructure.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+law_changed_by_force;Law Changed;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+law_changed_by_force_desc;We pressured the upper house to pass an urgent reform.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+social_reformed_nation;Full Welfare State;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+social_reformed_nation_desc;Our country social reforms match every socialist demand, having some scholars call us an welfare state.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 wahhabism;Wahhabism;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 wahhabism_desc;The "pivotal idea" of Wahhabism teaching was that people who called themselves Muslims but who participated in such innovations were not just misguided or committing a sin, but were "outside the pale of Islam altogether", as were Muslims who disagreed with his definition. This included not just lax, unlettered, nomadic Bedu, but Shia, Sufi, and Ottomans.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 russian_army;The Russian Army;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 russian_army_desc;The Russian Army may be the biggest land force of Europe, but it is poorly supplied and organized.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 landlocked_nation;Landlocked Nation;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 landlocked_nation_desc;Our nation doesn't have any access to the sea, greatly increasing import costs.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
-fundamentalist_sympathies;Islamic Fundamentalist;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+fundamentalist_sympathies;Islamic Fundamentalists;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 fundamentalist_sympathies_desc;Islamic Fundamentalists are agitating the people in this province.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 new_constitution;The New Constitution;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 new_constitution_desc;Our country issued a new constitution, guaranteeing voting and citizen rights and putting down the revolutionary flames.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
@@ -44,7 +98,7 @@ let_the_chips_fall_desc;We are not involved in this year election.;;;;;;;;;;;;;x
 the_big_army;The Big Army;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 the_big_army_desc;General Urquiza is gathering a huge army, compromised of volunteers from Uruguay and all over the country, to defeat Rosas.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 small_immigration_boom;Immigration Boom;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-small_immigration_boom_desc;With past conflicts solved, our country is undergoing a small immigration boom!;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+small_immigration_boom_desc;Our nation thrives and therefore more people flock to our cities each day.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 the_big_ben;The Big Ben;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 the_big_ben_desc;The Clock Tower derives its nickname from the bell, the Big Ben. With an extreme accuracy, the clock tower dominates life and work in London, always striking on time.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 bigben_construction;Reconstruction of the Palace of Westminster;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,

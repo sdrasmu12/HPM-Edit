@@ -90,8 +90,8 @@ trusts = {
 	
 	trigger = {
 		OR = {
-		state_scope = { has_pop_type = aristocrats }
-		state_scope = { has_pop_type = capitalists }
+		has_pop_type = aristocrats
+		has_pop_type = capitalists
 		}
 	}
 }

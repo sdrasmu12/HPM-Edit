@@ -1,10 +1,11 @@
 capital = 300
 primary_culture = british
 culture = anglo_canadian
+culture = australian
 religion = protestant
 government = hms_government
 plurality = 30
-nationalvalue = nv_productivity
+nationalvalue = nv_order
 literacy = 0.55
 civilized = yes
 
@@ -35,9 +36,7 @@ school_reforms = low_schools
 conscription = four_year_draft
 debt_law = debtors_prisons
 penal_system = colonial_transportation
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 # Technologies
 post_napoleonic_thought = 1

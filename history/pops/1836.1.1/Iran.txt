@@ -81,6 +81,11 @@
 		size = 65175
 	}
 
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 100
+	}
 
 	clergymen = {
 		culture = sephardic
@@ -381,10 +386,22 @@
 		religion = shiite
 		size = 650
 	}
+	
+	aristocrats = {
+		culture = kurdish
+		religion = sunni
+		size = 150
+	}
 
 	clergymen = {
 		culture = azerbaijani
 		religion = shiite
+		size = 325
+	}
+	
+	clergymen = {
+		culture = kurdish
+		religion = sunni
 		size = 325
 	}
 
@@ -433,7 +450,13 @@
 	farmers = {
 		culture = azerbaijani
 		religion = sunni
-		size = 16475
+		size = 13475
+	}
+	
+	farmers = {
+		culture = kurdish
+		religion = sunni
+		size = 3000
 	}
 }
 #Ardabil (280000/70000 POPS)

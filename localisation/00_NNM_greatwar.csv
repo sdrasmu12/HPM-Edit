@@ -47,7 +47,7 @@ EVTNAME96031;$FROMCOUNTRY$ Has Agreed;$FROMCOUNTRY$ a Convenu;$FROMCOUNTRY$ hat 
 EVTDESC96031;We have received word from $FROMCOUNTRY$ that they have agreed to an alliance. Whether or not they will actually live up to that alliance and join us in the war remains to be seen.;;;;;;;;;;;;;x,,,,
 EVTOPTA96031;Great;Excellent;Ausgezeichnet;;;;;;;;;;;x,,,,
 EVTNAME96065;Outrage!;;;;;;;;;;;x,,,,
-EVTDESC96065;A diplomatic incident with one of our enemies has outraged $COUNTRY_ADJ$ citizens. Several weeks ago, an envoy assigned to $CAPITAL$ was accused of stealing national secrets. It turned out the truth was far worse, and an investigation has unearthed a conspiracy to destablize $COUNTRY$ and leave it week for invasion. This has leaked out to the public, and now crowds in the capital are calling for total war.;;;;;;;;;;;x,
+EVTDESC96065;A diplomatic incident with one of our enemies has outraged $COUNTRY_ADJ$ citizens. Several weeks ago, an envoy assigned to $CAPITAL$ was accused of stealing national secrets. It turned out the truth was far worse, and an investigation has unearthed a conspiracy to destabilize $COUNTRY$ and leave it weak for invasion. This has leaked out to the public, and now crowds in the capital are calling for total war.;;;;;;;;;;;x,
 EVTOPTA96065;We must defend $COUNTRY_ADJ$ interests, no matter the cost.;;;;;;;;;;;x,,,
 EVTOPTB96065;We cannot afford such a war.;;;;;;;;;;;x,,,,
 EVTNAME96066;Assassination!;;;;;;;;;;;x,,,,

@@ -28,7 +28,7 @@ country_event = {
 	
 	trigger = {
 	ai = no
-	badboy = 1.8
+	badboy = 2
 	has_country_modifier = kinda_bad_badboy
 	NOT = { has_country_modifier = bad_badboy }
 		}
@@ -171,6 +171,9 @@ country_event = {
 		set_global_flag = 1836_set_up
 		enable_canal = 4
 		enable_canal = 5
+		2172 = { set_province_flag = mexico_city }
+		1612 = { set_province_flag = summer_palace }
+		1008 = { set_province_flag = moscow_city }
 		any_country = { serfs = {
 			militancy = -9
 			consciousness = -9
@@ -191,33 +194,113 @@ country_event = {
 			}
 		}
 		
-		
-		RUS = {
-			treasury = 50000
-			add_country_modifier = {
-				name = russian_army
-				duration = -1
+		1008 = { any_pop = { literacy = 0.1 } }
+		994 = { any_pop = { literacy = 0.1 } }
+		UBD = {
+			any_pop = { limit = {
+				OR = {
+					culture = ashkenazi
+					culture = swedish 
+					}
 				}
-			any_pop = { limit = { culture = north_german }
+			literacy = 0.5
+			}
+			any_pop = { limit = { 
+				OR = {
+				culture = polish 
+				culture = lithuanian
+					}
+				}
+			literacy = 0.2
+			}
+		}
+		RUS = {
+			treasury = 10000
+			any_pop = { limit = {
+				OR = {
+					culture = ashkenazi
+					culture = north_german 
+					}
+				}
+			literacy = 0.49
+			}
+			any_pop = { limit = { 
+				OR = {
+				culture = estonian 
+				culture = latvian
+					}
+				}
 			literacy = 0.3
 			}
-			any_pop = { limit = { culture = polish }
-			literacy = 0.1
+			any_pop = { limit = { 
+				OR = {
+				culture = polish 
+				culture = lithuanian
+					}
+				}
+			literacy = 0.2
+			}
+			any_pop = { 
+				limit = { 
+				OR = {
+					culture = siberian
+					culture = tatar
+					culture = ugrian
+					culture = kazak
+					culture = yakut
+					culture = mongol
+					}
+				}
+				literacy = 0.01
 			}
 			any_pop = { limit = { 
 				culture = russian 
 				NOT = { pop_type = serfs }
 				}
-			literacy = 0.07
+			literacy = 0.01
 			}
 		}
 		
-		LIT = { all_core = { set_province_flag = serfdom_abolished_local } }
-		EST = { all_core = { set_province_flag = serfdom_abolished_local } }
-		LAT = { all_core = { set_province_flag = serfdom_abolished_local } }
-		LOM = { all_core = { set_province_flag = serfdom_abolished_local } }
-		VEN = { all_core = { set_province_flag = serfdom_abolished_local } }
+		#LIT = { all_core = { set_province_flag = serfdom_abolished_local } }
+		#EST = { all_core = { set_province_flag = serfdom_abolished_local } }
+		#LAT = { all_core = { set_province_flag = serfdom_abolished_local } }
+		#LOM = { all_core = { set_province_flag = serfdom_abolished_local } }
+		#VEN = { all_core = { set_province_flag = serfdom_abolished_local } }
 		
+		any_greater_power = { limit = { NOT = { tag = NET } }
+			diplomatic_influence = {
+				who = JAV
+				value = -400
+				}
+			diplomatic_influence = {
+				who = MAL
+				value = -400
+				}
+			relation = {
+				who = JAV
+				value = -400
+				}
+			relation = {
+				who = MAL
+				value = -400
+				}
+			diplomatic_influence = {
+				who = DJA
+				value = -400
+				}
+			diplomatic_influence = {
+				who = SAK
+				value = -400
+				}
+			relation = {
+				who = DJA
+				value = -400
+				}
+			relation = {
+				who = SAK
+				value = -400
+				}
+			}
 		
 		
 		any_country = { limit = { government = absolute_monarchy }
@@ -281,13 +364,77 @@ country_event = {
 			canned_food = 200
 			wine = 200
 			liquor = 200
-		treasury = 10000 }
+			treasury = 10000 
+		}
 		CIR = {
 			small_arms = 100
 			ammunition = 200
 			canned_food = 200
 			wine = 200
 			liquor = 200
-		treasury = 10000 }
+			treasury = 10000 
+		}
+		
+		any_greater_power = {
+				limit = { NOT = { tag = TUR } }
+				diplomatic_influence = { who = BTL value = -400 }
+				diplomatic_influence = { who = RDL value = -400 }
+				diplomatic_influence = { who = BHT value = -400 }
+				diplomatic_influence = { who = MKN value = -400 }
+				diplomatic_influence = { who = BNB value = -400 }
+				diplomatic_influence = { who = BDN value = -400 }
+			}
+			
+		any_greater_power = {
+				limit = { NOT = { tag = PRU } }
+				diplomatic_influence = { who = NCT value = -400 }
+			}
+		
+		USA = {
+			any_country = { limit = { capital_scope = {continent = africa } NOT = { OR = { tag = MOR tag = ALD tag = EGY } } }
+				relation = { who = THIS value = -400 }
+				diplomatic_influence = { who = THIS value = -400 }
+				}
+			}
+		MEX = {
+			random_owned = {
+				limit = {
+					owner = { NOT = { year = 1840 } }
+				}
+				owner = {
+					add_country_modifier = {
+						name = fight_the_power
+						duration = 3650
+					}
+				}
+			}
+		}
+		any_country = { limit = { NOT = { debt_law = serfdom } } 
+		set_country_flag = serfdom_abolished_generic
+		}
 	}
 }
+
+country_event = {
+	id = 500061
+	title = "EVTNAME500061" #Removing Neuchatel cores - clean up
+	desc = "EVTDESC500061"
+	picture = "rhineland"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWI
+		owns = 608
+		war = no
+		608 = { OR = { is_core = NCT is_core = PRU is_core = NGF is_core = GER } }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "EVTOPT500061A"
+		608 = { remove_core = NCT remove_core = PRU remove_core = NGF remove_core = GER }
+		any_country = { clr_country_flag = neuchatel_crisis_escalated }
+		}
+	}

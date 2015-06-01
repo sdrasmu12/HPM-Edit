@@ -300,41 +300,40 @@ political_decisions = {
 				tag = SVY
 			}
 			government = absolute_monarchy
+			OR = {
+				has_country_flag = liberal_revolution_in_progress
+				has_country_flag = liberal_revolution_fired
+			}
 			NOT = { has_country_flag = get_your_statuto_albertino_here }
 		}
 
-		allow = {
-			average_militancy = 3
+		allow = { 
+			state_n_government = 1
+			average_militancy = 5 
 		}
 
 		effect = {
-			any_pop = {
-				militancy = -2
+			any_pop = { militancy = -5 }
+			any_pop = { scaled_militancy = {
+				factor = 3
+				ideology = reactionary 
+				}
 			}
+			political_reform = universal_weighted_voting
+			political_reform = proportional_representation
+			political_reform = harassment
+			political_reform = censored_press
+			political_reform = yes_meeting
+			social_reform = incarceration
 			prestige = 5
 			set_country_flag = get_your_statuto_albertino_here
 		}
+
+		ai_will_do = {
+			factor = 0.9
+		}
 	}
 
-	build_vittoriano = {
-		potential = {
-			tag = ITA
-			government = absolute_monarchy
-			NOT = { has_country_flag = vittoriano_built }
-		}
-
-		allow = {
-			realism = 1
-		}
-		
-		effect = {
-			prestige = 5
-			any_pop = {
-				militancy = -1
-			}
-			set_country_flag = vittoriano_built
-		}
-	}
 
 	the_case_of_edgardo_mortara = {
 		potential = {
@@ -369,11 +368,7 @@ political_decisions = {
 	the_first_vatican_council = {
 		potential = {
 			tag = PAP
-			OR = {
-				government = absolute_monarchy
-				government = prussian_constitutionalism
-				government = hms_government
-			}
+			government = theocracy
 			NOT = { has_country_flag = first_vatican_council_held }
 		}
 
@@ -419,7 +414,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = garibaldi_redshirts
 			prestige = 20
-			badboy = 3
+			badboy = 2
 			any_country = {
 				limit = {
 					is_culture_group = THIS
@@ -445,6 +440,28 @@ political_decisions = {
 				relation = {
 					who = SAR
 					value = -50
+				}
+			}
+			random_country = {
+				limit = {
+					exists = yes
+					tag = PAP
+					}
+				add_casus_belli = {
+					target = SAR
+					type = acquire_state
+					months = 48
+				}
+			}
+			random_country = {
+				limit = {
+					exists = yes
+					tag = SIC
+					}
+				add_casus_belli = {
+					target = SAR
+					type = conquest_any
+					months = 48
 				}
 			}
 		}
@@ -482,6 +499,7 @@ political_decisions = {
 				remove_core = VEN
 				remove_core = LOM
 				remove_core = RMG
+				remove_core = SYC
 			}
 		}
 	}
@@ -727,6 +745,7 @@ political_decisions = {
 				tag = VEN
 				tag = RMG
 				tag = SRD
+				tag = SYC
 			}
 			exists = yes
 			NOT = { has_country_flag = we_are_italian }
@@ -855,6 +874,7 @@ political_decisions = {
 			TUR = {
 				war = no
 				is_greater_power = no
+				any_owned_province = { OR =  { is_core = TRI is_core = CYR } }
 			}
 		}
 		
@@ -895,29 +915,34 @@ political_decisions = {
 	}
 	
 	perfect_fusion = {
-	picture = perfect_fusion
+		picture = perfect_fusion
 		potential = {
 			tag = SAR
-			owns = 765
-			owns = 766
+			OR = {
+				government = hms_government
+				government = prussian_constitutionalism
+				}
 			NOT = { has_country_flag = perfect_fusion }
 		}
 		
 		allow = {
-			OR = {
-				government = prussian_constitutionalism
-				government = hms_government
-				government = democracy
-			}
+			state_n_government = 1
+			average_militancy = 2
 		}
 		
 		effect = {
-			set_country_flag = perfect_fusion
 			add_accepted_culture = south_italian
-			any_pop = {
-				limit = { has_pop_culture = south_italian }
-				militancy = -4
+			SRD = { all_core = {
+				remove_core = SRD 
+				any_pop = { consciousness = 3 }
+				} 
 			}
+			any_pop = { scaled_militancy = {
+				factor = 3
+				ideology = reactionary 
+				}
+			}
+			set_country_flag = perfect_fusion
 		}
 		
 		ai_will_do = {
@@ -1075,5 +1100,61 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 		}
+	}
+	
+	fatherland_altar = {
+	picture = build_vittoriano
+		potential = {
+			owns = 749
+			NOT = { has_country_flag = vittoriano_built }
+			tag = ITA
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+				government = fascist_dictatorship
+			}
+			NOT = { has_country_flag = vittoriano_built }
+		}
+		
+		allow = {
+			money = 10000
+			realism = 1
+		}
+		
+		effect = {
+			treasury = -10000
+			prestige = 20
+			any_pop = { militancy = -1 }
+			set_country_flag = vittoriano_built
+			random_list = {
+				25 = {
+				add_country_modifier = {
+				name = monument_under_construction
+				duration = 3285
+					}
+				}
+				25 = {
+				add_country_modifier = {
+				name = monument_under_construction
+				duration = 3650
+					}
+				}
+				25 = {
+				add_country_modifier = {
+				name = monument_under_construction
+				duration = 4380
+					}
+				}
+				25 = {
+				add_country_modifier = {
+				name = monument_under_construction
+				duration = 5110
+					}
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
 	}
 }

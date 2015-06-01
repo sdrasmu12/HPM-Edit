@@ -1,9 +1,10 @@
 capital = 2213
 primary_culture = afro_antillean
 culture = afro_caribeno
+culture = caribeno
 religion = catholic
 government = presidential_dictatorship
-plurality = 25
+plurality = 10
 nationalvalue = nv_autocracy
 literacy = 0.02
 non_state_culture_literacy = 0.08
@@ -14,7 +15,7 @@ prestige = 0
 slavery = no_slavery
 upper_house_composition = party_appointed
 vote_franschise = none_voting
-public_meetings = yes_meeting
+public_meetings = no_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
 voting_system = first_past_the_post
@@ -33,9 +34,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = HAI_reactionary
 upper_house = {
@@ -48,13 +47,9 @@ upper_house = {
 	communist = 0
 }
 
- 
-
 # Technologies
 guild_based_production = 1
 enlightenment_thought = 1
-piston_steam_engine = 1
-publishing_industry = 1
 
 # Inventions
 

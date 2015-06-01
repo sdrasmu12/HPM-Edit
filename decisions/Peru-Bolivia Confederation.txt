@@ -275,6 +275,11 @@ political_decisions = {
 			has_country_flag = the_confederation_is_legitime
 			NOT = { has_country_flag = pbc_united }
 			OR = {
+				exists = PEU
+				exists = SPU
+				exists = BOL
+				}
+			OR = {
 				any_neighbor_country = {
 					primary_culture = south_andean
 					OR = {
@@ -323,6 +328,11 @@ political_decisions = {
 			}
 			any_country = {
 				limit = {
+					OR = {
+					 tag = SPU
+					 tag = PEU
+					 tag = BOL
+					}
 					primary_culture = south_andean
 					OR = {
 						in_sphere = PBC
@@ -462,10 +472,12 @@ declare_la_paz_capital = {
 			tag = BOL
 			year = 1898
 			2310 = { is_capital = no }
+			owns = 2310
 		}
 	
 		allow = {
 			year = 1898
+			owns = 2310
 			war = no
 			2310 = { is_capital = no }
 		}

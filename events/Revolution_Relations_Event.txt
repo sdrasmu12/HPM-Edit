@@ -2683,6 +2683,7 @@ country_event = {
 	picture = "propaganda"
 
 	trigger = {
+		war = no
 		OR = {
 			government = democracy
 			government = hms_government
@@ -2709,7 +2710,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		months = 100
+		months = 150
 		modifier = {
 			factor = 0.75
 			war_policy = jingoism
@@ -2763,8 +2764,34 @@ country_event = {
 				}
 			}
 			country_event = 800098
-		}	
+		}
+		ai_chance = { factor = 100 }
 	}
+	
+	
+	option = {
+		name = "EVT800094OPTB"
+		prestige = -20
+		random_country = {
+			limit = {
+				neighbour = THIS
+				OR = {
+					government = proletarian_dictatorship
+					government = fascist_dictatorship
+				}
+				NOT = {
+					war_with = THIS
+					truce_with = THIS
+				}
+				relation = {
+					who = THIS
+					value = 10
+				}
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+	
 }
 
 country_event = {
@@ -2884,6 +2911,10 @@ country_event = {
 				is_greater_power = no
 			}
 			modifier = {
+				factor = 0
+				badboy = 0.7
+			}
+			modifier = {
 				factor = 1.5
 				NOT = {
 					relation = {
@@ -2923,6 +2954,10 @@ country_event = {
 			modifier = {
 				factor = 0.5
 				war_policy = jingoism
+			}
+			modifier = {
+				factor = 100
+				badboy = 0.7
 			}
 			modifier = {
 				factor = 0.8

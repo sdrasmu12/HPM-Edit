@@ -687,9 +687,15 @@
 	farmers = {
 		culture = greek
 		religion = orthodox
-		size = 22650
+		size = 22000
 	}
 
+	farmers = {
+		culture = north_italian
+		religion = catholic
+		size = 650
+	}
+	
 	clergymen = {
 		culture = sephardic
 		religion = jewish

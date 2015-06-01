@@ -19,9 +19,10 @@ country_event = {
 			has_country_modifier = uncivilized_isolationism
 		}
 		OR = {
-		any_owned_province = { port = yes }
-		any_owned_province = { is_coastal = yes }
-			}
+			any_owned_province = { port = yes }
+			any_neighbor_country = { part_of_sphere = yes }
+			any_neighbor_country = { is_greater_power = yes }
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -3570,10 +3571,11 @@ country_event = {
 	trigger = {
 		civilized = no
 		has_country_modifier = uncivilized_isolationism
+		has_recently_lost_war = yes
 	}
 	
 	mean_time_to_happen = {
-		months = 300
+		months = 100
 		modifier = {
 			factor = 0.9
 			average_consciousness = 3
@@ -3649,6 +3651,7 @@ country_event = {
 		name = "EVTOPTA13355"
 		prestige = -25
 		war_exhaustion = 5
+		1612 = { clr_province_flag = summer_palace }
 	}
 }
 
@@ -3663,7 +3666,8 @@ country_event = {
 	trigger = {
 		vassal_of = ENG
 		ai = yes
-		civilized = no
+		NOT = { tag = AFG }
+		NOT = { tag = DUR }
 		NOT = { has_country_flag = no_british_doctrine }
 		ENG = { ideological_thought = 1 }
 		OR = {
@@ -3687,11 +3691,12 @@ country_event = {
 			primary_culture = malayalam
 			primary_culture = tamil
 			primary_culture = telegu
+			tag = CRL
 		}
 	}
 	
 	mean_time_to_happen = {
-		months = 100
+		months = 75
 		modifier = {
 			factor = 1.5
 			NOT = { average_militancy = 1 }
@@ -3730,10 +3735,14 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.1
+			OR = {
+			tag = BHP
+			tag = CRL
 			NOT = {
 				government = absolute_monarchy
 				government = prussian_constitutionalism
 				government = hms_government
+				}
 			}
 		}
 	}
@@ -3745,9 +3754,40 @@ country_event = {
 			militancy = 4
 			consciousness = 1
 		}
-		ENG = {
-			country_event = 13358
+		ENG = { country_event = 13358 }
+		political_reform = peonage
+		any_owned = { limit = {
+			OR = {
+				trade_goods = coal
+				trade_goods = iron
+				trade_goods = oil
+				trade_goods = precious_metal
+				trade_goods = sulphur
+				trade_goods = tropical_wood
+				trade_goods = timber
+				trade_goods = rubber
+				}
+			}
+		any_pop = { limit = { type = serfs } pop_type = labourers }
 		}
+		any_owned = { limit = {
+			OR = {
+				trade_goods = cattle
+				trade_goods = coffee
+				trade_goods = cotton
+				trade_goods = dye
+				trade_goods = fish
+				trade_goods = grain
+				trade_goods = opium
+				trade_goods = fruit
+				trade_goods = wool
+				trade_goods = silk
+				trade_goods = tea
+				trade_goods = tobacco
+					}
+			}
+		any_pop = { limit = { type = serfs } pop_type = farmers }
+			}
 	}
 }
 
@@ -3844,6 +3884,11 @@ country_event = {
 
 	option = {				
 		name = "EVTOPTA90910"
+		random_list = {
+			34 = { add_country_modifier = { name = global_baby_boom duration = 3650 } }
+			33 = { add_country_modifier = { name = global_baby_boom duration = 3285 } }
+			33 = { add_country_modifier = { name = global_baby_boom duration = 4015 } }
+		}
 		prestige = 10
 		remove_country_modifier = educational_reform
 		remove_country_modifier = military_reform
@@ -4076,5 +4121,208 @@ country_event = {
 		33 = { add_country_modifier = { name = slave_growth duration = 2190 } }
 			}
 		}
+	}
+}
+
+#Algerian claims
+country_event = {
+	id = 90953
+	title = "EVTNAME90953"
+	desc = "EVTDESC90953"
+	picture = "arab_revolt"
+	
+	fire_only_once = yes
+	
+	trigger = {
+			1714 = { empty = no }
+			1718 = { empty = no }
+			1714 = { NOT = { is_core = ALD } }
+			1718 = { NOT = { is_core = ALD } }
+			OR = {
+				owns = 1714
+				owns = 1718
+			}
+		}
+
+	option = {
+		name = "EVTOPTA90953"
+		ALD_1714 = { add_core = ALD }
+		ALD_1718 = { add_core = ALD }
+	}
+}
+
+#Treaty Ports
+province_event = {
+	id = 90954
+	title = "EVTNAME90954"
+	desc = "EVTDESC90954"
+		
+	trigger = {
+		OR = {
+			province_id = 1498
+			province_id = 1496
+			AND = {
+				province_id = 1569
+				NOT = { total_pops = 20000 }
+			}
+			AND = {
+				province_id = 1566
+				NOT = { total_pops = 20000 }
+			}
+		}
+		port = yes
+		NOT = { has_province_modifier = treaty_port }
+		is_core = CHI
+		owner = {
+			civilized = yes
+			NOT = { is_culture_group = east_asian }
+			NOT = { is_culture_group = far_east_asian }
+			}
+		NOT = { any_neighbor_province = { owned_by = THIS } }
+		any_neighbor_province = { owner = { capital_scope = {continent = asia } } }
+	}
+	
+	mean_time_to_happen = { months = 3 }
+
+	option = {
+		name = "EVTOPTA90954"
+		trade_goods = precious_metal
+		any_pop = { limit = { is_culture_group = east_asian } reduce_pop = 1.2 }
+		add_province_modifier = {
+			name = treaty_port
+			duration = -1
+			}
+		}
+}
+
+#End of Treaty Ports
+province_event = {
+	id = 90955
+	title = "EVTNAME90954"
+	desc = "EVTDESC90955"
+		
+	trigger = {
+		owner = { capital_scope = { continent = asia } }
+		OR = {
+			owner = { is_culture_group = east_asian }
+			owner = { is_culture_group = far_east_asian }
+		}
+		OR = {
+			trade_goods = precious_metal
+			has_province_modifier = treaty_port
+		}
+		OR = {
+			province_id = 1498
+			province_id = 1496
+			province_id = 1566
+			province_id = 1569
+		}
+	}
+
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVTOPTA90955"
+		random_list = {
+			25 = { trade_goods = fish }
+			25 = { trade_goods = silk }
+			25 = { trade_goods = tea }
+			25 = { trade_goods = opium }
+			}
+	}
+}
+
+#Migration to Hong Kong
+province_event = {
+	id = 90956
+	title = "EVTNAME90956"
+	desc = "EVTDESC90956"
+		
+	trigger = {
+		province_id = 1496
+		has_province_modifier = treaty_port
+		1496 = { owner = { civilized = yes capital_scope = { NOT = {continent = asia } } } }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 1 }
+	
+	immediate = {
+		random_list = {
+			40 = { 1497 = { artisans = { move_pop = 1496 } } }
+			10 = { random_neighbor_province = { limit = { owner = { civilized = no } } soldiers = { limit = { culture = yue } move_pop = 1496 } } }
+			10 = { random_neighbor_province = { limit = { owner = { civilized = no } } bureaucrats = { limit = { culture = yue } move_pop = 1496 } } }
+			40 = { 1493 = { serfs = { limit = { culture = yue } move_pop = 1496 } } }
+			}
+		}
+	
+	option = {
+		name = "EVTOPTA90956"
+		
+		any_pop = {
+			limit = {
+				is_primary_culture = no
+				is_accepted_culture = no 
+				is_culture_group = east_asian 
+				OR = {
+					type = artisans
+					type = soldiers
+					type = clergymen
+					type = serfs
+					}
+				}
+			pop_type = labourers	
+			}
+		}
+}
+
+
+#Cleaning Bukhara cores on Kandahar
+country_event = {
+	id = 90957
+	title = "EVTNAME90957"
+	desc = "EVTDESC90957"
+	picture = "central_asian_tribes"
+	
+	trigger = {
+		tag = AFG
+		owns = 1211
+		BUK = { exists = no }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { months = 12 }
+	
+	option = {
+		name = "EVTOPTA90957"
+		1211 = { remove_core = BUK }
+	}
+}
+
+#Flipping Caouzhou huge gold mine
+country_event = {
+	id = 90958
+	title = "EVTNAME90958"
+	desc = "EVTDESC90958"
+	picture = "diamonds_in_kimberley"
+		
+	trigger = {
+		owns = 1564
+		1564 = { trade_goods = precious_metal }
+		OR = {
+			year = 1900
+			civilized = yes
+		}
+	}
+
+	fire_only_once = yes
+	mean_time_to_happen = { months = 30 }
+	
+	option = {
+		name = "EVTOPTA90958"
+		1564 = { trade_goods = grain }
+		1576 = { trade_goods = precious_metal }
 	}
 }

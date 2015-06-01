@@ -38,6 +38,7 @@ political_decisions = {
 					duration = 365
 				}
 			}
+			ANG = { all_core = { remove_core = KON } }
 		}
 
 		ai_will_do = {
@@ -81,6 +82,7 @@ political_decisions = {
 					duration = 1049
 				}
 			}
+			MOZ = { all_core = { remove_core = GAZ remove_core = AGC remove_core = ZUL } }
 		}
 
 		ai_will_do = {

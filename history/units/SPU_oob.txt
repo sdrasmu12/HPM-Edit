@@ -1,3 +1,7 @@
+USA = {
+	value = -75
+}
+
 army = {
 	name = "Ejército de South Peru"
 	location = 2304 #Arequipa

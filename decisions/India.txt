@@ -130,6 +130,7 @@ political_decisions = {
 			primary_culture = rajput
 			NOT = { has_global_flag = rajputana_formed }
 			NOT = { tag = HND }
+			NOT = { has_country_flag = mughal_reborn }
 		}
 
 		allow = {
@@ -269,6 +270,7 @@ political_decisions = {
 		picture = form_rajputana
         potential = {
 			civilized = yes
+			NOT = { has_country_flag = mughal_reborn }
 			NOT = { primary_culture = rajput }
 			NOT = { has_global_flag = rajputana_formed }
 			NOT = { tag = HND }
@@ -407,9 +409,6 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
-			release_vassal = RAJ
-			relation = { who = RAJ value = 100 }
-			diplomatic_influence = { who = RAJ value = 200 }
 			RAJ = { civilized = yes }
 		}
 		
@@ -472,9 +471,13 @@ political_decisions = {
 		effect = {
 			set_global_flag = baluchistan_formed
 			prestige = 5
-			all_core = { remove_core = THIS }
+			all_core = { add_core = BLC }
+			1221 = { add_core = BLC } 
+			1222 = { add_core = BLC } 
+			1146 = { add_core = BLC } 
+			1144 = { add_core = BLC } 
+			1220 = { add_core = BLC } 
 			change_tag = BLC
-			KAL_1221 = { add_core = BLC }
 			1143 = { add_core = BLC } #Bam
 			1145 = { add_core = BLC } #Jask
 		}
@@ -485,9 +488,11 @@ political_decisions = {
 	}
 	
 	form_durrani_empire = {
-        potential = {
+			potential = {
 			primary_culture = pashtun
 			NOT = { has_global_flag = durrani_formed }
+			NOT = { tag = PAK }
+			NOT = { tag = CRL }
 		}
 
 		allow = {
@@ -755,7 +760,7 @@ political_decisions = {
 		}
 	}
 	
-	reclaim_india = {
+	reclaim_india_mughals = {
 		picture = map_india
 		potential = {
 			tag = MUG
@@ -770,12 +775,255 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = mughal_reborn
+			add_accepted_culture = kannada
+			add_accepted_culture = marathi
+			add_accepted_culture = telegu
+			add_accepted_culture = kanauji
+			add_accepted_culture = baluchi
+			add_accepted_culture = bengali
+			add_accepted_culture = bihari
+			add_accepted_culture = oriya
+			add_accepted_culture = kashmiri
 			HND = { all_core = { add_core = MUG } }
 			prestige = 20
 		}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { factor = 1 }
+	}
+	
+	mughal_declaration = {
+		picture = last_mughal
+		potential = {
+			tag = MUG
+			vassal_of = ENG
+			NOT = { has_country_flag = mughal_indepence }
+			NOT = { has_country_flag = mughal_reborn }
 		}
+		
+		allow = {
+			vassal_of = ENG
+			any_neighbor_country = { has_country_flag = sepoy_rebellion }
+			1236 = { any_neighbor_province = { owned_by = ENG average_militancy = 7 } }
+		}
+		
+		effect = {	
+			set_country_flag = mughal_indepence
+			any_pop = { limit = { has_pop_religion = sunni } militancy = -9 }
+			any_pop = { limit = { has_pop_religion = sikh } consciousness = 3 }
+			PNJ = { all_core = { any_pop = { limit = { has_pop_religion = sikh } militancy = -3 } } }
+
+			define_general = {
+				name = "Bakht Khan"
+				personality = audacious
+				background = school_of_the_bayonet
+			}
+			leave_alliance = ENG
+			ENG = {
+				release_vassal = MUG 
+				diplomatic_influence = { who = THIS value = -400 }
+				country_event = 900041
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	create_pakistan = {
+		picture = muslim_league
+		alert = no
+		potential = {
+			NOT = { has_global_flag = pakistan_born }
+			NOT = { has_global_flag = pakistan_formed }
+			NOT = { has_country_flag = mughal_reborn }
+			NOT = { exists = PAK }
+			NOT = { tag = PAK }
+			year = 1880
+			OR = {
+				is_greater_power = yes
+				tag = HND
+				}
+			any_owned_province = {
+				OR = {
+					is_core = KAL
+					is_core = MAK
+					is_core = SIN
+					is_core = PNJ
+					}
+			}
+		}
+		
+		allow = {
+			civilized = yes
+			war = no
+			mass_politics = 1
+			KAL = {
+			all_core = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						OR = {
+							is_vassal = no
+							vassal_of = THIS
+							}
+						war = no
+						is_greater_power = no
+							}
+						}
+					}
+				}
+			MAK = { 
+			all_core = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						OR = {
+							is_vassal = no
+							vassal_of = THIS
+							}
+						war = no
+						is_greater_power = no
+							}
+						}
+					}
+				}
+			SIN = {
+			all_core = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						OR = {
+							is_vassal = no
+							vassal_of = THIS
+							}
+						war = no
+						is_greater_power = no
+							}
+						}
+					}
+				}
+			PNJ = {
+			all_core = { 
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+						OR = {
+							is_vassal = no
+							vassal_of = THIS
+							}
+						war = no
+						is_greater_power = no
+							}
+						}
+					}
+				}
+		}
+		
+		effect = {	
+			set_global_flag = pakistan_born
+			prestige = 5
+			any_country = {
+				limit = {
+					exists = yes
+					ai = yes
+					in_sphere = THIS
+					OR = {
+						primary_culture = pashtun
+						primary_culture = panjabi
+						primary_culture = sindi
+						primary_culture = baluchi
+					}
+					NOT = {
+						has_country_flag = post_colonial_country
+						tag = THIS
+						tag = AFG
+						tag = MUG
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			CRL = { all_core = { add_core = PAK remove_core = CRL } }
+			KAL = { all_core = { add_core = PAK remove_core = KAL } }
+			MAK = { all_core = { add_core = PAK remove_core = MAK } }
+			SIN = { all_core = { add_core = PAK } }
+			PNJ = { all_core = { add_core = PAK remove_core = PNJ } }
+			KAS = { all_core = { add_core = PAK } }
+			ENG_1252 = { add_core = PAK }
+			any_owned = { limit = { is_core = PAK } any_pop = { limit = { OR = { has_pop_religion = sunni has_pop_religion = shiite } } militancy = -2 consciousness = 5 } }
+			1223 = { remove_core = CRL }
+			PAK = {
+				all_core = {
+					limit = { NOT = { is_core = KAS } }
+					remove_core = HND
+					}
+				}	
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	form_pakistan = {
+		picture = muslim_league
+		alert = no
+		potential = {
+			NOT = { has_global_flag = pakistan_born }
+			NOT = { has_global_flag = pakistan_formed }
+			NOT = { exists = PAK }
+			NOT = { tag = PAK }
+			NOT = { tag = HND }
+			NOT = { tag = PNJ }
+			NOT = { tag = AFG }
+			NOT = { tag = MUG }
+			NOT = { tag = DUR }
+			OR = {
+				primary_culture = baluchi
+				primary_culture = sindi
+				primary_culture = panjabi
+				primary_culture = pashtun
+			}
+		}
+		
+		allow = {
+			civilized = yes
+			war = no
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1
+			KAL = { all_core = { owned_by = THIS } }
+			MAK = { all_core = { owned_by = THIS } }
+			SIN = { all_core = { owned_by = THIS } }
+			PNJ = { all_core = { owned_by = THIS } }
+		}
+		
+		effect = {	
+			set_global_flag = pakistan_formed
+			prestige = 20
+			all_core = { add_core = PAK remove_core = THIS }
+			CRL = { all_core = { add_core = PAK remove_core = CRL } }
+			KAL = { all_core = { add_core = PAK remove_core = KAL } }
+			MAK = { all_core = { add_core = PAK remove_core = MAK } }
+			SIN = { all_core = { add_core = PAK remove_core = SIN } }
+			PNJ = { all_core = { add_core = PAK remove_core = PNJ } }
+			KAS = { all_core = { add_core = PAK } }
+			ENG_1252 = { add_core = PAK }
+			1223 = { remove_core = CRL }
+			change_tag = PAK
+			PAK = {
+				add_accepted_culture = panjabi
+				add_accepted_culture = baluchi
+				add_accepted_culture = pashtun
+				add_accepted_culture = sindi
+				add_accepted_culture = kashmiri
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
 	}
 }

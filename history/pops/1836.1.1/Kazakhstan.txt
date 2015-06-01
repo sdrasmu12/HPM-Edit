@@ -413,6 +413,12 @@
 		religion = sunni
 		size = 18250
 	}
+	
+	farmers = {
+		culture = russian
+		religion = orthodox
+		size = 500
+	}
 }
 #Qaratal (108000/27000 POPS)
 1188 = {

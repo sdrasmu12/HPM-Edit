@@ -1,7 +1,9 @@
-capital = 1074
-primary_culture = siberian
-culture = russian
-religion = animist
+capital = 1078 #Chita
+primary_culture = russian
+culture = byelorussian
+culture = ukrainian
+culture = siberian
+religion = orthodox
 government = absolute_monarchy
 plurality = 0.0
 nationalvalue = nv_order
@@ -32,7 +34,6 @@ conscription = two_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
 child_labor = child_labor_legal
-bureaucracy_ref = gentry
 citizens_rights = primary_culture_only
 
 ruling_party = KAM_conservative

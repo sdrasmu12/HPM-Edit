@@ -1,11 +1,6 @@
 owner = SID
 controller = SID
 add_core = SID
-add_core = KAF
 add_core = ETH
 trade_goods = coffee
-life_rating = 30
-1861.1.1 = {
-	owner = ETH
-	controller = ETH
-}
+life_rating = 35

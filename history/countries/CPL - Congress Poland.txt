@@ -3,7 +3,7 @@ primary_culture = polish
 religion = catholic
 government = absolute_monarchy
 plurality = 0.2
-nationalvalue = nv_productivity
+nationalvalue = nv_liberty
 literacy = 0.6
 civilized = yes
 
@@ -18,21 +18,20 @@ trade_unions = no_trade_unions
 voting_system = first_past_the_post
 political_parties = underground_parties
 
+# Social Reforms
 wage_reform = no_minimum_wage
 work_hours = no_work_hour_limit
 safety_regulations = no_safety
 health_care = no_health_care
 unemployment_subsidies = no_subsidies
-pensions = no_pensions 
+pensions = no_pensions
 school_reforms = no_schools
 
 #New Reforms
 conscription = no_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = POL_conservative
 upper_house = {
@@ -51,11 +50,6 @@ flintlock_rifles = 1
 bronze_muzzle_loaded_artillery = 1
 military_staff_system = 1
 army_command_principle = 1
-post_nelsonian_thought = 1
-clipper_design = 1
-naval_design_bureaus = 1
-alphabetic_flag_signaling = 1
-the_command_principle = 1
 classicism_n_early_romanticism = 1
 late_enlightenment_philosophy = 1
 malthusian_thought = 1
@@ -65,98 +59,7 @@ private_banks = 1
 no_standard = 1
 early_classical_theory_and_critique = 1
 guild_based_production = 1
-piston_steam_engine = 1
 publishing_industry = 1
 mechanized_mining = 1
 basic_chemistry = 1
-
-#Inventions
-#corvettes = yes
-commerce_raiders = yes
-
-schools = army_tech_school
-
-1861.1.1 = {
-ruling_party = POL_conservative
-plurality = 30
-
-# Technologies
-	post_napoleonic_thought = 1
-	flintlock_rifles = 1
-	muzzle_loaded_rifles = 1
-	bronze_muzzle_loaded_artillery = 1
-	military_staff_system = 1
-	army_command_principle = 1
-	army_professionalism = 1
-	army_decision_making = 1
-	private_banks = 1
-	no_standard = 1
-	early_classical_theory_and_critique = 1
-	freedom_of_trade = 1
-	guild_based_production = 1
-	organized_factories = 1
-	classicism_n_early_romanticism = 1
-	late_enlightenment_philosophy = 1
-	idealism = 1
-	malthusian_thought = 1
-	enlightenment_thought = 1
-	ideological_thought = 1
-	state_n_government = 1
-	nationalism_n_imperialism = 1
-	introspectionism = 1
-	associationism = 1
-	piston_steam_engine = 1
-	publishing_industry = 1
-	mechanized_mining = 1
-	clean_coal = 1
-	basic_chemistry = 1
-	medicine = 1
-	post_nelsonian_thought = 1
-	clipper_design = 1
-	naval_design_bureaus = 1
-	alphabetic_flag_signaling = 1
-	the_command_principle = 1
-
-#Inventions
-	commerce_raiders = yes
-	john_ramsay_mcculloch = yes
-	nassau_william_sr = yes
-	james_mill = yes
-	ammunition_production = yes
-	small_arms_production = yes
-	explosives_production = yes
-	artillery_production = yes
-	building_station_shipyards = yes
-	aerial_bacteria_and_antiseptic_principle = yes
-	chemotherapy = yes
-	prophylaxis_against_malaria = yes
-	pressure_chambers_for_thorax_surgery = yes
-	clinical_thermometers_and_binaural_stethoscopes = yes
-	authoritarianism = yes
-	vaccination = yes
-	genetics:_heredity = yes
-	political_religion = yes
-	traditionalism = yes
-	paternalism = yes
-	hierarchical_order = yes
-	army_societal_status = yes
-	army_academic_training = yes
-	combat_medicine = yes
-	egalitarianism = yes
-	neokantian_idealism = yes
-	field_training = yes
-	hegelian_idealism = yes
-	work_classification = yes
-	army_continuous_issuing_of_orders = yes
-	work_specialization = yes
-	army_independent_command = yes
-	bureaucracy_vs._nepotism = yes
-	army_delegated_power = yes
-	work_control_and_hierarchy = yes
-	biased_multiculturalism = yes
-	separatism = yes
-	populism_vs._establishment = yes
-	pit_coal = yes
-	coke = yes
-}
 

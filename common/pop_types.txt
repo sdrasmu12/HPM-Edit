@@ -845,6 +845,25 @@ emigration_chance = {
 		state_scope = { is_colonial = yes }
 		is_accepted_culture = yes
 	}	
+	modifier = {
+		factor = -50.0
+			has_pop_religion = yazidi
+			location = { continent = south_america }
+	}
+	modifier = {
+		factor = -1.5
+		OR = {
+			has_pop_religion = sunni
+			has_pop_religion = shiite
+		}
+		is_state_religion = yes
+	}
+	modifier = {
+		factor = 2
+		is_state_religion = no
+		location = { owner = { has_country_flag = islamic_law } }
+	}
+	
 	
 }
 
@@ -939,6 +958,15 @@ assimilation_chance = {
 			NOT = { unemployment = 0.05 }
 		}
 	}
+	
+	modifier = {
+		factor = -1
+		OR = {
+			is_accepted_culture = yes
+			has_pop_religion = yazidi
+		}
+	}
+
 	
 	group = {
 	modifier = {
@@ -1114,12 +1142,20 @@ conversion_chance = {
 	}
 	
 	modifier = {
-		factor = -2
+		factor = -0.4
 		OR = {
 			has_pop_religion = jewish
+			has_pop_religion = mormon
 			has_pop_religion = shiite
 			has_pop_religion = sunni
+			has_pop_religion = shinto
 		}
+	}
+	
+	modifier = {
+		factor = -1.0
+		has_pop_religion = yazidi
+		location = { continent = south_america }
 	}
 	
 	modifier = {

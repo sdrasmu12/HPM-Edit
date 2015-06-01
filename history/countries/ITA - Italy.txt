@@ -33,9 +33,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = ITA_conservative
 upper_house = {
@@ -57,7 +55,7 @@ upper_house = {
 	plurality = 60
 	literacy = 0.32
 	non_state_culture_literacy = 0.20
-	 
+
 	
 # Technologies
 	post_napoleonic_thought = 1

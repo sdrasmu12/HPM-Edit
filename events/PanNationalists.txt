@@ -180,6 +180,7 @@ country_event = {
 			limit = {
 				is_culture_group = italian
 				NOT = { exists = ITA }
+				NOT = { government = theocracy }
 				OR = {
 					has_country_flag = made_the_call_to_union
 					is_greater_power = yes
@@ -269,7 +270,7 @@ country_event = {
 					factor = 5
 				}
 			}
-		}			
+		}
 	}
 }
 

@@ -3,4 +3,4 @@ controller = EGY
 add_core = EGY
 add_core = SUD
 trade_goods = cattle
-life_rating = 15
+life_rating = 10

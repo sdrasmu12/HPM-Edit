@@ -290,13 +290,19 @@
 	soldiers = {
 		culture = turkish
 		religion = sunni
-		size = 3000
+		size = 6000
 	}
 
 	farmers = {
 		culture = turkish
 		religion = sunni
 		size = 23675
+	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 100
 	}
 
 	bureaucrats = {
@@ -1850,6 +1856,12 @@
 		religion = sunni
 		size = 32025
 	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
+	}
 
 	clergymen = {
 		culture = greek
@@ -1917,6 +1929,12 @@
 		culture = turkish
 		religion = sunni
 		size = 37900
+	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
 	}
 
 	clergymen = {
@@ -2800,6 +2818,12 @@
 		religion = sunni
 		size = 1175
 	}
+	
+	farmers = {
+		culture = kurdish
+		religion = yazidi
+		size = 375
+	}
 
 	farmers = {
 		culture = kurdish
@@ -2903,6 +2927,141 @@
 		culture = kurdish
 		religion = sunni
 		size = 31600
+	}
+
+	farmers = {
+		culture = kurdish
+		religion = yazidi
+		size = 1375
+	}
+}
+
+#Jezira/Cizre (92000/23000 POPS)
+2414 = {
+	aristocrats = {
+		culture = turkish
+		religion = sunni
+		size = 50
+	}
+
+	clergymen = {
+		culture = turkish
+		religion = sunni
+		size = 75
+	}
+
+	artisans = {
+		culture = turkish
+		religion = sunni
+		size = 150
+	}
+
+	soldiers = {
+		culture = turkish
+		religion = sunni
+		size = 675
+	}
+
+	farmers = {
+		culture = turkish
+		religion = sunni
+		size = 2050
+	}
+
+	clergymen = {
+		culture = armenian
+		religion = orthodox
+		size = 50
+	}
+
+	artisans = {
+		culture = armenian
+		religion = orthodox
+		size = 350
+	}
+
+	farmers = {
+		culture = armenian
+		religion = orthodox
+		size = 4600
+	}
+
+	clergymen = {
+		culture = assyrian
+		religion = catholic
+		size = 25
+	}
+
+	artisans = {
+		culture = assyrian
+		religion = catholic
+		size = 100
+	}
+
+	farmers = {
+		culture = assyrian
+		religion = catholic
+		size = 1775
+	}
+
+	aristocrats = {
+		culture = kurdish
+		religion = sunni
+		size = 150
+	}
+
+	clergymen = {
+		culture = kurdish
+		religion = sunni
+		size = 100
+	}
+
+	artisans = {
+		culture = kurdish
+		religion = sunni
+		size = 250
+	}
+	
+	soldiers = {
+		culture = kurdish
+		religion = sunni
+		size = 75
+	}
+
+	farmers = {
+		culture = kurdish
+		religion = sunni
+		size = 1025
+	}
+	
+	aristocrats = {
+		culture = kurdish
+		religion = yazidi
+		size = 150
+	}
+
+	clergymen = {
+		culture = kurdish
+		religion = yazidi
+		size = 100
+	}
+
+	artisans = {
+		culture = kurdish
+		religion = yazidi
+		size = 550
+	}
+
+	soldiers = {
+		culture = kurdish
+		religion = yazidi
+		size = 1175
+	}
+
+	farmers = {
+		culture = kurdish
+		religion = yazidi
+		size = 7025
 	}
 }
 #Cilicia Region (540000)
@@ -3067,6 +3226,12 @@
 		culture = turkish
 		religion = sunni
 		size = 37525
+	}
+	
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
 	}
 
 	clergymen = {

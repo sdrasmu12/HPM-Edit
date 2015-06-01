@@ -56,11 +56,6 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_prod_telegraph_icon"
-		texturefile = "gfx\\interface\\prod_telegraph_icon.dds"
-	}
-	
-	spriteType = {
 		name = "GFX_prod_investment_bg"
 		texturefile = "gfx\\interface\\prod_investment_bg.dds"
 	}

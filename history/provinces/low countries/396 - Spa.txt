@@ -1,12 +1,8 @@
-owner = BEL
-controller = BEL
-add_core = BEL
-add_core = NET
-add_core = WLL
+owner = PRU
+controller = PRU
+add_core = PRU
+add_core = RHI
+add_core = GER
 trade_goods = coal
 life_rating = 35
- 
 1861.1.1 = { railroad = 3 }
-1861.1.1 = {
-	remove_core = NET
-}

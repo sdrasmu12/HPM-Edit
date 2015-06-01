@@ -39,7 +39,7 @@ army = {
 
 army = {
 	name = "2eme Division d'Infanterie"
-	location = 396 #Spa
+	location = 395 #Liege
 	regiment = {
 		name= "4e Infanterie Brigade"
 		type = infantry
@@ -66,13 +66,13 @@ army = {
 	regiment = {
 		name= "7eme Brigade d'Infanterie"
 		type = infantry
-		home = 395 #Namur
+		home = 395 #Liege
 	}
 
 	regiment = {
 		name= "8eme Brigade d'Infanterie"
 		type = infantry
-		home = 396 #Spa
+		home = 395
 	}
 
 	regiment = {
@@ -85,7 +85,7 @@ army = {
 
 army = {
 	name = "1er Division de Cavalerie"
-	location = 395 #Namur
+	location = 395 #Liege
 	regiment = {
 		name= "1er Brigade de Cavalerie"
 		type = dragoon

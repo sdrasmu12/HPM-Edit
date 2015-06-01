@@ -73,7 +73,7 @@
 		religion = hindu
 		size = 3650
 	}
-	
+
 	slaves = {
 		culture = assamese
 		religion = hindu

@@ -311,7 +311,7 @@
 		religion = orthodox
 		size = 37650
 	}
-	
+
 	soldiers = {
 		culture = bulgarian
 		religion = orthodox
@@ -417,7 +417,7 @@
 		religion = orthodox
 		size = 35875
 	}
-	
+
 	soldiers = {
 		culture = bulgarian
 		religion = orthodox
@@ -678,6 +678,12 @@
 		size = 100
 	}
 
+	farmers = {
+		culture = circassian
+		religion = sunni
+		size = 50
+	}
+	
 	soldiers = {
 		culture = bulgarian
 		religion = orthodox
@@ -736,7 +742,7 @@
 		religion = orthodox
 		size = 250
 	}
-	
+
 	clergymen = {
 		culture = romanian
 		religion = orthodox

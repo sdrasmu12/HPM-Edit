@@ -9,7 +9,6 @@ political_decisions = {
 			}	
 		}		
 		allow = {
-			prestige = 10
 			NOT = { military_score = 50 }
 			NOT = { badboy = 1 }		
 		}
@@ -19,7 +18,6 @@ political_decisions = {
 				name = neutrality
 				duration = -1
 			}
-			neutrality = yes
 		}
 		
 		ai_will_do = {

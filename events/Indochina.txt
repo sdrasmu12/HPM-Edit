@@ -396,7 +396,6 @@ country_event = {
 		is_disarmed = no
 		is_greater_power = yes
 		nationalism_n_imperialism = 1
-		has_global_flag = berlin_conference
 		any_neighbor_country = {
 			civilized = no
 			OR = {
@@ -423,7 +422,6 @@ country_event = {
 		NOT = {
 			has_country_flag = no_more_indochina
 			has_country_modifier = punitive_effects
-			war_policy = pacifism
 			casus_belli = DAI
 			casus_belli = CAM
 			casus_belli = LUA
@@ -434,7 +432,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 30
+		months = 12
 		modifier = {
 			factor = 2
 			ai = no
@@ -846,3 +844,156 @@ country_event = { #The Dai Viet Emperor has Refused!
 		}
 	}
 }
+
+province_event = { #Kota Bahru founded
+	id = 95658
+	title = "EVTNAME95658"
+	desc = "EVTDESC95658"
+	
+	trigger = {
+		province_id = 1391
+		year = 1843
+	}
+	
+	mean_time_to_happen = { months = 12 }
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVT95658OPTA"
+		add_province_modifier = {
+			name = recently_built_city
+			duration = 365
+			}
+		1391 = { change_province_name = "Kota Bahru" }
+	}
+}
+#Protectorate over Luang Prabang and the Black Flag Army
+country_event = {
+	id = 95659
+	title = "EVTNAME95659"
+	desc = "EVTDESC95659"
+	picture = "black_flag_army"
+	
+	trigger = {
+		LUA = {
+			exists = yes
+			part_of_sphere = no
+			ai = yes
+			is_vassal = no
+			neighbour = THIS
+		}
+		year = 1870
+		is_greater_power = yes
+		owns = 1374
+		NOT = { is_culture_group = east_asian }
+		NOT = { is_culture_group = southeast_asian }
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { months = 12 }
+	
+	option = {
+		name = "EVT95659OPTA"
+		inherit = LUA
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT95659OPTB"
+		badboy = -1
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Franco-Siamese War
+country_event = {
+	id = 95660
+	title = "EVTNAME95660"
+	desc = "EVTDESC95660"
+	picture = "ships_to_bangkok"
+	
+	trigger = {
+		owns = 1356
+		1356 = { is_colonial = yes }
+		is_greater_power = yes
+		SIA = {
+			civilized = no
+			ai = yes
+			neighbour = THIS
+		OR = {
+			any_owned_province = { is_core = WIA }
+			any_owned_province = { is_core = LUA }
+			any_owned_province = { is_core = CHK }
+			}
+		}
+		revolution_n_counterrevolution = 1
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { months = 36 }
+	
+	option = {
+		name = "EVT95660OPTA"
+		set_country_flag = take_laos
+		relation = { who = SIA value = -400 }
+		diplomatic_influence = { who = SIA value = -400 }
+		casus_belli ={
+			target = SIA
+			type = cut_down_to_size
+			months = 50
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT95660OPTB"
+		prestige = -5
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Ending of Franco-Siamese War
+country_event = {
+	id = 95661
+	title = "EVTNAME95661"
+	desc = "EVTDESC95661"
+	picture = "ships_to_bangkok"
+	
+	trigger = {
+		is_greater_power = yes
+		war = no
+		has_country_flag = take_laos
+		truce_with = SIA
+		SIA = { is_disarmed = yes }
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT95661OPTA"
+		any_country = {
+			limit = {
+				primary_culture = lao
+				vassal_of = SIA
+			}
+			annex_to = SIA
+		}
+		
+		SIA = {
+			research_points = 2000
+			any_owned = { 
+			limit = {
+				OR = {
+					is_core = WIA 
+					is_core = LUA
+					is_core = CHK
+					}
+				}
+			secede_province = THIS
+			}
+		}
+	}
+}
+

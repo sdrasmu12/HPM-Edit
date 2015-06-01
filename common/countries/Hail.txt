@@ -59,7 +59,7 @@ party = {
 
 party = {
 	name = "HAL_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -73,7 +73,7 @@ party = {
 
 party = {
 	name = "HAL_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist
@@ -101,7 +101,7 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Muhammad ibn Saud" "Abd al-Aziz ibn Muhammad" "Turki ibn Abd Allah" "Saud ibn Abd al-Aziz" "Faisal ibn Turki"
+		"Muhammad ibn Rashid" "Abd al-Aziz ibn Muhammad" "Turki ibn Abd Allah" "Rashid ibn Abd al-Aziz" "Faisal ibn Turki"
 		}
 	ironclad = {
 		"Ala al-Din" "Husam al-Din" "Izz al-Din" "Jalal al-Din" "Khayr al-Din" "Majid al-Din" "Nasir al-Din" "Nur al-Din" 
@@ -113,7 +113,7 @@ unit_names = {
 	cruiser = {
 		"Abd al-Aziz" "Abd al-Hadi" "Abd al-Haqq" "Abd al-Jalil" "Abd al-Latif" 
 		"Abd al-Hafiz" "Abd al-Hakim" "Abd al-Nasir" "Abd al-Quddus" "Abd al-Rahim" "Abd al-Malik"
-		"Abd al-Rashid" "Abd al-Rahman" "Abd al-Sami" "Abd al-Wadud" "Abd al-Wahhab"
+		"Abd al-Rashid" "Abd al-Rahman" "Abd al-Sami" "Abd al-Wadud"
 	}
 	frigate = {
 		Akram Atif Ayman Bahir Fadil Fath Firas Fawwaz Ghalib Hakim Humam Jabbar Jawhar Kamal Khalid 

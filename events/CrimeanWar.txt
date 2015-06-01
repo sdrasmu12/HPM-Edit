@@ -204,7 +204,6 @@ country_event = {
 		has_country_flag = refused_french_claim
 		NOT = { has_global_flag = france_protector_of_eastern_christians }
 		war = no
-		is_greater_power = no
 		owns = 917
 		OR = {
 			AND = {

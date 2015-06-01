@@ -4,13 +4,26 @@ BEL = {
 ENG = {
 	value = 125
 }
-MOR = {
- 
-	value = 75
-}
-SAK = {
+MAL = { value = 400 }
+JAV = { value = 400 }
+DJA = { 
+	value = 125
+	military_access = yes 
+	
+	}
+SAK = { 
+	military_access = yes 
+	value = 100
+	}
+
+ATJ = {
 	value = -100
 }
+	
+MOR = {
+	value = 75
+}
+
 ASH = {
 	value = 75
 }
@@ -52,8 +65,43 @@ SUL = {
 }
 
 army = {
-	name = "1e Divisie"
-	location = 375 
+	name = "Borneo Garnizoen"
+	location = 1408
+	regiment = {
+		name= "1e Infanterie Brigade"
+		type = infantry
+		home = 375
+		}
+	regiment = {
+		name= "2e Infanterie Brigade"
+		type = infantry
+		home = 375
+		}
+	}
+	
+army = {
+	name = "Suwalesi Garnizoen"
+	location = 1430
+	regiment = {
+		name= "1e Infanterie Brigade"
+		type = infantry
+		home = 375
+		}
+	}
+
+army = {
+	name = "Palembang Garnizoen"
+	location = 1399
+	regiment = {
+		name= "1e Infanterie Brigade"
+		type = infantry
+		home = 375
+		}
+	}	
+
+army = {
+	name = "Nederlandse Leger"
+	location = 375
 	regiment = {
 		name= "1e Cavalerie Brigade"
 		type = cuirassier
@@ -67,9 +115,21 @@ army = {
 	}
 
 	regiment = {
-		name= "3e Cavalerie Brigade"
-		type = cuirassier
+		name= "1e Artillerie Brigade"
+		type = artillery
 		home = 380
+	}
+	
+	regiment = {
+		name = "2e Artillerie Brigade"
+		type = artillery
+		home = 386
+	}
+	
+	regiment = {
+		name = "3e Artillerie Brigade"
+		type = artillery
+		home = 385
 	}
 
 	regiment = {
@@ -89,12 +149,7 @@ army = {
 		type = infantry
 		home = 377
 	}
-
-}
-
-army = {
-	name = "2e Divisie"
-	location = 381
+	
 	regiment = {
 		name = "4e Infanterie Brigade"
 		type = infantry
@@ -106,34 +161,17 @@ army = {
 		type = infantry
 		home = 379
 	}
-
+	
 	regiment = {
 		name = "6e Infanterie Brigade"
-		type = infantry
-		home = 386
-	}
-
-}
-
-army = {
-	name = "3e Divisie"
-	location = 375
-	regiment = {
-		name = "7e Infanterie Brigade"
 		type = infantry
 		home = 383
 	}
 
 	regiment = {
-		name = "8e Infanterie Brigade"
+		name = "7e Infanterie Brigade"
 		type = infantry
 		home = 384
-	}
-
-	regiment = {
-		name = "9e Infanterie Brigade"
-		type = infantry
-		home = 385
 	}
 
 }
@@ -199,14 +237,13 @@ navy = {
 
 	ship = {
 		name= "Irene"
-		type = frigate
+		type = clipper_transport
 	}
 
 	ship = {
 		name= "Orpheus"
-		type = frigate
+		type = clipper_transport
 	}
-
 
 	ship = {
 		name= "1e Transport Eskader"
@@ -244,7 +281,7 @@ navy = {
 
 	ship = {
 		name= "Eendracht"
-		type = frigate
+		type = clipper_transport
 	}
 
 	ship = {
@@ -277,5 +314,62 @@ navy = {
 		type = clipper_transport
 	}
 
+}
+
+leader = {
+	name = "Crown Prince Frederik"
+	picture = net_gen_prinsfrederik
+	date = 1836.1.1
+	type = land
+	personality = active_p
+	background = drillmaster
+}
+leader = {
+	name = "Karel Duycker"
+	picture = net_gen_duycker
+	date = 1827.1.1
+	type = land
+	personality = mediocre
+	background = old_school
+}
+leader = {
+	name = "Frans David Cochius"
+	picture = net_gen_cochius
+	date = 1830.1.1
+	type = land
+	personality = aggressive
+	background = colonial_b
+}
+leader = {
+	name = "Fredrik Karel List"
+	picture = net_gen_list
+	date = 1830.1.1
+	type = land
+	personality = arrogant
+	background = old_school
+}
+leader = {
+	name = "Engelbertus Lucas"
+	picture = net_adm_lucas
+	date = 1830.1.1
+	type = sea
+	personality = indifferent
+	background = politician
+}
+leader = {
+	name = "Charles Nepveu"
+	picture = net_gen_nepveu
+	date = 1831.1.1
+	type = land
+	personality = bigoted
+	background = powerful_friends
+}
+leader = {
+	name = "Julius Constantijn Rijk"
+	picture = net_adm_rijk
+	date = 1836.1.1
+	type = sea
+	personality = able
+	background = exranker
 }
 

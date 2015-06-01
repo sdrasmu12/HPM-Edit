@@ -3,7 +3,7 @@ primary_culture = bedouin
 religion = sunni
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_order
+nationalvalue = nv_tradition
 literacy = 0.28
 
 # Political reforms
@@ -29,9 +29,7 @@ school_reforms = no_schools
 conscription = one_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = IRQ_conservative
 last_election = 1834.1.1
@@ -44,3 +42,7 @@ upper_house = {
 	socialist = 0
 	communist = 0
 }
+
+foreign_training = yes_foreign_training
+foreign_weapons = yes_foreign_weapons
+flintlock_rifles = 1

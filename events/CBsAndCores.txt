@@ -2201,7 +2201,15 @@ country_event = {
 					}
 				}
 			}
-			secede_province = FROM
+			state_scope = {
+				any_owned = {
+					limit = {
+						is_core = FROM
+						NOT = { is_core = THIS }
+					}
+				secede_province = FROM
+				}
+			}
 		}
 		ai_chance = { factor = 100 }
 	}

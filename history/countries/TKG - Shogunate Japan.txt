@@ -9,7 +9,7 @@ non_state_culture_literacy = 0.10
 
 # Political reforms
 slavery = no_slavery
-upper_house_composition = party_appointed
+upper_house_composition = appointed
 vote_franschise = none_voting
 public_meetings = no_meeting
 press_rights = state_press
@@ -30,9 +30,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = NIP_reactionary
 upper_house = {
@@ -45,7 +43,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 land_reform = yes_land_reform
 education_reform = yes_education_reform

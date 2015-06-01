@@ -5,6 +5,7 @@ government = democracy
 plurality = 0.0
 nationalvalue = nv_equality
 literacy = 0.03
+civilized = yes
 
 # Political reforms
 slavery = no_slavery
@@ -29,9 +30,7 @@ school_reforms = no_schools
 conscription = one_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = INO_conservative
 upper_house = {

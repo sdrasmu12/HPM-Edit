@@ -1,9 +1,9 @@
-capital = 2468
+capital = 2476
 primary_culture = australian
 religion = protestant
 government = hms_government
 plurality = 0.98
-nationalvalue = nv_liberty
+nationalvalue = nv_order
 literacy = 0.7
 civilized = yes
 
@@ -27,12 +27,10 @@ pensions = low_pensions
 school_reforms = no_schools
 
 #New Reforms
-conscription = two_year_draft
+conscription = one_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = AST_liberal_2
 upper_house = {

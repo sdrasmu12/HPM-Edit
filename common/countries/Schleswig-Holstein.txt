@@ -74,7 +74,7 @@ party = {
 
 party = {
 	name = "SWH_socialist_2"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 1875.1.1
 
 	ideology = socialist
@@ -158,7 +158,7 @@ party = {
 
 party = {
 	name = "SWH_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

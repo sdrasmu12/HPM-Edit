@@ -1,9 +1,8 @@
 owner = USA
-controller = USA
-add_core = USA
+controller = USA
+add_core = USA
 trade_goods = grain
 life_rating = 35
- 
 fort = 1
 #state_building = {
 #	level = 1
@@ -15,6 +14,6 @@ fort = 1
 		ideology = liberal
 		loyalty_value = 15
 	}
+	add_core = CSA
 }
-1861.1.1 = { add_core = CSA }
 1861.1.1 = { railroad = 3 }

@@ -1,5 +1,5 @@
-color = { 125  92  110 }
-graphical_culture = Generic
+color = { 228  237  55 }
+graphical_culture = UsGC
 
 party = {
 	name = "DES_reactionary"
@@ -38,7 +38,7 @@ party = {
 
 	economic_policy = laissez_faire
 	trade_policy = free_trade
-	religious_policy = secularized
+	religious_policy = moralism
 	citizenship_policy = full_citizenship
 	war_policy = pro_military
 }
@@ -59,7 +59,7 @@ party = {
 
 party = {
 	name = "DES_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -73,7 +73,7 @@ party = {
 
 party = {
 	name = "DES_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

@@ -6,7 +6,6 @@ political_decisions = {
 			USA = { government = democracy }
 			OR = {
 				tag = TEX
-				tag = DES
 				tag = CAL
 				tag = LSK
 			}
@@ -167,6 +166,7 @@ political_decisions = {
 		
 		allow = {
 			prestige = 40
+			state_n_government = 1
 		}
 		
 		effect = {
@@ -315,6 +315,7 @@ political_decisions = {
 			state_n_government = 1
 			NOT = { truce_with = MEX }
 			OR = {
+				TEX = { in_sphere = THIS }
 				TEX = { exists = no }
 				invention = manifest_destiny
 				any_owned_province = { is_core = MEX }
@@ -774,12 +775,12 @@ political_decisions = {
 		}
 		
 		allow = {
-			NOT = {
-				average_militancy = 4
-			}
+			state_n_government = 1
+			militancy = 2
 		}
 		effect = {
-			war_exhaustion = -3
+			war_exhaustion = -5
+			any_pop = { militancy = -1 }
 			any_pop = {
 				limit = {
 					has_pop_culture = dixie
@@ -885,12 +886,11 @@ political_decisions = {
 		}
 		
 		effect = {
-			250 = {
-				remove_core = ENG
-				remove_core = MRU
-				remove_core = CAN
-				secede_province = USA
-			}
+			249 = { remove_core = CAN }
+			250 = { remove_core = CAN }
+			250 = { remove_core = ENG }
+			250 = { remove_core = MRU }
+			250 = { secede_province = USA }
 			badboy = -2
 			prestige = 10
 			USA = { country_event = 44122 }
@@ -949,5 +949,72 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 		}
+	}
+	
+	demand_36_parallel = {
+	picture = CSA_36_parallel
+		potential = {
+			tag = CSA
+			is_vassal = no
+			NOT = { has_country_flag = 36_or_fight }
+		}
+		
+		allow = {
+			war = no
+			NOT = { truce_with = USA }
+			NOT = { truce_with = MEX }
+			NOT = {
+				OR = {
+				in_sphere = USA
+				in_sphere = MEX
+				}
+			}
+			prestige = 40
+		}
+		
+		effect = {
+			set_country_flag = 36_or_fight
+			badboy = 5
+			MEX_103 = { add_core = CSA }
+			MEX_100 = { add_core = CSA }
+			TEX_132 = { add_core = CSA }
+			USA_129 = { add_core = CSA }
+			USA_144 = { add_core = CSA }
+			USA_188 = { add_core = CSA }
+			USA_2556 = { add_core = CSA }
+			USA_205 = { add_core = CSA }
+			USA_201 = { add_core = CSA }
+			USA_200 = { add_core = CSA }
+			USA_196 = { add_core = CSA }
+			USA_194 = { add_core = CSA }
+			USA_139 = { add_core = CSA }
+			90 = { add_core = CSA }
+			any_neighbor_country = { limit = { any_owned_province = { is_core = THIS } } country_event = 441268 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	pass_the_fifteenth_amendment = {
+	picture = first_vote_usa
+		potential = {
+			tag = USA
+			NOT = { has_country_flag = fifteenth_amendment_enacted }
+			NOT = { citizens_rights = all_voting_pops }
+			government = democracy
+			has_global_flag = american_civil_war_has_happened
+			has_country_flag = has_used_radical_reconstruction
+		}
+		
+		allow = {
+			war = no
+			average_militancy = 1
+		}
+		
+		effect = {
+			set_country_flag = fifteenth_amendment_enacted
+			political_reform = all_voting_pops
+			any_pop = { limit = { is_primary_culture = no is_accepted_culture = no } militancy = -1 }
+		}
+		ai_will_do = { factor = 1 }
 	}
 }

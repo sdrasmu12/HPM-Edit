@@ -3085,17 +3085,13 @@ country_event = {
 	
 	option = {
 		name = "EVT97683OPTA"
-			JAP_1088 = { add_core = EZO
-			secede_province = EZO
-			}
-			1089 = { add_core = EZO 
-			secede_province = EZO
-			}
+		JAP_1088 = { add_core = EZO }
+		1089 = { add_core = EZO }
+		release_vassal = EZO
 		relation = {
 			who = EZO
 			value = 400
 			}
-		create_vassal = EZO
 		EZO = {
 		civilized = yes
 		government = democracy
@@ -3126,17 +3122,13 @@ country_event = {
 	
 	option = {
 		name = "EVT97683OPTB"
-			JAP_1088 = { add_core = EZO
-			secede_province = EZO
-			}
-			1089 = { add_core = EZO 
-			secede_province = EZO
-			}
+		JAP_1088 = { add_core = EZO }
+		1089 = { add_core = EZO }
+		release_vassal = EZO
 		relation = {
 			who = EZO
 			value = 400
 			}
-		create_vassal = EZO
 		EZO = { 
 		civilized = yes
 		government = democracy

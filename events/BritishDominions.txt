@@ -860,6 +860,7 @@ country_event = {
 		is_vassal = yes
 		is_substate = no
 		civilized = yes
+		ai = no
 		overlord = {
 			war = no
 			civilized = yes

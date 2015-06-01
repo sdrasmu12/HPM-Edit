@@ -309,7 +309,7 @@ province_event = {
 		OR = {
 			terrain = desert
 			terrain = plains
-			terrain = coastal_desert
+			terrain = semidesert
 		}
 	}
 
@@ -769,7 +769,6 @@ province_event = {
 			trade_goods = silk
 			continent = europe
 			continent = north_america
-			continent = south_america
 			has_province_modifier = switched_production
 		}
 		OR = {
@@ -1191,7 +1190,7 @@ province_event = {
 			terrain = steppe
 			terrain = plains
 			terrain = hills
-			terrain = coastal_desert
+			terrain = semidesert
 			terrain = desert
 		}
 	}

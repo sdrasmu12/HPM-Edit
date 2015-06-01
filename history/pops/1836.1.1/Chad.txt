@@ -239,7 +239,7 @@
 		religion = sunni
 		size = 75
 	}
-	
+
 	farmers = {
 		culture = baguirmi
 		religion = sunni

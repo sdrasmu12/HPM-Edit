@@ -25,11 +25,11 @@ country_event = {
 		}
 		OR = {
 			AND = {
-				average_militancy = 2
+				average_militancy = 4
 				has_country_modifier = springtime_of_nations
 			}
 			AND = {
-				average_militancy = 5
+				average_militancy = 6
 				NOT = { has_country_modifier = springtime_of_nations }
 			}
 			any_owned_province = {
@@ -347,9 +347,14 @@ country_event = {
 		government = democracy
 		election = yes
 		year = 1850
+		rank = 4
 		is_disarmed = no
 		NOT = {
 			year = 1870
+			any_core = {
+				NOT = { is_core = ITA }
+				NOT = { owned_by = THIS }
+			}
 			has_country_flag = louis_deposed
 			has_country_flag = 2nd_empire
 		}
@@ -468,7 +473,7 @@ country_event = {
 		}
 		war = no
 		OR = {
-		
+			NOT = { rank = 5 }
 			any_core = {
 				NOT = { is_core = ITA }
 				NOT = { owned_by = THIS }

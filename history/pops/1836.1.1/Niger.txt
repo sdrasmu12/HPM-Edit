@@ -73,6 +73,12 @@
 		religion = sunni
 		size = 450
 	}
+	
+	bureaucrats = {
+		culture = hausa
+		religion = sunni
+		size = 25
+	}
 
 	clergymen = {
 		culture = songhai

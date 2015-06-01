@@ -1,3 +1,6 @@
+USA = {
+	value = -75
+}
 CHL = {
 	value = -100
 }

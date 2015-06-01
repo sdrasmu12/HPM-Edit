@@ -3,8 +3,8 @@ primary_culture = somali
 religion = sunni
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_order
-literacy = 0.006
+nationalvalue = nv_tradition
+literacy = 0.04
 
 # Political reforms
 slavery = yes_slavery
@@ -29,9 +29,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = GEL_conservative
 upper_house = {

@@ -244,7 +244,7 @@ country_event = {
 						ruling_party_ideology = liberal
 							}
 					}
-				capital_scope = { continent = south_america }
+				capital_scope = { continent = north_america }
 				NOT = { relation = { who = ARC value = 100 } }
 			}
 		}
@@ -417,7 +417,7 @@ country_event = {
 					name = rio_de_la_plata 
 					duration = 3650
 						}
-		any_country = { limit = { capital_scope = { continent = south_america } }
+		any_country = { limit = { capital_scope = { continent = north_america } }
 		relation = {
 			who = SBA
 			value = -110
@@ -653,7 +653,7 @@ country_event = {
 		capital = 2360
 		clr_global_flag = entre_rios_rebellion
 		set_country_flag = entre_rios_has_happened
-		prestige = 5
+		prestige = 2
 		government = democracy
 		ruling_party_ideology = liberal
 		political_reform = no_slavery
@@ -744,7 +744,7 @@ country_event = {
 			clr_country_flag = will_support_entre_rios
 			}
 		set_country_flag = entre_rios_has_happened
-		prestige = 10
+		prestige = 2
 		any_country = { all_core = { remove_core = ENT } }
 		any_pop = { militancy = -4 }
 		any_country = {
@@ -780,7 +780,7 @@ country_event = {
 				}
 		inherit = SBA
 		set_country_flag = rosas_victory_new_regime
-		prestige = 10
+		prestige = 2
 		ENT = { all_core = { remove_core = ENT } }
 		any_pop = { militancy = -4 }
 		any_country = {
@@ -1514,7 +1514,7 @@ country_event = {
 			}
 		clr_global_flag = entre_rios_rebellion
 		set_country_flag = entre_rios_has_happened
-		prestige = 10
+		prestige = 5
 		any_country = {
 			all_core = { remove_core = ENT }
 		}
@@ -1548,7 +1548,7 @@ country_event = {
 				}
 		inherit = SBA
 		set_country_flag = rosas_victory_new_regime }
-		prestige = 10
+		prestige = 5
 		ENT = {
 			all_core = { remove_core = ENT }
 		}
@@ -1616,7 +1616,7 @@ country_event = {
 				}
 		clr_global_flag = entre_rios_rebellion
 		set_country_flag = entre_rios_has_happened
-		prestige = 10
+		prestige = 2
 		any_pop = { militancy = -3 }
 		ai_chance = {
 			factor = 0.95
@@ -1656,7 +1656,7 @@ country_event = {
 				}
 		clr_global_flag = entre_rios_rebellion
 		set_country_flag = entre_rios_has_happened
-		prestige = 10
+		prestige = 2
 		any_pop = { militancy = -3 }
 		ai_chance = {
 			factor = 0.4
@@ -1665,7 +1665,7 @@ country_event = {
 		
 		option = {
 		name = "EVTOPT4661017C" #Remains SBA
-		prestige = 20
+		prestige = 5
 		ai_chance = {
 			factor = 0.01
 				}

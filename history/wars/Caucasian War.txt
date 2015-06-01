@@ -10,7 +10,7 @@ name = "Caucasian War"
 	# country - 3rd party
 	# state_province_id - target state capital
 	war_goal = {
-		casus_belli = conquest
+		casus_belli = conquest_any
 		actor = RUS
 		receiver = DAG
 	}

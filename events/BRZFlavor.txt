@@ -327,6 +327,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA50000"
+		2461 = { change_province_name = "Florianópolis" }
 		government = democracy
 		clr_country_flag = communist_gov
 		clr_country_flag = absolute_monarchy_gov
@@ -356,7 +357,7 @@ country_event = {
 		consciousness = -3
 		}
 		ai_chance = {
-			factor = 0.8
+			factor = 0.9
 			}
 		}
 		
@@ -371,8 +372,30 @@ country_event = {
 		consciousness = 3
 	}
 		ai_chance = {
-			factor = 0.2
+			factor = 0.1
 			}
+		}
+	}
+	
+country_event = {
+
+	id = 50003
+	title = "EVTNAME50003"
+	desc = "EVTDESC50003"
+	picture = "juiz_de_fora"
+
+	trigger = {
+		tag = BRZ 
+		year = 1860
+	}
+
+	mean_time_to_happen = { months = 12 }
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPTA50003"
+		2446 = { change_province_name = "Juiz de Fora" }
 		}
 	}
 	

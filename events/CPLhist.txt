@@ -1,37 +1,4 @@
-country_event = {
-	id = 500000
-	title = "EVTNAME500000" #The Organic Statute
-	desc = "EVTDESC500000"
-	picture = "organic_statute"
-	
-	fire_only_once = yes
-	
-	trigger = {
-	tag = CPL
-	year = 1832
-		}
-	
-	option = {
-		name = "EVTOPT500000A"
-		any_greater_power = { limit = { NOT = { tag = RUS } }
-			diplomatic_influence = {
-			who = THIS
-			value = -400
-				}
-			relation = {
-				who = THIS
-				value = -50
-				}
-			}
-		
-		add_country_modifier = {
-			name = organic_statute
-			duration = -1
-			}
-		}
-	}
-	
-country_event = {
+	country_event = {
 	id = 500001
 	title = "EVTNAME500001" #The January Uprising
 	desc = "EVTDESC500001"
@@ -43,72 +10,31 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	is_triggered_only = yes
-	
-	option = {
-		name = "EVTOPT500001A"
-		war = {
-			target = CPL
-			attacker_goal = {
-				casus_belli = annex_core_country
-					}
-			defender_goal = {
-				casus_belli = status_quo
-				}
-			}
-		ai_chance = { factor = 99 }
-		}
-
-	option = {
-		name = "EVTOPT500001B"
-		ai_chance = { factor = 01 }
-		}
-		
-	option = {
-		name = "EVTOPT500001C"
-		CPL = { any_owned = {remove_core = RUS } }
-		ai_chance = { factor = 0 }
-		}
-	}
-
-country_event = {
-	id = 5000002
-	title = "EVTNAME5000002" #The January Uprising - CPL start
-	desc = "EVTDESC5000002"
-	picture = "january_uprising"
-	
-	fire_only_once = yes
-	
 	trigger = {
 		NOT = { has_global_flag = january_uprising_happened }
-		tag = CPL
-		year = 1855
-		vassal_of = RUS
-		exists = yes 
-		has_country_modifier = organic_statute
-		RUS = {
-			OR = {
+		tag = RUS
+		year = 1850
+		any_owned_province = { is_core = CPL }
+		OR = {
 			has_recently_lost_war = yes	
 			AND = {
 				has_country_flag = crimean_war
 				war = no 
-					}
 				}
 			}
 		}
 	
-	mean_time_to_happen = { months = 12
-		modifier = {
-				factor = 0.1
-				month = 1
-			}
-		}
-	
-	
 	option = {
-		name = "EVTOPT5000002A"
-		set_global_flag = january_uprising_happened
-		
+		name = "EVTOPT500001A"
+		release = CPL
+		CPL = { all_core = { add_core = RUS } }
+		any_owned = { limit = { is_core = LIT }
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 365
+				}
+			}
+		CPL = {
 		government = presidential_dictatorship
 		ruling_party_ideology = conservative
 		political_reform = none_voting
@@ -119,7 +45,6 @@ country_event = {
 		political_reform = underground_parties
 		political_reform = mandatory_service
 		political_reform = peonage
-		
 		nationalvalue = nv_order
 		leadership = 80
 		treasury = 10000
@@ -140,12 +65,11 @@ country_event = {
 			personality = stouthearted
 			background = nationalist
 		}
-	
-		remove_country_modifier = organic_statute 
-				add_country_modifier = {
-					name = small_country_draft
-					duration = 720
-					}
+			
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 720
+			}
 	
 				706 = { any_pop = {
 					limit = {
@@ -167,18 +91,17 @@ country_event = {
 					}
 					reduce_pop = 0.9
 				}
-	
-		RUS = {
-		country_event = 500001
-		relation = {
-			who = CPL
-			value = -400
+		}
+		war = {
+			target = CPL
+			attacker_goal = {
+				casus_belli = annex_core_country
+					}
+			defender_goal = {
+				casus_belli = status_quo
 				}
-		diplomatic_influence = {
-			who = CPL
-			value = -400
 			}
-		release_vassal = CPL
+		set_global_flag = january_uprising_happened	
 		any_owned = { limit = {
 			OR = {
 				is_core = RUT
@@ -209,56 +132,15 @@ country_event = {
 			consciousness = 5
 					}
 				}
-			}
-			ai_chance = { factor = 100 }
+		ai_chance = { factor = 99 }
 		}
 		
 	option = {
-		name = "EVTOPT5000002B"
-		any_owned = {
-		add_province_modifier = {
-			name = nationalist_agitation
-				duration = 3650
-				}
-		any_pop = {
-			militancy = 5
-			consciousness = 8
-			}
-		}
-		
-		RUS = {
-		any_owned = { limit = {
-			OR = {
-				is_core = RUT
-				is_core = PLC
-				is_core = POL
-				is_core = LIT
-				is_core = LAT
-				}
-			}
-		any_pop = { limit = { is_accepted_culture = no }
-			ideology = {
-				factor = 0.1
-				value = liberal
-				}
-			militancy = 7
-			consciousness = 8
-				}
-			}
-			
-		any_owned = { limit = {
-			OR = {
-				is_core = BYE
-				is_core = UKR
-				}
-			}
-		any_pop = { limit = { is_accepted_culture = no }
-			militancy = 3
-			consciousness = 5
-					}
-				}
-			}
-			ai_chance = { factor = 0 }
+		name = "EVTOPT500001C"
+		CPL = { any_owned = {remove_core = RUS } }
+		release = CPL
+		prestige = -50
+		ai_chance = { factor = 0 }
 		}
 	}
 	
@@ -298,11 +180,6 @@ country_event = {
 			}
 		create_alliance = CPL
 		leave_alliance = RUS
-		casus_belli ={
-			target = RUS
-			type = humiliate
-			months = 6
-			}
 		relation = {
 			who = RUS
 			value = -150
@@ -311,6 +188,10 @@ country_event = {
 			who = CPL
 			value = 200
 				}
+		diplomatic_influence = {
+			who = CPL
+			value = 100
+			}
 		any_pop = { limit = { has_pop_culture = polish }
 			consciousness = 4
 			militancy = -6
@@ -440,12 +321,16 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT500003A"  #punish them
+		RUS_360 = { add_core = RUS }
+		CPL = { all_core = { add_core = RUS } }
+		
 		add_tax_relative_income = 0.05
+		
 		706 = { any_pop = { limit = {
 			has_pop_culture = polish
 			pop_type = officers
 				}
-			reduce_pop = 0.99
+			reduce_pop = 0.7
 			}
 		}
 		any_owned = {
@@ -457,12 +342,24 @@ country_event = {
 			pop_type = soldiers
 					}
 				}
-			reduce_pop = 0.98
+			reduce_pop = 0.7
 			}
 		}
-		ai_chance = {
-			factor = 0.99
+		
+		any_owned = {
+			limit = { is_core = CPL }
+		any_pop = { limit = { has_pop_culture = polish }
+			random_list = {
+				
+			25 = { reduce_pop = 0.99 }
+			25 = { reduce_pop = 0.985 }
+			25 = { reduce_pop = 0.98 }
+			25 = { reduce_pop = 0.975 }
+				}
 			}
+		}
+		
+		ai_chance = { factor = 0.99 }
 		}
 			
 	option = {
@@ -476,29 +373,94 @@ country_event = {
 			}
 		}
 	}
-	
+
 country_event = {
 	id = 500004
-	title = "EVTNAME500004" #CPL rise
+	title = "EVTNAME500004" #Polish petitions for annexation
 	desc = "EVTDESC500004"
-	picture = "partition_of_poland"
+	picture = "greatpowers"
+	
+	
+	trigger = {
+		ai = yes
+		NOT = { has_country_flag = polish_integration_asked }
+		is_greater_power = no
+		primary_culture = polish
+		war = no
+		OR = {
+			part_of_sphere = no
+			in_sphere = POL
+		 }
+		POL = {
+			NOT = { truce_with = THIS }
+			exists = yes
+			neighbour = THIS 
+			is_vassal = no
+		}
+	}
+		
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVTOPT500004A"
+		set_country_flag = polish_integration_asked
+		all_core = {
+			add_core = POL
+			remove_core = THIS
+		}
+		annex_to = POL
+		
+		ai_chance = { 
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					tag = DZG
+					is_secondary_power = yes
+				}
+			}
+		}
+	}
+			
+	option = {
+		name = "EVTOPT500004B"
+		set_country_flag = polish_integration_asked
+		all_core = { add_core = POL }
+		ai_chance = {
+			factor = 0
+			modifier = {
+			factor = 100
+				OR = {
+					tag = DZG
+					is_secondary_power = yes
+					}
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = 500005
+	title = "EVTNAME500005" #GP Poland gets cores
+	desc = "EVTDESC500005"
+	picture = "greatpowers"
 	
 	fire_only_once = yes
 	
 	trigger = {
-	OR = {
-		tag = CPL
 		tag = POL
-		}
-	has_country_modifier = organic_statute
-	is_vassal = no
-	war = no
-		}
+		war = no
+		is_greater_power = yes
+		exists = yes
+	}
 		
-	mean_time_to_happen = { days = 3 }
+	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = "EVTOPT500004A"  
-		remove_country_modifier = organic_statute
-		}
+		name = "EVTOPT500005A"
+		PZN = { all_core = { add_core = POL } }
+		PML = { all_core = { add_core = POL } }
+		SLS = { all_core = { add_core = POL } }
+		LUZ = { all_core = { add_core = POL } }
 	}
+}

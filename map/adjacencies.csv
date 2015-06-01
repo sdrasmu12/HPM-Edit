@@ -48,7 +48,6 @@ From;To;Type;Through;Data;Comment
 371;373;sea;2711;0;Fyn-Jylland
 2557;373;sea;2711;0;Fyn-Esbjerg
 375;385;sea;2722;0;Bay of Holland
-418;419;sea;2725;0;Channel Islands Strait
 473;766;sea;2751;0;Sassari Strait
 826;824;sea;2764;0;Corfu Strait
 826;853;sea;2764;0;Corfu Strait
@@ -72,7 +71,7 @@ From;To;Type;Through;Data;Comment
 #
 # Asian Straits
 #
-1083;1086;sea;2832;0;Tatar Straits
+1083;1086;land;2832;0;Tatar Straits
 1084;1086;sea;2832;0;Tatar Straits
 1087;1643;sea;2831;0;La Perouse Strait
 1087;1643;sea;2839;0;La Perouse Strait
@@ -81,8 +80,8 @@ From;To;Type;Through;Data;Comment
 1309;1322;sea;2794;0;Palk Strait #Ceylon-S India
 1310;1322;sea;2794;0;Palk Strait #Ceylon-S India
 1384;1402;sea;2814;0;Straits of Johore
-1385;1402;sea;2814;0;Straits of Johore
-1403;1413;sea;2805;0;Sunda Strait
+1384;1385;sea;2814;0;Straits of Johore to Singapore
+1403;1413;land;2805;0;Sunda Strait
 1412;1851;sea;2782;0;Aden Strait
 1412;1875;sea;2782;0;Aden Strait
 1418;1421;sea;2811;0;Strait of Madura

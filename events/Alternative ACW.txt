@@ -353,10 +353,7 @@ province_event = {
 		NOT = { is_core = CSA }
 		NOT = { is_core = FSA }
 		is_core = USA
-		OR = {
-			continent = north_america
-			continent = south_america
-		}
+		continent = north_america
 		owner = {
 			tag = USA
 			slavery = freedom_of_womb
@@ -420,10 +417,7 @@ province_event = {
 		NOT = { is_core = CSA }
 		NOT = { is_core = FSA }
 		is_core = USA
-		OR = {
-			continent = north_america
-			continent = south_america
-		}
+		continent = north_america
 		owner = {
 			tag = USA
 			slavery = yes_slavery

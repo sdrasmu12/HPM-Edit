@@ -8,8 +8,8 @@ country_event = {
 	trigger = {
 		civilized = yes
 		OR = {
-			pop_majority_religion = catholic
-			pop_majority_religion = protestant
+			capital_scope = { pop_majority_religion = catholic }
+			capital_scope = { pop_majority_religion = protestant }
 		}
 		NOT = {
 			has_country_modifier = libertine_culture

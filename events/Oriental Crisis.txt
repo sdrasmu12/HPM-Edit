@@ -384,10 +384,11 @@ country_event = {
 		is_our_vassal = EGY
 		NOT = { has_country_flag = egypt_rule_restored }
 		NOT = { has_country_flag = egypt_restricted }
+		NOT = { has_country_flag = egypt_limited_rule_agreed }
 	}
 	
 	mean_time_to_happen = {
-		months = 6
+		months = 1
 	}
 	
 	option = {
@@ -450,14 +451,14 @@ country_event = {
 			country_event = 90089
 		}		
 		ai_chance = {
-			factor = 90
+			factor = 80
 		}
 	}
 	
 	option = {
 		name = "EVT90081OPTB"
 		set_country_flag = egypt_rule_restored
-		badboy = 5
+		badboy = 2
 		prestige = 10
 		EGY = {
 			all_core = {
@@ -466,6 +467,18 @@ country_event = {
 			}
 		}
 		inherit = EGY
+		random_country = {
+			limit = {
+				tag = HDJ
+				ai = yes
+				OR = {
+					part_of_sphere = no
+					in_sphere = TUR
+				}
+			}
+			annex_to = THIS
+		}
+			
 		relation = { who = RUS value = -200 }
 		leave_alliance = RUS
 		any_owned = {
@@ -492,7 +505,7 @@ country_event = {
 			leave_alliance = TUR
 		}
 		ai_chance = {
-			factor = 10
+			factor = 20
 		}
 	}
 }
@@ -505,6 +518,7 @@ province_event = {
 	trigger = {
 		is_core = EGY
 		culture = misri
+		NOT = { owner = { has_global_flag = berlin_conference } }
 		NOT = {
 			owner = { accepted_culture = misri }
 			average_militancy = 8
@@ -552,7 +566,7 @@ province_event = {
 		}
 		modifier = {
 			factor = 2
-			owner = { citizenship_policy = full_citizenship }
+			owner = { citizens_rights = all_voting_pops }
 		}
 	}
 	
@@ -836,7 +850,7 @@ country_event = {
 
 	option = {
 		name = "EVT90086OPTA"
-		prestige = -5
+		prestige = -1
 		war_exhaustion = -10
 		create_alliance = FROM
 		relation = {
@@ -982,12 +996,12 @@ country_event = {
 		name = "EVT90088OPTA"
 		prestige = 10
 		end_war = EGY
-		random_country = { limit = {
+		random_country = { 
+		limit = {
 			tag = HDJ
-			ai = yes }
-			any_owned = {
-				secede_province = TUR
+			ai = yes 
 			}
+			any_owned = { secede_province = TUR }
 		}
 		relation = { who = EGY value = 300 }
 		diplomatic_influence = { who = EGY value = 200 }
@@ -1034,6 +1048,13 @@ country_event = {
 		add_country_modifier = {
 			name = no_more_war
 			duration = 1095
+		}
+		create_vassal = EGY
+		create_alliance = EGY
+		set_country_flag = egypt_limited_rule_agreed
+		diplomatic_influence = {
+			who = EGY
+			value = 400
 		}
 		ai_chance = {
 			factor = 100

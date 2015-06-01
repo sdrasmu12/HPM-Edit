@@ -3011,13 +3011,13 @@
 	craftsmen = {
 		culture = north_german
 		religion = catholic
-		size = 12500
+		size = 16500
 	}
 
 	artisans = {
 		culture = north_german
 		religion = catholic
-		size = 10000
+		size = 6000
 	}
 
 	artisans = {

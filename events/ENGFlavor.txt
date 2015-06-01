@@ -1717,10 +1717,16 @@ country_event = {
 		}
 		owns = 1251 #Calcutta
 		year = 1853
-		NOT = {
-			year = 1857
-			exists = MUG
+		NOT = { year = 1857 }
+		MUG = { 
+			OR = {
+				exists = no
+			AND = {
+				exists = yes
+				vassal_of = THIS
+				}
 			}
+		}
 	}
 	
 	fire_only_once = yes
@@ -2108,7 +2114,7 @@ country_event = {
 		diplomatic_influence = { who = BUR value = -200 }
 		casus_belli = {
 			target = BUR
-			type = demand_concession_casus_belli
+			type = demand_concession_NI_casus_belli
 			months = 60
 		}
 		ai_chance = {
@@ -2348,10 +2354,15 @@ country_event = {
 	option = {
 		name = "EVT36965OPTA"
 		set_country_flag = lagos_slave_trade
-		1923 = {
-			owner = { country_event = 36966 }
-		}
+		1923 = { owner = { country_event = 36966 } }
 		1923 = { secede_province = THIS }
+		relation = { who = SOK value = -400 }
+		relation = { who = OYO value = -400 }
+		relation = { who = ARO value = -400 }
+		relation = { who = WRI value = -400 }
+		relation = { who = BEN value = -400 }
+		relation = { who = CLA value = -400 }
+		ai_chance = { factor = 100 }
 	}
 	
 	option = {
@@ -2359,6 +2370,7 @@ country_event = {
 		set_country_flag = lagos_slave_trade
 		prestige = -10
 		badboy = -2
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -2405,7 +2417,7 @@ country_event = {
 				state_province_id = 1923
 			}
 			call_ally = yes
-		}		
+		}
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -2692,6 +2704,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		2083 = { empty = yes }
+		owns = 2087
 		OR = {
 			NGF = { exists = yes }
 			GER = { exists = yes }
@@ -2766,6 +2779,7 @@ country_event = {
 		2513 = { change_province_name = "Dunedin" }
 		2515 = { change_province_name = "Christchurch" }
 		2516 = { change_province_name = "Nelson" }
+		any_pop = { limit = { location = { is_core = NZL } culture = australian } reduce_pop = 1.2 }
 		ai_chance = { factor = 100 }
 		}
 	option = {
@@ -2817,29 +2831,26 @@ country_event = {
 		2070 = { empty = yes }
 		2635 = { empty = yes }
 		tag = ENG
+		OR = {
+			2068 = { any_neighbor_province = { owned_by = THIS } }
+			2068 = { any_neighbor_province = { owner = { civilized = no in_sphere = THIS } } }
+			}
 		has_global_flag = berlin_conference
 		has_country_flag = ian_would_be_proud
+		owns = 2087
 	}
 		
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
 		name = "EVT3697006OPTA"
-		2070 = { secede_province = THIS }
-		2635 = { secede_province = THIS }
-		2068 = { secede_province = THIS }
-		
-		2635 = { secede_province = RHO }
-		2070 = { secede_province = RHO }	
-			
-		2068 = {
-				secede_province = RHO
-				change_province_name = "Salisbury"
-			}
+		2070 = { secede_province = THIS life_rating = 20 }
+		2635 = { secede_province = THIS life_rating = 20 }
+		2068 = { secede_province = THIS life_rating = 20 }
+		2068 = { change_province_name = "Salisbury" }
 		ENG_2014 = { add_core = RHO }
 		ENG_2016 = { add_core = RHO }
 		ENG_2071 = { add_core = RHO }
-		create_vassal = RHO
 		2087 = {
 		any_pop = {
 			limit = {
@@ -2858,134 +2869,507 @@ country_event = {
 			pop_type = soldiers 
 				}
 			}
-		RHO = {
-			tech_school = army_tech_school
-			capital = 2068
-			small_arms = 200
-			ammunition = 200
-			canned_food = 200
-			wine = 200
-			liquor = 200
-			treasury = 50000 
-			leadership = 50
-			define_general = {
-				name = "Frederick Selous"
-				personality = audacious
-				background = nationalist
-				}
-			government = presidential_dictatorship
-			political_reform = mandatory_service
-			political_reform = primary_culture_only
-			political_reform = hereditary_bureaucracy
-			political_reform = none_voting
-			political_reform = appointed
-			political_reform = first_past_the_post
-			political_reform = state_press
-			political_reform = underground_parties
-			political_reform = debtors_prisons
-			social_reform = good_schools
-			social_reform = capital_punishment
-			social_reform = good_health_care
-		any_owned = {
-		add_province_modifier = {
-					name = colonial_exploitation
-					duration = 1095
-					}
-				}
-			}
-		relation = {
-			who = RHO
-			value = 400
-			}
-		diplomatic_influence = {
-			who = RHO
-			value = 400
-			}
-			ai_chance = { factor = 100 }
-		}
-		
-	
-	option = {
-		name = "EVT3697006OPTB"
-		2070 = { secede_province = THIS }
-		2635 = { secede_province = THIS }
-		2068 = { secede_province = THIS }
-		
-		2635 = { secede_province = RHO }
-		2070 = { secede_province = RHO }	
-			
-		2068 = {
-				secede_province = RHO
-				change_province_name = "Salisbury"
-			}
-		ENG_2014 = { add_core = RHO }
-		ENG_2016 = { add_core = RHO }
-		ENG_2071 = { add_core = RHO }
-		create_vassal = RHO
-		2087 = {
-		any_pop = {
-			limit = {
-			 type = soldiers
-			 culture = british
-					}
-			move_pop = 2068 
-				}
-			}
-		2087 = {
-		any_pop = {
-			limit = {
-			 type = artisans
-			 culture = british
-					}
-			pop_type = soldiers 
-				}
-			}
-		change_tag_no_core_switch = RHO
-		RHO = {
-			tech_school = army_tech_school
-			capital = 2068
-			small_arms = 200
-			ammunition = 200
-			canned_food = 200
-			wine = 200
-			liquor = 200
-			treasury = 50000 
-			leadership = 50
-			define_general = {
-				name = "Frederick Selous"
-				personality = audacious
-				background = nationalist
-				}
-			government = presidential_dictatorship
-			political_reform = mandatory_service
-			political_reform = primary_culture_only
-			political_reform = hereditary_bureaucracy
-			political_reform = none_voting
-			political_reform = appointed
-			political_reform = first_past_the_post
-			political_reform = state_press
-			political_reform = underground_parties
-			political_reform = debtors_prisons
-			social_reform = good_schools
-			social_reform = capital_punishment
-			social_reform = good_health_care
-		any_owned = {
-		add_province_modifier = {
-					name = colonial_exploitation
-					duration = 1095
-					}
-				}
-			}
-		relation = {
-			who = RHO
-			value = 400
-			}
-		diplomatic_influence = {
-			who = RHO
-			value = 400
-			}
-		ai_chance = { factor = 0 }
 		}
 	}
+#Canada cores on Oregon and beyond
+country_event = {
+
+	id = 3697007
+	title = "EVTNAME3697007" 
+	desc = "EVTDESC3697007"
+	picture = "danishgovernment"
+
+	fire_only_once = yes
 	
+	trigger = {
+		tag = ENG
+		CAN = { 
+			exists = yes 
+			vassal_of = ENG
+			owns = 21
+			owns = 20
+			owns = 13
+			}
+		78 = { owned_by = THIS is_core = THIS is_core = COL }
+		79 = { owned_by = THIS is_core = THIS is_core = COL }
+		80 = { owned_by = THIS is_core = THIS is_core = COL }
+		81 = { owned_by = THIS is_core = THIS is_core = COL }
+		82 = { owned_by = THIS is_core = THIS is_core = COL }
+		83 = { owned_by = THIS is_core = THIS is_core = COL }
+	}
+		
+	mean_time_to_happen = { days = 1 }
 	
+	option = {
+		name = "EVT3697007OPTA"
+		relation = { who = CAN value = 100 }
+		diplomatic_influence = { who = CAN value = 100 }
+		badboy = -1
+		any_owned = {
+			limit = { is_core = COL }
+			secede_province = CAN
+			add_core = CAN
+			remove_core = THIS
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT3697007OPTB"
+		relation = { who = CAN value = -50 }
+		diplomatic_influence = { who = CAN value = -50 }
+		any_owned = {
+			limit = { is_core = COL }
+			remove_core = THIS
+		}
+		ai_chance = { factor = 0 }
+	}
+}	
+
+#Canada cores on Alaska
+country_event = {
+
+	id = 3697008
+	title = "EVTNAME3697008" 
+	desc = "EVTDESC3697008"
+	picture = "danishgovernment"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		CAN = { 
+			exists = yes 
+			vassal_of = ENG
+			owns = 15
+			owns = 16
+			owns = 17
+			}
+		LSK  = { all_core = { owned_by = THIS } }
+	}
+		
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT3697007OPTA"
+		relation = { who = CAN value = 100 }
+		diplomatic_influence = { who = CAN value = 100 }
+		badboy = -1
+		any_owned = {
+			limit = { is_core = LSK }
+			secede_province = CAN
+			add_core = CAN
+			remove_core = THIS
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT3697007OPTB"
+		relation = { who = CAN value = -50 }
+		diplomatic_influence = { who = CAN value = -50 }
+		any_owned = {
+			limit = { is_core = LSK }
+			remove_core = THIS
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Selling Kashmir
+country_event = {
+
+	id = 3697009
+	title = "EVTNAME3697009" 
+	desc = "EVTDESC3697009"
+	picture = "kashmir_selling"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		owns = 1224
+		owns = 1225
+		owns = 1226
+		war = no
+		NOT = { year = 1880 }
+		KAS = { exists = no }
+	}
+		
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVT3697009OPTA"
+			prestige = 5
+			badboy = -2
+			treasury = 50000
+			PAN_1224 = { secede_province = KAS }
+			create_vassal = KAS
+			diplomatic_influence = { who = KAS value = 400 }
+			relation = { who = KAS value = 400 }
+			random_country = {
+				limit = {
+					exists = yes
+					tag = CRL
+					ai = yes
+					}
+			add_casus_belli = {  target = ENG type = establish_protectorate_casus_belli months = 36 }
+			}
+			KAS = {
+				civilized = no
+				government = absolute_monarchy 
+				any_pop = { militancy = 1 consciousness = 2 }
+				military_reform = yes_foreign_weapons
+				military_reform = yes_foreign_training
+				all_core = { remove_core = PNJ }
+			}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT3697009OPTB"
+		any_owned = { limit = { OR = { is_core = PNJ is_core = KAS } } any_pop = { militancy = 4 consciousness = 6 } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Durand Line
+country_event = {
+
+	id = 3697010
+	title = "EVTNAME3697010" 
+	desc = "EVTDESC3697010"
+	picture = "greatpowers"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT3697010OPTA"
+			badboy = -2
+			relation = { who = ENG value = 400 }
+			treasury = 50000
+			HND = { all_core = { remove_core = AFG } }
+			any_owned = { limit = { is_core = HND } secede_province = ENG }
+			FROM = { diplomatic_influence = { who = THIS value = 50 } }
+			FROM = { any_owned = { limit = { is_core = AFG } secede_province = AFG } }
+			ai_chance = { 
+				factor = 90
+				modifier = {
+					factor = 100
+					OR = {
+						vassal_of = ENG
+						in_sphere = ENG
+					}
+				}
+			}
+	}
+	
+	option = {
+		name = "EVT3697010OPTB"
+		relation = { who = ENG value = -100 }
+		ai_chance = { factor = 10 }
+	}
+}
+
+#Sikkim Incident
+country_event = {
+
+	id = 3697011
+	title = "EVTNAME3697011" 
+	desc = "EVTDESC3697011"
+	picture = "sikkim_dalai_lama"
+
+	trigger = {
+		is_greater_power = yes
+		civilized = yes
+		SIK = {
+			ai = yes
+			exists = yes
+			OR = {
+				part_of_sphere = no
+				in_sphere = THIS
+			}
+			is_vassal = no
+		}
+		year = 1849
+		owns = 1252
+		NOT = { year = 1870 }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 36 }
+	
+	option = {
+		name = "EVT3697011OPTA"
+			relation = { who = SIK value = -400 }
+			diplomatic_influence = { who = SIK value = -400 }
+			war = {
+				target = SIK
+				attacker_goal = {
+					casus_belli = conquest_any
+					}
+				defender_goal = {
+					casus_belli = humiliate
+					}
+			}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT3697011OPTB"
+		relation = { who = SIK value = -400 }
+		diplomatic_influence = { who = SIK value = -400 }
+		casus_belli = {
+			target = SIK
+			type = conquest_any
+			months = 36
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Bahrain - Qatar War
+country_event = {
+
+	id = 3697012
+	title = "EVTNAME3697012" 
+	desc = "EVTDESC3697012"
+	picture = "bahrain_city"
+
+	trigger = {
+		tag = BHR
+		year = 1860
+		QAT = { exists = yes vassal_of = THIS }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 50 }
+	
+	immediate = { release_vassal = QAT }
+	
+	option = {
+		name = "EVT3697012OPTA"
+		ABU = { sphere_owner = { country_event = 3697013 } }
+		relation = { who =  QAT value = -400 }
+		1165 = { remove_core = BHR }
+		war = {
+			target = QAT
+			attacker_goal = {
+				casus_belli = conquest_any
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		
+		}
+	}
+}
+
+#Bahrain - Qatar War - Foreign Intervention
+country_event = {
+
+	id = 3697013
+	title = "EVTNAME3697012" 
+	desc = "EVTDESC3697013"
+	picture = "bahrain_city"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT3697013OPTA"
+		relation = { who =  BHR value = -400 }
+		diplomatic_influence = { who =  BHR value = -400 }
+		relation = { who = QAT value = 400 }
+		diplomatic_influence = { who = QAT value = 400 }
+		random_country = {
+			limit = {
+				vassal_of = THIS
+				exists = yes
+				tag = BHR
+				}
+		THIS = { release_vassal = BHR }
+		}
+		
+		casus_belli = {
+			target = BHR
+			type = add_to_sphere
+			months = 60
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = "EVT3697013OPTB"
+		relation = { who =  BHR value = -400 }
+		diplomatic_influence = { who =  BHR value = -400 }
+		relation = { who = QAT value = 400 }
+		diplomatic_influence = { who = QAT value = 400 }
+		random_country = {
+			limit = {
+				vassal_of = THIS
+				exists = yes
+				tag = BHR
+				}
+		THIS = { release_vassal = BHR }
+		}
+		
+		casus_belli = {
+			target = BHR
+			type = add_to_sphere
+			months = 60
+		}
+		
+		war = {
+			target = BHR
+			attacker_goal = {
+				casus_belli = add_to_sphere
+				}
+			defender_goal = {
+				casus_belli = status_quo
+				}
+			}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT3697013OPTC"
+		prestige = -5
+		ai_chance = { factor = 0 }
+	}
+}
+
+#UK relations in Arabia
+country_event = {
+
+	id = 3697014
+	title = "EVTNAME3697014" 
+	desc = "EVTDESC3697014"
+	picture = "bahrain_city"
+
+	trigger = {
+		owns = 1173
+		owns = 1175
+		is_greater_power = yes
+		}
+		
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT3697014OPTA"
+		random_country = { limit = { exists = yes tag = JOH ai = yes } relation = { who = THIS value = -400 } }
+		random_country = { limit = { exists = yes tag = OMA } relation = { who = THIS value = 400 } }
+		random_country = { limit = { exists = yes tag = NEJ } relation = { who = THIS value = 400 } }
+		random_country = { limit = { exists = yes tag = HAL } relation = { who = THIS value = 400 } }
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT3697014OPTB"
+		ai_chance = { factor = 0 }
+	}
+}
+
+
+country_event = {
+
+	id = 113901
+	title = "EVTNAME113901"
+	desc = "EVTDESC113901"
+	picture = "welcome_stranger_nugget"
+
+	trigger = {
+		owns = 2478
+		year = 1860
+		2478 = { NOT = { trade_goods = precious_metal } }
+		NOT = { year = 1890 }
+	}
+	
+	mean_time_to_happen = { months = 24 }
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPTA113901"
+		prestige = 2
+		2478 = {trade_goods = precious_metal add_province_modifier = { name = gold_rush duration = 730 } }
+	}
+}
+
+country_event = {
+
+	id = 315001
+	title = "EVTNAME315001"
+	desc = "EVTDESC315001"
+	picture = "diamonds_in_kimberley"
+	
+	trigger = {
+		owns = 2601
+		owns = 2605
+		owns = 2503
+		year = 1890
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen = { months = 24 }
+
+	option = {
+		name = "EVTOPTA315001" 
+		2601 = { 
+			trade_goods = wool
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+			add_province_modifier = { name = emigration_boom duration = 3650 }
+			life_rating = -5
+		}
+		2605 = { 
+			trade_goods = wool
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+			add_province_modifier = { name = emigration_boom duration = 3650 }
+			life_rating = -5
+		}
+		2503 = {
+			trade_goods = wool
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+			add_province_modifier = { name = emigration_boom duration = 3650 }
+			life_rating = -10
+		}
+		2500 = {
+			trade_goods = cattle
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+		}
+		2501 = {
+			trade_goods = grain
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+		}
+		2505 = {
+			trade_goods = precious_metal
+			remove_province_modifier = local_tractors
+		}
+		2497 = {
+			trade_goods = precious_metal
+			remove_province_modifier = local_tractors
+		}
+		2498 = {
+			trade_goods = oil
+			remove_province_modifier = local_tractors
+		}
+		2468 = {
+			trade_goods = coal
+			remove_province_modifier = local_tractors
+			life_rating = 10
+		}
+		2478 = {
+			trade_goods = wool
+			remove_province_modifier = local_machine_tools
+			remove_province_modifier = local_nitroglycerin
+		}
+		AST = { capital = 2468 }
+	}
+}
+

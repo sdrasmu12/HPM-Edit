@@ -16,7 +16,7 @@ name = "Taiping Rebellion"
 	}
 	war_goal = {
 		casus_belli = civil_war
-		actor = CHI
+		actor = QNG
 		receiver = TPG
 	}
 

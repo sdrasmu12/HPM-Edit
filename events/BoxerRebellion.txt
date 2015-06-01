@@ -21,7 +21,7 @@ country_event = {
 trigger = {
 		tag = QNG
 		civilized = no
-		civilization_progress = 0.7
+		civilization_progress = 0.65
 		any_owned_province = {
 			controlled_by = THIS
 			is_core = CHI	
@@ -56,7 +56,7 @@ trigger = {
 	}
 	
 	mean_time_to_happen = {
-		months = 25
+		months = 12
 		modifier = {
 			factor = 1.5
 			war = yes

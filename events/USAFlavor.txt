@@ -809,6 +809,10 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA44116"
+		add_country_modifier = {
+			name = global_baby_boom
+			duration = 3650
+		}
 		any_pop = {
 			consciousness = 0.3
 		}
@@ -1105,69 +1109,69 @@ country_event = {
 		}
 }
 
-#Great Migration of 1843
-country_event = {
-
-	id = 44123
-	title = "EVTNAME44123"
-	desc = "EVTDESC44123"
-	picture = "1843_GreatMigration"
-
-	trigger = {
-		tag = USA   
-		year = 1841
-		81 = { empty = yes }
-		82 = { empty = yes }
-		83 = { empty = yes }
-		owns = 91
-		owns = 92
-	}
-	
-	fire_only_once = yes
- 
-	mean_time_to_happen = { 
-		months = 7 
-		
-		modifier = {
-			factor = 0.8 #increase likelihood to happen
-			year = 1843
-			}
-		}
-
-	option = {
-		name = "EVTOPTA44123" 
-		81 = { 
-			life_rating = 5
-			secede_province = THIS
-			random_list = {
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
-				}
-			}
-			
-		82 = {
-			change_province_name = "Baker City"
-			life_rating = 5
-			secede_province = THIS
-			random_list = {
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
-				}
-			}
-		83 = {
-			life_rating = 5
-			secede_province = THIS
-			random_list = {
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
-				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
-				}
-			}
-		}
-	}
-	
+##Great Migration of 1843 to Oregon
+#country_event = {
+#
+#	id = 44123
+#	title = "EVTNAME44123"
+#	desc = "EVTDESC44123"
+#	picture = "1843_GreatMigration"
+#
+#	trigger = {
+#		tag = USA   
+#		year = 1841
+#		81 = { empty = yes }
+#		82 = { empty = yes }
+#		83 = { empty = yes }
+#		owns = 91
+#		owns = 92
+#	}
+#	
+#	fire_only_once = yes
+#
+#	mean_time_to_happen = { 
+#		months = 7 
+#		
+#		modifier = {
+#			factor = 0.8 #increase likelihood to happen
+#			year = 1843
+#			}
+#		}
+#
+#	option = {
+#		name = "EVTOPTA44123" 
+#		81 = { 
+#			life_rating = 5
+#			secede_province = THIS
+#			random_list = {
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
+#				}
+#			}
+#			
+#		82 = {
+#			change_province_name = "Baker City"
+#			life_rating = 5
+#			secede_province = THIS
+#			random_list = {
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
+#				}
+#			}
+#		83 = {
+#			life_rating = 5
+#			secede_province = THIS
+#			random_list = {
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 2 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 3 } }
+#				33 = { any_pop = { limit = { culture = yankee } reduce_pop = 4 } }
+#				}
+#			}
+#		}
+#	}
+#	
 #Child Labor Laws
 country_event = {
 
@@ -1249,6 +1253,10 @@ country_event = {
 		name = "EVTOPTA441255" 
 		prestige = 2
 		78 = { change_province_name = "Seattle" }
+		81 = { life_rating = 5 }
+			
+		82 = { change_province_name = "Baker City" life_rating = 5 }
+		83 = { life_rating = 5 }
 		ai_chance = { factor = 100 }
 	}
 	
@@ -1267,7 +1275,8 @@ country_event = {
 	picture = "guinea_coast"
 
 	trigger = {
-		tag = USA   
+		tag = USA  
+		war = no
 		owns = 1887
 		owns = 1888
 		year = 1847
@@ -1279,14 +1288,10 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA441266" 
-		1887 = {
-			secede_province = LIB 
-			add_core = LIB
-			}
-		1888 = { 
-			secede_province = LIB 
-			add_core = LIB
-			}
+		1887 = { add_core = LIB }
+		1888 = { add_core = LIB }
+		LIB = { all_core = { remove_core = USA } }
+		release = LIB
 		relation = {
 			who = LIB
 			value = 400
@@ -1295,8 +1300,9 @@ country_event = {
 			who = LIB
 			value = 400
 			}
-		LIB = { capital = 1887 
-		election = yes
+		LIB = {
+			capital = 1887 
+			election = yes
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -1319,6 +1325,7 @@ country_event = {
 			who = LIB
 			value = 400
 			}
+		LIB = { all_core = { remove_core = USA } }
 		change_tag_no_core_switch = LIB
 		LIB = { capital = 1887 
 		election = yes
@@ -1345,3 +1352,83 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+
+#End of homesteading
+country_event = {
+
+	id = 441267
+	title = "EVTNAME441267"
+	desc = "EVTDESC441267"
+	picture = "homesteading"
+
+	trigger = {
+		tag = USA   
+		has_country_modifier = the_homestead_act
+		OR = {
+			AND = {
+				NOT = { ruling_party_ideology = liberal }
+				NOT = { government = democracy }
+			}
+			NOT = { number_of_states = 3 }
+			NOT = { num_of_ports = 1 }
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen = { months = 1 }
+
+	option = {
+		name = "EVTOPTA441267" 
+		remove_country_modifier = the_homestead_act
+	}
+}
+
+#36 Parallel or Fight
+country_event = {
+
+	id = 441268
+	title = "EVTNAME441268"
+	desc = "EVTDESC441268"
+	picture = "36_parallel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA441268" 
+		any_owned = { limit = { is_core = CSA }
+			secede_province = CSA
+			remove_core = THIS
+			}
+		relation = { who = CSA value = 200 }
+		ai_chance = { 
+			factor = 0 
+			modifier = {
+				factor = 20
+				CSA = { brigades_compare = 2 }
+			}
+			modifier = {
+				factor = 80
+				THIS = { in_sphere = CSA }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB441268" 
+		relation = { who = CSA value = -400 }
+		CSA = { diplomatic_influence = {
+			who = THIS
+			value = -400
+			}
+		}
+		ai_chance = {
+			factor = 80 
+			modifier = {
+				factor = 60
+				FROM = { brigades_compare = 1.5 }
+			}
+		}
+	}
+}
+

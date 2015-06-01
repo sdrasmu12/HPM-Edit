@@ -1,4 +1,10 @@
 #German Minors
+NCT = {
+	value = 225
+	level = 5
+	influence_value = 0
+}
+
 ANH = {
 	value = 225
 	level = 5

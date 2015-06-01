@@ -110,13 +110,13 @@
 	farmers = {
 		culture = norwegian
 		religion = protestant
-		size = 5400
+		size = 5000
 	}
 
 	farmers = {
 		culture = sami
 		religion = protestant
-		size = 2000
+		size = 2400
 	}
 
 	farmers = {

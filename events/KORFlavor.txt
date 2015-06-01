@@ -1253,7 +1253,7 @@ country_event = {
 			}
 	}
 	
-	mean_time_to_happen = { months = 48 }
+	mean_time_to_happen = { months = 60 }
 	
 	option = {
 		name = "EVT85031OPTA"

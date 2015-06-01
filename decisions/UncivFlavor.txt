@@ -21,6 +21,29 @@ political_decisions = {
 			set_country_flag = sent_an_elephant_to_america
 		}
 	}
+	
+	champassak_integration_act = {
+		picture = form_laos
+		potential = {
+			tag = SIA
+			CHK = { exists = yes vassal_of = SIA }
+			NOT = {
+				has_country_flag = champassak_integrated
+			}
+		}
+		allow = {
+			war = no
+			civilized = yes
+			is_our_vassal = CHK
+			CHK = { OR = { part_of_sphere = no in_sphere = THIS } }
+		}
+		
+		effect = {
+			badboy = 1
+			inherit = CHK
+			set_country_flag = champassak_integrated
+		}
+	}
 
 	enact_muhammad_alis_reforms = {
 		potential = {
@@ -48,6 +71,9 @@ political_decisions = {
 				name = muhammad_alis_reforms
 				duration = -1
 			}
+			
+			any_owned = { limit = { continent = africa is_core = EGY } add_province_modifier = { name = baby_boom duration = 5475 } }
+			
 			any_pop = {
 				limit = { is_primary_culture = yes }
 				consciousness = 4
@@ -76,7 +102,7 @@ political_decisions = {
 			set_country_flag = dar_al_funun_built
 			add_country_modifier = {
 				name = dar_al_funun
-				duration = -1
+				duration = 3650
 			}
 			random_owned = {
 				limit = {
@@ -104,6 +130,44 @@ political_decisions = {
 				}
 			}
 		}
+	}
+	
+	revoke_kurdish_autonomy = {
+		picture = old_kurdistan_map
+		potential = {
+			tag = PER
+			NOT = { has_country_flag = kurdish_states_integrated }
+			OR = {
+				is_our_vassal = RDL
+				is_our_vassal = MKN
+			}
+		}
+		
+		allow = {
+			civilization_progress = 0.25
+		}
+		
+		effect = {
+			set_country_flag = kurdish_states_integrated
+			prestige = 5
+			any_country = {
+				limit = {
+					vassal_of = THIS
+					primary_culture = kurdish
+					ai = yes
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					vassal_of = THIS
+					primary_culture = kurdish
+					ai = no
+				}
+				PER = { release_vassal = THIS }
+			}
+		}
+		ai_will_do = { factor = 1 }
 	}
 	
 	annals_of_the_fulani_jihad = {
@@ -161,7 +225,6 @@ political_decisions = {
 				tag = SHW
 				tag = TIG
 			}
-			primary_culture = amhara
 			ETH = { exists = no }
 		}
 		
@@ -294,28 +357,31 @@ political_decisions = {
 			OR = {
 				tag = GEL
 				tag = MAJ
+				tag = WRL
+				tag = HBY
 			}
-			NOT = { has_country_flag = somalia_united }
+			NOT = { has_global_flag = somalia_united }
 		}
 
 		allow = {
 			war = no
-			OR = {
-				AND = {
-					1868 = { owned_by = THIS }
-					1872 = { owned_by = THIS }
-				}
-				NOT = { exists = GEL }
-				NOT = { exists = MAJ }
-			}
+			1868 = { owned_by = THIS }
+			1872 = { owned_by = THIS }
+			1873 = { owned_by = THIS }
+			NOT = { exists = GEL }
+			NOT = { exists = MAJ }
+			NOT = { exists = WRL }
+			NOT = { exists = HBY }
 		}
 
 		effect = {
-			set_country_flag = somalia_united
+			set_global_flag = somalia_united
 			prestige = 5
 			all_core = { add_core = SOM }
+			HBY = { all_core = { remove_core = HBY } }
 			GEL = { all_core = { remove_core = GEL } }
 			MAJ = { all_core = { remove_core = MAJ } }
+			WRL = { all_core = { remove_core = WRL } }
 			change_tag = SOM
 			any_pop = { militancy = -4 }			
 		}
@@ -396,6 +462,8 @@ political_decisions = {
 		effect = {
 			set_global_flag = toucouleur_created
 			prestige = 10
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
 			add_accepted_culture = fulbe
 			add_accepted_culture = bambara
 			add_accepted_culture = songhai
@@ -420,20 +488,21 @@ political_decisions = {
 			tag = KOR
 			has_country_flag = tonghak_rebellion_happened
 			NOT = { has_country_flag = tonghak }
+			civilized = no
 		}
 		allow = {
 			war = no
 			NOT = {
 				num_of_revolts = 1
-				any_owned_province = {
-					has_province_modifier = peasant_revolt
-				}
+				any_owned_province = { has_province_modifier = peasant_revolt }
 			}
 		}
 		effect = {
 			set_country_flag = tonghak 
 			prestige = 20
-			years_of_research = 1
+			years_of_research = 5
+			political_reform = no_slavery
+			political_reform = debtors_prisons
 			add_country_modifier = {
 				name = self_strengthening_movement
 				duration = 1095
@@ -443,8 +512,49 @@ political_decisions = {
 				consciousness = -2
 			}
 		}
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	second_tonghak_reforms = {
+	picture = tonghak_reforms
+		potential = {
+			tag = KOR
+			has_country_flag = tonghak_rebellion_happened
+			has_country_flag = tonghak
+			NOT = { has_country_flag = tonghak_2 }
+			civilized = no
 		}
+		allow = {
+			war = no
+			NOT = {
+				num_of_revolts = 1
+				any_owned_province = { has_province_modifier = peasant_revolt }
+			}
+		}
+		effect = {
+			set_country_flag = tonghak_2 
+			random_country = {
+				limit = { tag = KOR is_vassal = yes }
+				overlord = {
+					release_vassal = KOR
+					casus_belli ={
+						target = KOR
+						type = make_puppet
+						months = 12
+						}
+						relation = {
+						who = KOR
+						value = -200
+						}
+					}
+				}
+			years_of_research = 5
+			poor_strata = {
+				militancy = -1
+				consciousness = -1
+			}
+		}
+		ai_will_do = { factor = 1 }
 	}
 }

@@ -1,5 +1,5 @@
 color = { 166  224  85 }
-graphical_culture = Generic
+graphical_culture = BritishGC
 
 party = {
 	name = "NEN_liberal"
@@ -45,7 +45,7 @@ party = {
 
 party = {
 	name = "NEN_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -87,7 +87,7 @@ party = {
 
 party = {
 	name = "NEN_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

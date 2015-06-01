@@ -22,7 +22,7 @@ country_event = {
 			has_global_flag = ottmans_supported
 				}
 		has_global_flag = balkans_supported
-			}
+		}
 		
 		LBY = {exists = no}
 		
@@ -33,10 +33,6 @@ country_event = {
 				is_core = CYR
 				}
 			}
-		
-		1735 = {is_colonial = yes}
-		1742 = {is_colonial = yes}
-		
 		}
 		
 	mean_time_to_happen = {months = 10}
@@ -127,7 +123,7 @@ country_event = {
 	
 	name = "EVT900002OPTB"
 	prestige = 10
-	badboy = 10
+	badboy = 5
 	
 	TUR = {country_event = 900006}
 	

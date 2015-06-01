@@ -55,18 +55,6 @@ army = {
 	}
 
 	regiment = {
-		name= "2. Guardia Reale"
-		type = guard
-		home = 764
-	}
-
-	regiment = {
-		name= "3. Guardia Reale"
-		type = guard
-		home = 759
-	}
-
-	regiment = {
 		name= "1. Truppe Svizzere"
 		type = infantry
 		home = 760

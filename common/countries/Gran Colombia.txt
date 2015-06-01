@@ -11,8 +11,8 @@ party = {
 	economic_policy = interventionism
 	trade_policy = free_trade
 	religious_policy = pluralism
-	citizenship_policy = full_citizenship
-	war_policy = pro_military
+	citizenship_policy = limited_citizenship
+	war_policy = anti_military
 }
 
 party = {
@@ -31,7 +31,7 @@ party = {
 
 party = {
 	name = "GCO_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -73,7 +73,7 @@ party = {
 
 party = {
 	name = "GCO_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

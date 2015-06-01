@@ -73,6 +73,8 @@ country_event = {
 			literacy = 0.40
 			has_country_flag = free_press_promised
 			NOT = { has_country_modifier = free_press_promised	}
+			NOT = { government = proletarian_dictatorship }
+			NOT = { government = fascist_dictatorship }
 	}
  
 	mean_time_to_happen =  {
@@ -95,6 +97,20 @@ country_event = {
 				issue = free_press
 				factor = 4
 			}
+	}
+	
+	option = {
+		name = "EVTOPTB90101"
+		clr_country_flag = free_press_promised
+		scaled_militancy = {
+				issue = free_press
+				factor = 9
+			}
+		add_country_modifier = {
+			name = backed_down_on_promise
+			duration = 1460
+			
+		}
 	}
 }
 
@@ -189,6 +205,20 @@ country_event = {
 				issue = yes_meeting
 				factor = 4
 			}
+	}
+	
+	option = {
+		name = "EVTOPTB90101"
+		clr_country_flag = yes_meeting_promised
+		scaled_militancy = {
+				issue = yes_meeting
+				factor = 9
+			}
+		add_country_modifier = {
+			name = backed_down_on_promise
+			duration = 1460
+			
+		}
 	}
 }
 
@@ -303,5 +333,19 @@ country_event = {
 				issue = all_trade_unions
 				factor = 4
 			}
+	}
+	
+	option = {
+		name = "EVTOPTB90101"
+		clr_country_flag = trade_unions_promised
+		scaled_militancy = {
+				issue = all_trade_unions
+				factor = 9
+			}
+		add_country_modifier = {
+			name = backed_down_on_promise
+			duration = 1460
+			
+		}
 	}
 }

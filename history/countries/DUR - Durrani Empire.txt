@@ -7,7 +7,7 @@ culture = baluchi
 religion = sunni
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_autocracy
+nationalvalue = nv_tradition
 literacy = 0.2
 
 # Political reforms
@@ -33,9 +33,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = AFG_conservative
 upper_house = {

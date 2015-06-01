@@ -82,8 +82,8 @@ country_event = {
 	tag = PRG
 	year = 1839
 	NOT = {
-	has_country_modifier = francia_utopia 
-	has_country_modifier = national_confusion
+		has_country_modifier = francia_utopia 
+		has_country_modifier = national_confusion
 		}
 	NOT = { year = 1860 }
 	}
@@ -131,9 +131,8 @@ country_event = {
 		name = "EVTOPT700002A"
 		add_country_modifier = {
 			name = solano_lopez_industrialization
-			duration = -1
+			duration = 1825
 			}
-		tech_school = industrial_tech_school
 		clr_country_flag = carlos_lopez_elected
 		set_country_flag = carlos_lopez_dictator
 		ruling_party_ideology = reactionary
@@ -208,7 +207,8 @@ country_event = {
 	option = {
 		name = "EVTOPT700003A"	
 		USA = { set_country_flag = lopez_insult }
-		prestige = 10
+		prestige = 5
+		badboy = 1
 		relation = {
 			who = USA
 			value = -100
@@ -249,10 +249,10 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	year = 1857
-	tag = USA
-	has_country_flag = lopez_insult
-	war = no
+		year = 1857
+		tag = USA
+		has_country_flag = lopez_insult
+		war = no
 	}
 		
 	mean_time_to_happen = { months = 4 
@@ -281,7 +281,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPT700004B"
-		prestige = -20
+		prestige = -10
 		clr_country_flag = lopez_insult
 			ai_chance = {
 					factor = 0
@@ -349,10 +349,10 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	year = 1855
-	tag = USA
-	war = no
-	has_country_flag = uruguay_military_access
+		year = 1855
+		tag = USA
+		war = no
+		has_country_flag = uruguay_military_access
 	}
 		
 	mean_time_to_happen = { days = 10 }
@@ -385,10 +385,10 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	year = 1855
-	tag = USA
-	war = no
-	has_country_flag = not_uruguay_military_access
+		year = 1855
+		tag = USA
+		war = no
+		has_country_flag = not_uruguay_military_access
 	}
 		
 	mean_time_to_happen = { days = 10 }
@@ -428,6 +428,8 @@ country_event = {
 			has_country_flag = wont_submit }
 		}
 	}
+	
+	fire_only_once = yes
 		
 	mean_time_to_happen = {
 		months = 7
@@ -449,7 +451,7 @@ country_event = {
 		name = "EVTOPT700008A"	
 		clr_country_flag = not_uruguay_military_access
 		set_country_flag = asked_for_peace
-		prestige = -20
+		prestige = -10
 		treasury = -500
 		USA = {
 		treasury = 500
@@ -468,7 +470,7 @@ country_event = {
 		name = "EVTOPT700008B"
 		clr_country_flag = usa_expedition
 		set_country_flag = wont_submit
-		prestige = 20
+		prestige = 5
 		USA = {
 		casus_belli = {
 	        target = PRG
@@ -565,12 +567,11 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	year = 1835
-	tag = PRG
-	NOT = { has_country_modifier = francia_utopia }
-	NOT = { year = 1860 }
+		year = 1835
+		tag = PRG
+		NOT = { has_country_modifier = francia_utopia }
+		NOT = { year = 1860 }
 	}
-
 	
 	option = {
 		name = "EVTOPT700011A"
@@ -657,11 +658,12 @@ country_event = {
 	picture = "solano_lopez"
 	
 	trigger = {
-	year = 1862
-	tag = PRG
-	has_country_modifier = solano_lopez_industrialization
+		year = 1862
+		tag = PRG
+		has_country_modifier = solano_lopez_industrialization
 	}
 	
+	fire_only_once = yes
 	mean_time_to_happen = { months = 4 }
 	
 	option = {
@@ -674,7 +676,72 @@ country_event = {
 		define_general = {
 				name = "Francisco Solano Lopez"
 				personality = audacious
-				background = cursed_luck
+				background = unqualified
 			}
+		}
+	}
+
+#Event to normalize a small paraguay relations
+country_event = {
+	id = 700016
+	title = "EVTNAME700016"
+	desc = "EVTDESC700016"
+	picture = "greatpowers"
+	
+	trigger = {
+		tag = PRG
+		year = 1850
+		NOT = { owns = 2554 }
+		NOT = { owns = 2366 }
+		NOT = { owns = 2367 }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 6 }
+	
+	option = {
+		name = "EVTOPT700016A"
+		any_neighbor_country = { limit = { NOT = { owns = 2337 } } relation = { who = THIS value = 400 } }
+		2554 = { remove_core = PRG }
+		2366 = { remove_core = PRG }
+		2367 = { remove_core = PRG }
+		2420 = { remove_core = PRG }
+		ai_chance = { factor = 100 }
+		}
+	option = {
+		name = "EVTOPT700016B"
+		any_neighbor_country = { relation = { who = THIS value = -400 } }
+		ai_chance = { factor = 0 }
+		}
+	}
+	
+	
+#Event to normalize a small paraguay relations
+country_event = {
+	id = 700017
+	title = "EVTNAME700016"
+	desc = "EVTDESC700016"
+	picture = "greatpowers"
+	
+	trigger = {
+		tag = PRG
+		NOT = { owns = 2420 }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = "EVTOPT700016A"
+		BRZ = { relation = { who = THIS value = 210 } }
+		2420 = { remove_core = PRG }
+		ai_chance = { factor = 100 }
+		}
+	option = {
+		name = "EVTOPT700016B"
+		any_neighbor_country = { relation = { who = THIS value = -400 } }
+		ai_chance = { factor = 0 }
 		}
 	}

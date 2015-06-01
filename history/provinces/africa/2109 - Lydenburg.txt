@@ -6,6 +6,7 @@ add_core = GAZ
 add_core = ZUL
 trade_goods = coal
 life_rating = 15
+terrain = woods
 1861.1.1 = {
 	owner = TRN
 	controller = TRN

@@ -17,41 +17,43 @@ rebel = {
 }
 
 life_needs = {
-	cattle = 1
+	cattle = 0.75
 	wool =  1
 	fish =  1
 	fruit =  1
-	grain =  2.5
-	regular_clothes = 0.2
+	grain =  2
 }
 
 everyday_needs = {
 	coal = 1
 	tobacco = 2
-	regular_clothes = 1.4
+	tea = 4
+	liquor = 3
+	regular_clothes = 1.2
 	furniture = 1.1
 	fertilizer = 0.5 #0
-	cattle = 1
-	liquor = 0.4
-	wine = 1
 }
 
 
 luxury_needs = {	
-	cattle = 3
 	regular_clothes = 2
 	furniture = 3
-	liquor = 1
+	liquor = 1.5
 	wine = 1
 	coffee = 3
 	tobacco = 3
-	opium = 3
+	opium = 6
+	paper = 1.0
+	telephones = 1.0
+	automobiles = 0.5
+	radio = 1.0
+	fuel = 0.1
 }
 
 country_migration_target = { factor = 0 }
 
 migration_target = { factor = 0 }
-
+	
 promote_to = {
 	farmers = {
 		factor = 1
@@ -112,11 +114,11 @@ ideologies = {
 		consciousness = 7
 		}
 	modifier = {
-		factor = 1.6
+		factor = 1.3
 		consciousness = 8
 		}
 	modifier = {
-		factor = 2
+		factor = 1.5
 		consciousness = 9
 		}
 	}

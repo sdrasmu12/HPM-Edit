@@ -430,13 +430,13 @@
 		religion = protestant
 		size = 20
 	}	
-	
+
 	farmers = {
 		culture = anglo_canadian
 		religion = protestant
 		size = 400
 	}
-	
+
 	aristocrats = {
 		culture = native_american_minor
 		religion = animist
@@ -481,7 +481,7 @@
 		religion = protestant
 		size = 200
 	}
-	
+
 	aristocrats = {
 		culture = native_american_minor
 		religion = animist
@@ -3435,7 +3435,6 @@
 #Ruled by France 1836
 #Saint Pierre (2000/500 POPS)
 77 = {
-
 	clergymen = {
 		culture = french_canadian
 		religion = catholic
@@ -3447,7 +3446,7 @@
 		religion = catholic
 		size = 1
 	}
-	
+
 	artisans = {
 		culture = basque
 		religion = catholic

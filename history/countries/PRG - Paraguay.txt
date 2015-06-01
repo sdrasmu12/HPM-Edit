@@ -4,11 +4,10 @@ culture = guarani
 religion = catholic
 government = presidential_dictatorship
 plurality = 5.0
-nationalvalue = nv_productivity
-literacy = 0.4
-non_state_culture_literacy = 0.4
+nationalvalue = nv_autocracy
+literacy = 0.2
+non_state_culture_literacy = 0.1
 civilized = yes
-prestige = 0
 
 
 # Political reforms
@@ -31,12 +30,10 @@ pensions = no_pensions
 school_reforms = low_schools
 
 # New Reforms
-conscription = mandatory_service
+conscription = four_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = PRG_reactionary
 upper_house = {
@@ -66,7 +63,6 @@ piston_steam_engine = 1
 publishing_industry = 1
 
 set_country_flag = isolationist
-
 # Inventions
 
 #Starting Consciousness
@@ -114,4 +110,3 @@ oob = "PRG_oob.txt"
 
 #Inventions
 }
-

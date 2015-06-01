@@ -146,6 +146,31 @@ country_event = {
 			}
 		}
 		set_global_flag = taiping_has_happened
+		TPG = {
+			define_general = {
+				name = "Li Xiucheng"
+				personality = stout
+				background = innovative_tactician
+			}
+			
+			define_general = {
+				name = "Feng Yunshan"
+				personality = spirited
+				background = gifted_administrator
+			}
+			
+			define_general = {
+				name = "Xiao Chaogui"
+				personality = deeply_religious
+				background = incompetent
+			}
+			
+			define_general = {
+				name = "Shi Dakai"
+				personality = audacious
+				background = expert_raider
+			}
+		}
 	}
 	
 	option = {
@@ -235,6 +260,31 @@ country_event = {
 		}
 		set_global_flag = taiping_has_happened
 		change_tag_no_core_switch = TPG
+		TPG = {
+			define_general = {
+				name = "Li Xiucheng"
+				personality = stout
+				background = innovative_tactician
+			}
+			
+			define_general = {
+				name = "Feng Yunshan"
+				personality = spirited
+				background = gifted_administrator
+			}
+			
+			define_general = {
+				name = "Xiao Chaogui"
+				personality = deeply_religious
+				background = incompetent
+			}
+			
+			define_general = {
+				name = "Shi Dakai"
+				personality = audacious
+				background = expert_raider
+			}
+		}
 	}
 }
 
@@ -252,8 +302,9 @@ country_event = {
 		NOT = { has_global_flag = taiping_has_been_defeated }
 	}
 	
+	mean_time_to_happen = { days = 1 }
+	
 	immediate = {
-	research_points = -30000
 	any_pop = {
 			ideology = {
 				factor = 0.6
@@ -284,9 +335,6 @@ country_event = {
 	
 	option = {
 		name = "EVT160002OPTA"
-		any_country = { limit = { vassal_of = THIS }
-		research_points = -6000
-		}
 		set_global_flag = taiping_has_been_defeated
 		prestige = 10
 		any_owned = {
@@ -622,18 +670,12 @@ country_event = {
 		CHI_1082 = { add_core = MCK }
 		CHI_1479 = { add_core = MCK }
 		CHI_1552 = { add_core = MCK }
-		1081 = { add_core = MCK }
-		2697 = { add_core = MCK }
 		1533 = { add_core = MCK }
 		CHI_1468 = {
 			remove_core = CHI
 			remove_core = TPG
 		}
 		CHI_1465 = {
-			remove_core = CHI
-			remove_core = TPG
-		}
-		1469 = {
 			remove_core = CHI
 			remove_core = TPG
 		}
@@ -1296,7 +1338,7 @@ country_event = {
 	trigger = {
 		tag = TPG
 		civilized = no
-		government = absolute_monarchy
+		government = theocracy
 		has_global_flag = taiping_victorious
 		war = no
 	}
@@ -1307,11 +1349,19 @@ country_event = {
 	
 	option = {
 		name = "EVT160025OPTA"
-		prestige = -20
-		
+		government = absolute_monarchy
+		clr_country_flag = communist_gov
+		set_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = theocratic_government
 		add_country_modifier = {
 			name = national_confusion
-			duration = 1095
+			duration = 1825
 		}
 		rich_strata = { militancy = 6 }
 		any_owned = {
@@ -1331,9 +1381,30 @@ country_event = {
 			}
 		}
 		any_pop = {
-			limit = { is_primary_culture = no }
-			militancy = 4
-			consciousness = 2
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			ideology = {
+				value = liberal
+				factor = 0.05
+			}
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		any_pop = {
+			limit = {
+				is_primary_culture = no
+				is_accepted_culture = no
+			}
+			militancy = 2
+			consciousness = 3
 		}
 		ai_chance = {
 			factor = 50
@@ -1342,9 +1413,18 @@ country_event = {
 	
 	option = {
 		name = "EVT160025OPTB"
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = theocratic_government
 		add_country_modifier = {
 			name = national_confusion
-			duration = 1095
+			duration = 1825
 		}
 		all_core = {
 			remove_core = TPG
@@ -1429,13 +1509,79 @@ country_event = {
 				duration = 2920
 			}
 		}
-		years_of_research = 0.5
 		government = presidential_dictatorship
 		ruling_party_ideology = conservative
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		set_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = theocratic_government
 		ai_chance = {
 			factor = 30
 			modifier = {
 				factor = 0.5
+				QNG = { exists = no }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT160025OPTD"
+		add_country_modifier = {
+			name = national_confusion
+			duration = 1095
+		}
+		rich_strata = { militancy = 6 }
+		any_owned = {
+			limit = {
+				any_core = {
+					NOT = {
+						primary_culture = nanfaren
+						tag = CHI
+					}
+					exists = no
+				}
+			}
+			remove_province_modifier = nationalist_agitation
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.05
+			}
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+		}
+		any_pop = {
+			limit = {
+				is_primary_culture = no
+				is_accepted_culture = no
+			}
+			militancy = 2
+			consciousness = 3
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
 				QNG = { exists = no }
 			}
 		}

@@ -3,7 +3,7 @@ primary_culture = boer
 religion = protestant
 government = democracy
 plurality = 25.0
-nationalvalue = nv_productivity
+nationalvalue = nv_order
 literacy = 0.35
 non_state_culture_literacy = 0.05
 civilized = yes
@@ -32,9 +32,7 @@ school_reforms = no_schools
 conscription = two_year_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = TRN_conservative
 upper_house = {
@@ -86,7 +84,6 @@ oob = "TRN_oob.txt"
 	literacy = 0.40
 	non_state_culture_literacy = 0.05
 	set_country_flag = had_sand_river_convention
-	 
 }
 1861.1.1 = {
 

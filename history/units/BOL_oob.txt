@@ -1,3 +1,7 @@
+USA = {
+	value = -50
+}
+
 PEU = { value=200 }
 
 leader = {

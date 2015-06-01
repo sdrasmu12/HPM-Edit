@@ -21,7 +21,7 @@ country_event = {
 		NOT = {
 			AND = {
 				has_country_modifier = ottomanism_reform
-				citizenship_policy = full_citizenship
+				citizens_rights = all_voting_pops
 			}
 			is_culture_group = arab
 			is_culture_group = iranian_turanian
@@ -365,11 +365,11 @@ country_event = {
 		}
 		modifier = {
 			factor = 1.5
-			citizenship_policy = residency
+			citizens_rights = primary_culture_only
 		}
 		modifier = {
 			factor = 0.9
-			citizenship_policy = full_citizenship
+			citizens_rights = all_voting_pops
 		}
 		modifier = {
 			factor = 0.75
@@ -413,11 +413,13 @@ province_event = {
 	trigger = {
 		owner = {
 			has_country_flag = arab_revolt
+			NOT = { has_country_flag = arab_revolt_ended }
 			NOT = {
 				is_culture_group = arab
 				is_culture_group = iranian_turanian
 			}
 		}
+		
 		controlled_by = THIS
 		NOT = { has_province_modifier = nationalist_agitation }
 		any_core = {
@@ -635,7 +637,7 @@ country_event = {
 	}
 
 	option = {
-		name = "EVT96115OPTA"
+		name = "EVT96115OPTB"
 		leave_alliance = TUR
 		TUR = {
 			diplomatic_influence = {
@@ -978,7 +980,7 @@ province_event = {
 		}
 	}
 }
-			
+
 #Arab Union
 country_event = {
 	id = 98725
@@ -992,12 +994,15 @@ country_event = {
 		name = "EVT98725OPTA"
 		any_country = {
 			limit = {
+				OR = {
+					primary_culture = mashriqi
+					primary_culture = bedouin
+					primary_culture = misri
+				}
 				NOT = { tag = THIS }
-				is_culture_group = arab
 			}
 			all_core = { add_core = ARU }
 		}
-		MOR_1696 = { add_core = ARU }
 		any_country = {
 			limit = {
 				NOT = { is_culture_group = arab }
@@ -1027,11 +1032,16 @@ country_event = {
 				}
 			}
 		}
+		PER_1132 = { remove_core = ARU }
 		any_country = {
 			limit = {
 				exists = yes
 				ai = yes
-				is_culture_group = arab
+				OR = {
+					primary_culture = mashriqi
+					primary_culture = bedouin
+					primary_culture = misri
+				}
 				OR = {
 					in_sphere = THIS
 					vassal_of = THIS
@@ -1046,7 +1056,7 @@ country_event = {
 		}
 	}
 }
-#wahhabism
+#wahhabism in nejd
 country_event = {
 	id = 98726
 	title = "EVTNAME98726"
@@ -1079,6 +1089,63 @@ country_event = {
 			ideology = {
 				factor = 0.75
 				value = conservative
+				}
+			}
+		}
+	}
+
+#wahhabism in nejd
+country_event = {
+	id = 98727
+	title = "EVTNAME98726"
+	desc = "EVTDESC98726"
+	picture = "wahhabism"
+	
+	trigger = { 
+		has_country_flag = claimed_yemen
+		ai = yes
+		any_neighbor_country = {
+			OR = {
+				tag = FDL
+				tag = LHJ
+				tag = KTH
+				tag = MHR
+			}
+		exists = yes
+		}
+		OR = {
+			NOT = { casus_belli = FDL }
+			NOT = { casus_belli = LHJ }
+			NOT = { casus_belli = KTH }
+			NOT = { casus_belli = MHR }
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVT98726OPTA"
+		any_country = {
+			limit = {
+				exists = yes
+			OR = {
+				tag = FDL
+				tag = LHJ
+				tag = KTH
+				tag = MHR
+			}
+		}
+		add_casus_belli = {
+				target = THIS
+				type = establish_protectorate_BC_casus_belli
+				months = 100
+			}
+		add_casus_belli = {
+				target = THIS
+				type = establish_protectorate_NI_casus_belli
+				months = 100
 				}
 			}
 		}

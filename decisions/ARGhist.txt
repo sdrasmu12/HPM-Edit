@@ -33,7 +33,7 @@ political_decisions = {
 			OR = {
 				is_greater_power = yes
 				nationalism_n_imperialism = 1
-				year = 1870
+				year = 1865
 			}
 		}
 		effect = {
@@ -116,7 +116,7 @@ conquest_of_the_chaco = {
 			OR = {
 				is_greater_power = yes
 				nationalism_n_imperialism = 1
-				year = 1870
+				year = 1865
 			}
 		}
 		effect = {
@@ -298,8 +298,49 @@ argentina_chile_border_treaty = {
 		}
 	}
 		
-		ai_will_do = {
-			factor = 1
+		ai_will_do = { factor = 1 }
+	}
+	
+	rename_the_falklands_argentina = {
+		picture = falklands_map
+		potential = {
+			primary_culture = platinean
+			NOT = { has_global_flag = falklands_are_the_malvinas }
+			owns = 2131
 		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = falklands_are_the_malvinas
+			2131 = { change_province_name = "Islas Malvinas" }
+			prestige = 2
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	rename_the_falklands_england = {
+		picture = falklands_map
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			has_global_flag = falklands_are_the_malvinas
+		}
+		
+		allow = {
+			war = no
+			owns = 2131
+		}
+		
+		effect = {
+			clr_global_flag = falklands_are_the_malvinas
+			2131 = { change_province_name = "Falkland Islands" }
+			prestige = 2
+		}
+		ai_will_do = { factor = 1 }
 	}
 }

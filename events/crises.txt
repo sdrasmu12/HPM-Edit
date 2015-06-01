@@ -599,9 +599,9 @@ province_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 250
+		months = 300
 		modifier = {
-			factor = 1.5
+			factor = 2
 			NOT = { average_militancy = 3 }
 		}
 		modifier = {
@@ -609,7 +609,7 @@ province_event = {
 			average_militancy = 6
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.9
 			owner = { badboy = 0.8 }
 		}
 		modifier = {
@@ -681,19 +681,33 @@ province_event = {
 	allow_multiple_instances = no
 	
 	trigger = {
-		NOT = { has_global_flag = crisis_begin_researched }
+		NOT = { has_global_flag = revolution_n_counter_researched }
+		NOT = { province_id = 608 }
 		is_colonial = no
-		state_scope = {
+		OR = {
+			state_scope = {
 				flashpoint_tension = 30
 				has_flashpoint = yes
 			}
+			AND = {
+				country = { ai = yes }
+				any_neighbor_province = { owner = { ai = no } state_scope = { flashpoint_tension = 25 has_flashpoint = yes } }
+				}
+			}
 		}
 	
-	mean_time_to_happen = { days = 1 }
+	mean_time_to_happen = { 
+		days = 10 
+		modifier = {
+			factor = 0.01
+			country = { ai = yes  }
+			} 
+		}
 	
 	option = {
 		name = "EVT60168OPTA"
 		any_country = {
+			limit = { NOT = { tag = NCT } }
 			any_state  = {
 				limit = {
 					has_flashpoint = yes
@@ -715,10 +729,11 @@ country_event = {
 	allow_multiple_instances = no
 	
 	trigger = {
-		NOT = { has_global_flag = crisis_begin_researched }
-		NOT = { has_country_flag = revolution_n_counter_researched }
+		NOT = { has_global_flag = revolution_n_counter_researched }
 		revolution_n_counterrevolution = 1
-		}
+	}
+	
+	fire_only_once = yes
 	
 	mean_time_to_happen = { 
 		months = 24
@@ -730,39 +745,6 @@ country_event = {
 	
 	option = {
 		name = "EVT60169OPTA"
-		set_global_flag = crisis_begin_researched
-		set_country_flag = revolution_n_counter_researched
-	}
-}
-
-country_event = {
-	id = 60170
-	title = "EVTNAME60169"
-	desc = "EVTDESC60170"
-	picture = "crisis_revolution_enabled"
-	
-	allow_multiple_instances = no
-	
-	trigger = {
-		NOT = { has_country_flag = revolution_n_counter_researched }
-		has_global_flag = crisis_begin_researched
-		revolution_n_counterrevolution = 1
-		}
-	
-	mean_time_to_happen = { 
-	months = 24
-		modifier = {
-		factor = 0.1
-		ai = yes
-		}
-	}
-	
-	option = {
-		name = "EVT60170OPTA"
-		set_country_flag = revolution_n_counter_researched
-		any_country = {
-			limit = { revolution_n_counterrevolution = 1 }
-		set_country_flag = revolution_n_counter_researched
-		}
+		set_global_flag = revolution_n_counter_researched
 	}
 }

@@ -2399,7 +2399,7 @@ country_event = {
 	
 	option = {
 		name = "EVT900705OPTA"
-		clr_country_flag = claimed_bosnia
+		clr_country_flag = claimed_croatia
 		prestige = 10
 		CRO = { country_event = 19370 }
 		leave_alliance = RUS

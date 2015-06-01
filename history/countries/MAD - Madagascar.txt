@@ -1,10 +1,10 @@
 capital = 2115
 primary_culture = malagasy
-religion = catholic
+religion = animist
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_order
-literacy = 0.035
+nationalvalue = nv_tradition
+literacy = 0.01
 non_state_culture_literacy = 0.01
 
 # Political reforms
@@ -30,9 +30,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = MAD_conservative
 upper_house = {
@@ -45,7 +43,6 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Starting Consciousness
 consciousness = 0

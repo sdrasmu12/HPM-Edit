@@ -1752,13 +1752,6 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 		}
 		
-		iconType = {
-			name ="telegraph"
-			spriteType = "GFX_prod_telegraph_icon"
-			position = { x= 205 y = 8 }
-			Orientation = "UPPER_LEFT"
-		}
-		
 		instantTextBoxType = { 
 			name = "project_name"
 			position = { x = 234 y = 9 }

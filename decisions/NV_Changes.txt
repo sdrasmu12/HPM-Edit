@@ -1,18 +1,20 @@
 political_decisions = {
 
 	change_national_value_on = {
-		alert = no
+		alert = yes
 		picture = national_value
 		potential = {
 			nationalvalue = nv_tradition
-			NOT = {	has_country_modifier = national_confusion }
 			NOT = {	has_country_flag = nv_change }
 			civilized = no
+		}
+		
+		allow = {
+			civilization_progress = 0.5
+			NOT = {	has_country_modifier = national_confusion }
 			war = no
 			NOT = { num_of_revolts = 1 }
 		}
-		
-		allow = { civilization_progress = 0.5 }
 		
 		effect = { set_country_flag = nv_change }
 		
@@ -21,12 +23,9 @@ political_decisions = {
 			
 			modifier = {
 				factor = 0
-				OR = {
-					tag = QNG
-					tag = KOR
-					}
-				}
+				tag = QNG
 			}
+		}
 	}
 
 	change_national_value_off = {
@@ -124,7 +123,7 @@ political_decisions = {
 			}
 		}
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0.25 }
 	}
 	
 	switch_to_autocracy = {
@@ -165,7 +164,7 @@ political_decisions = {
 			}
 		}
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0.75 }
 	}
 	
 	switch_to_equality = {

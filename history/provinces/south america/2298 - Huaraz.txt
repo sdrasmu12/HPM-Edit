@@ -3,4 +3,3 @@ controller = PEU
 add_core = PEU
 trade_goods = iron
 life_rating = 35
- 

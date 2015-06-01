@@ -1,5 +1,6 @@
 owner = MAS
 controller = MAS
+add_core = MAS
 add_core = SEG
 trade_goods = grain
-life_rating = 15
+life_rating = 35

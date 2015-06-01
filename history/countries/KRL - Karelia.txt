@@ -1,8 +1,8 @@
 capital = 995
-primary_culture = ugrian
-culture = finnish
+primary_culture = finnish
+culture = ugrian
 culture = russian
-religion = protestant
+religion = orthodox
 government = democracy
 plurality = 0.5
 nationalvalue = nv_equality
@@ -33,7 +33,6 @@ conscription = two_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
 child_labor = child_labor_legal
-bureaucracy_ref = gentry
 citizens_rights = culture_voting_only
 
 ruling_party = KRL_conservative

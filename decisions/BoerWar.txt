@@ -64,10 +64,9 @@ political_decisions = {
 	sand_river_convention = {
 		potential = {
 			is_our_vassal = TRN
-			TRN = {
-				NOT = { any_owned_province = { is_core = THIS } }
-			}
+			TRN = { NOT = { any_owned_province = { is_core = THIS } } }
 			NOT = { has_country_flag = had_sand_river_convention }
+			NOT = { has_country_flag = boer_accepted }
 		}
 		allow = {
 			TRN = {
@@ -85,6 +84,7 @@ political_decisions = {
 	orange_river_convention = {
 		potential = {
 			is_our_vassal = ORA
+			NOT = { has_country_flag = boer_accepted }
 			ORA = {
 				NOT = { any_owned_province = { is_core = THIS } }
 			}
@@ -287,11 +287,13 @@ political_decisions = {
 	
 	create_south_africa = {
 		picture = form_south_africa
+		alert = no
 		potential = {
 			any_owned_province = { is_core = SAF }
 			SAF = { exists = no }
 			NOT = { has_global_flag = south_africa_formed }
 			NOT = { capital_scope = { continent = africa } }
+			civilized = yes
 		}
 		
 		allow = {
@@ -329,18 +331,20 @@ political_decisions = {
 			}
 			release_vassal = SAF
 			create_alliance = SAF
-			SAF = { primary_culture = THIS }
 			diplomatic_influence = {
 				who = SAF
-				value = 300
+				value = 400
 			}	
 		}
 		
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 0.5
-				great_wars_enabled = yes
+				factor = 100
+				year = 1910
+				NOT = { exists = TRN }
+				NOT = { exists = ORA }
+				NOT = { exists = NAL }
 			}
 		}
 	}
@@ -373,6 +377,7 @@ political_decisions = {
 					remove_core = SAF
 				}
 				primary_culture = THIS
+				add_accepted_culture = boer
 			}
 			any_pop = {
 				limit = {
@@ -515,10 +520,38 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = claimed_north_cape_colony
-			2088 = { add_core = THIS }
-			2092 = { add_core = THIS }
-			2093 = { add_core = THIS }
-			2558 = { add_core = THIS }
+			2088 = { owner = { 
+			add_casus_belli = {
+				target = THIS
+				type = place_in_the_sun
+				months = 60
+					}
+				}
+			}
+			2092 = { owner = { 
+			add_casus_belli = {
+				target = THIS
+				type = place_in_the_sun
+				months = 60
+					}
+				}
+			}
+			2093 = { owner = { 
+			add_casus_belli = {
+				target = THIS
+				type = place_in_the_sun
+				months = 60
+					}
+				}
+			}
+			2558 = { owner = { 
+			add_casus_belli = {
+				target = THIS
+				type = place_in_the_sun
+				months = 60
+					}
+				}
+			}
 			random_country = {
 				limit = { owns = 2093 }
 				relation = { who = THIS value = -100 }
@@ -554,21 +587,14 @@ political_decisions = {
 		effect = {
 			set_country_flag = claimed_xhosa
 			badboy = 2
-			2098 = {
-				add_core = THIS
-				add_core = SAF
-			}
-			2099 = {
-				add_core = THIS
-				add_core = SAF
-			}
-			2100 = {
-				add_core = THIS
-				add_core = SAF
-			}
-			2104 = {
-				add_core = THIS
-				add_core = SAF
+			2098 = { add_core = SAF }
+			2099 = { add_core = SAF }
+			2100 = { add_core = SAF }
+			2104 = { add_core = SAF }
+			casus_belli ={
+				target = XHO
+				type = conquest_any
+				months = 60
 			}
 			random_country = {
 				limit = { owns = 2100 }
@@ -612,7 +638,6 @@ political_decisions = {
 					owns = 2099
 				}
 				2099 = {
-					add_core = THIS
 					add_core = SAF
 					secede_province = THIS
 				}
@@ -623,7 +648,6 @@ political_decisions = {
 					owns = 2098
 				}
 				2098 = {
-					add_core = THIS
 					add_core = SAF
 					secede_province = THIS
 				}

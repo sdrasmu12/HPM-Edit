@@ -76,7 +76,7 @@ overseas = {
 	mine_rgo_size = 3
 	assimilation_rate = -0.3
 	pop_consciousness_modifier = -0.05
-
+	pop_militancy_modifier = -0.05
 }
 
 coastal = {
@@ -176,13 +176,13 @@ war_exhaustion = {
 	factory_throughput = -0.01
 	tax_efficiency = -0.002
 	administrative_efficiency_modifier = -0.002
-	cb_generation_speed_modifier = -0.02
+	cb_generation_speed_modifier = -0.01
 	RGO_throughput = -0.01
 }
 
 
 badboy = {
-	global_pop_consciousness_modifier = 0.005
+	global_pop_consciousness_modifier = 0.001
 }
 
 
@@ -219,7 +219,7 @@ civ_nation = {
 
 unciv_nation = {
 	prestige = -0.05
-	mobilisation_size = -0.1
+	mobilisation_size = -0.13
 	diplomatic_points_modifier = -0.25
 	cb_generation_speed_modifier = 0.8
 }
@@ -250,7 +250,7 @@ total_occupation = {
 total_blockaded = {
 	war_exhaustion = 0.4	#increased by war exhaustion.  
 	global_population_growth = -0.0001
-	import_cost = 0.75
+	import_cost = 1
 	prestige = -0.1
 }
 

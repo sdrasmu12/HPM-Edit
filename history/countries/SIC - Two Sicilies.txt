@@ -3,8 +3,8 @@ primary_culture = south_italian
 religion = catholic
 government = absolute_monarchy
 plurality = 25.0
-nationalvalue = nv_autocracy
-literacy = 0.35
+nationalvalue = nv_order
+literacy = 0.25
 civilized = yes
 prestige = 10
 
@@ -28,12 +28,10 @@ pensions = no_pensions
 school_reforms = no_schools
 
 # New Reforms
-conscription = one_year_draft
-debt_law = debtors_prisons
+conscription = no_draft
+debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = SIC_reactionary
 upper_house = {
@@ -46,19 +44,16 @@ upper_house = {
 	communist = 0
 }
 
- 
 
 # Technologies
 post_napoleonic_thought = 1
 flintlock_rifles = 1
 bronze_muzzle_loaded_artillery = 1
-military_staff_system = 1
 army_command_principle = 1
 post_nelsonian_thought = 1
 clipper_design = 1
 naval_design_bureaus = 1
 alphabetic_flag_signaling = 1
-the_command_principle = 1
 classicism_n_early_romanticism = 1
 late_enlightenment_philosophy = 1
 malthusian_thought = 1
@@ -69,16 +64,13 @@ no_standard = 1
 early_classical_theory_and_critique = 1
 freedom_of_trade = 1
 guild_based_production = 1
-piston_steam_engine = 1
 publishing_industry = 1
-mechanized_mining = 1
 basic_chemistry = 1
 
 #Inventions
 
 # Starting Consciousness
 consciousness = 3
-nonstate_consciousness = 1
 
 oob = "SIC_oob.txt"
 

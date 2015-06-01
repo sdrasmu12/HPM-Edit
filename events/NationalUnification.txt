@@ -52,6 +52,7 @@ country_event = {
 			limit = {
 				war = no
 				NOT = { tag = THIS }
+				NOT = { tag = UBD }
 				NOT = { has_country_flag = post_colonial_country }
 				is_culture_group = THIS
 				is_greater_power = no
@@ -610,6 +611,7 @@ country_event = {
 	
 	trigger = {
 		war = no
+		NOT = { tag = UBD }
 		has_country_flag = crown_from_the_gutter
 		is_culture_group = germanic
 		is_greater_power = yes
@@ -713,6 +715,7 @@ country_event = {
 				NOT = { tag = KUK }
 				NOT = { tag = DNB }
 				NOT = { tag = PRU }
+				NOT = { tag = UBD }
 				NOT = { has_country_flag = post_colonial_country }
 				OR = {
 					all_core = { owned_by = THIS }
@@ -763,6 +766,7 @@ country_event = {
 					tag = KUK
 					tag = AUS
 					tag = DNB
+					tag = UBD
 				}
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -1689,6 +1693,112 @@ country_event = {
 			modifier = {
 				factor = 0.5
 				war_policy = jingoism
+			}
+		}
+	}
+}
+
+# Unification of Greater Finland
+country_event = {
+	id = 11109
+	title = "EVTNAME11109" #Ugric Unification
+	desc = "EVTDESC11109"
+	picture = "Celebration"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT11109OPTA"
+		FROM = {
+			inherit = THIS
+			badboy = 3
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				in_sphere = FROM
+			}
+			modifier = {
+				factor = 1.5
+				relation = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.5
+				relation = {
+					who = FROM
+					value = 175
+				}
+			}
+			modifier = {
+				factor = 1.5
+				alliance_with = FROM
+			}
+			modifier = {
+				factor = 2
+				government = fascist_dictatorship
+				FROM = {
+					government = fascist_dictatorship
+				}
+			}
+			modifier = {
+				factor = 2
+				government = proletarian_dictatorship
+				FROM = {
+					government = proletarian_dictatorship
+				}
+			}
+			modifier = {
+				factor = 3
+				vassal_of = FROM
+			}
+		}
+	}
+		
+	option = {
+		name = "EVT11109OPTB"
+		prestige = 1
+		relation = {
+			who = FROM
+			value = -100
+		}
+		leave_alliance = FROM
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				NOT = {
+					relation = {
+						who = FROM
+						value = -100
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				NOT = {
+					relation = {
+						who = FROM
+						value = -175
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				government = fascist_dictatorship
+				FROM = {
+					government = proletarian_dictatorship
+				}
+			}
+			modifier = {
+				factor = 10
+				government = proletarian_dictatorship
+				FROM = {
+					government = fascist_dictatorship
+				}
 			}
 		}
 	}

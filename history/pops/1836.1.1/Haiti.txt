@@ -29,7 +29,7 @@
 	soldiers = {
 		culture = afro_antillean
 		religion = catholic
-		size = 2600
+		size = 100
 	}
 
 	farmers = {

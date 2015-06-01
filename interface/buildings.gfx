@@ -1,4 +1,22 @@
 objectTypes = {
+
+	EMFXActorType = {
+		name = "manufactory_fine_arts_academy"
+		actorfile = "gfx\anims\Manu_FineartsAcadamy.xac"
+		
+		idle   = "gfx\anims\Static.xsm"
+		
+		scale = 0.8
+	}
+
+	EMFXActorType = {
+		name = "manufactory_trading"
+		actorfile = "gfx\anims\Manu_TradeCompany.xac"
+		
+		idle   = "gfx\anims\Static.xsm"
+		
+		scale = 1.5
+	}
 	
 	EMFXActorType = {
 		name = "City_southamericagfx_0"
@@ -24,7 +42,7 @@ objectTypes = {
 		
 		idle   = "gfx\anims\Static.xsm"
 		
-		scale = 0.8
+		scale = 1.5
 	}
 	
 		EMFXActorType = {

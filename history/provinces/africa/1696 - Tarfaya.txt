@@ -1,4 +1,6 @@
+owner = MOR
+controller = MOR
 add_core = MOR
 trade_goods = fish
-terrain = coastal_desert
+terrain = semidesert
 life_rating = 15

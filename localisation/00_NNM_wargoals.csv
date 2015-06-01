@@ -25,6 +25,7 @@ AGRESSION_WAR_HOLY_LAND_NAME;$ORDER$$FIRST$-$SECOND$ Levantine War;;;;;;;;;;;;;x
 NORMAL_WAR_BRITISH_RAJ_NAME;$ORDER$$SECOND$ War of the British Raj;;;;;;;;;;;;;x,,,
 AGRESSION_WAR_BRITISH_RAJ_NAME;$ORDER$$SECOND$ War of the British Raj;;;;;;;;;;;;;x,,,
 NORMAL_CIVIL_WAR_NAME_USA_FSA;$ORDER$American Civil War;$ORDER$ guerre de rébellion;$ORDER$Rebellionskrieg;;;;;;;;;;;x,,,
+NORMAL_CIVIL_WAR_NAME_USA_CSA_USA;$ORDER$American Civil War;$ORDER$ guerre de rébellion;$ORDER$Rebellionskrieg;;;;;;;;;;;x
 NORMAL_WAR_CHINA_REUNIFICATION;$ORDER$ War of Chinese Reunification;Guerre $ORDER$$FIRST$-$SECOND$;$ORDER$$FIRST$-$SECOND$ Krieg;Baza;Base:;Base:;Alap:;Základna:;;;;;;;x;;;;;;;;;;;;;;,,,
 AGRESSION_WAR_CHINA_REUNIFICATION;$ORDER$ War of Chinese Reunification;Guerre $ORDER$$FIRST$-$SECOND$;$ORDER$$FIRST$-$SECOND$ Krieg;Baza;Base:;Base:;Alap:;Základna:;;;;;;;x;;;;;;;;;;;;;;,,,
 NORMAL_WAR_SAHEL_JIHAD_NAME;$ORDER$$FIRST$ Jihad;;;;;;;;;;;;;x,,,

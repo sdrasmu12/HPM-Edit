@@ -2,9 +2,9 @@
 
 #Asia
 ATJ = {
-	value = 25
-	level = 5
-	influence_value = 0
+	value = 150
+	level = 4
+	influence_value = 50
 }
 BUR = {
 	value = 125
@@ -24,12 +24,17 @@ SIA = {
 NEP = {
 	value = -25
 }
+
+JOH = {
+	value = -200
+}
+
 QNG ={
 	level = 0
 }
-JOH = { 
-	value = 50
-	level = 3
+NYE ={
+	value = -25
+	level = 0
 }
 
 ARC = { 
@@ -63,7 +68,7 @@ AFG = {
 }
 BHR = {
 	value = 50
-	level = 4
+	level = 3
 	influence_value = 0
 }
 ABU = {
@@ -78,29 +83,25 @@ OMA = {
 }
 NEJ = {
 	value = 100
-	level = 4
+	level = 2
 	influence_value = 0
 }
 FDL = {
-	value = 100
-	level = 4
+	value = 50
+	level = 2
 	influence_value = 0
 }
 
 KTH = {
-	value = 100
-	level = 4
+	value = 50
+	level = 2
 	influence_value = 0
 }
 
 MHR = {
-	value = 100
+	value = 50
 	level = 4
 	influence_value = 0
-}
-
-NYE = {
-	value = 50
 }
 
 
@@ -278,7 +279,7 @@ leader = {
 	type = sea
 	personality = charismatic
 	background = adventurer
-	prestige = 0.1
+	prestige = 0.4
 }
 
 leader = {
@@ -317,6 +318,7 @@ leader = {
 	type = land
 	personality = indifferent
 	background = gifted_administrator
+	prestige = 0.1
 }
 
 leader = {
@@ -326,7 +328,7 @@ leader = {
 	type = land
 	personality = heroic
 	background = school_of_defense
-	prestige = 0.3
+	prestige = 0.8
 }
 
 leader = {
@@ -336,6 +338,7 @@ leader = {
 	type = land
 	personality = dauntless
 	background = school_of_the_bayonet
+	prestige = 0.3
 }
 
 leader = {
@@ -345,6 +348,7 @@ leader = {
 	type = land
 	personality = doughty
 	background = school_of_offense
+	prestige = 0.2
 }
 
 leader = {
@@ -866,11 +870,11 @@ army = {
 }
 army = {
 	name = "5th Indian Division"
-	location = 1236
+	location = 1239
 	regiment = {
 		name= "1.5th Indian Division"
 		type = infantry
-		home = 1236
+		home = 1239
 	}
 
 	regiment = {

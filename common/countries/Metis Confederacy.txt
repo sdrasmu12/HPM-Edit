@@ -1,5 +1,5 @@
 color = { 221  186  163 }
-graphical_culture = Generic
+graphical_culture = BritishGC
 
 party = {
 	name = "CAN_liberal"
@@ -59,7 +59,7 @@ party = {
 
 party = {
 	name = "CAN_socialist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -73,7 +73,7 @@ party = {
 
 party = {
 	name = "CAN_communist"
-	start_date = 1845.1.1
+	start_date = 1848.1.1
 	end_date = 2000.1.1
 
 	ideology = communist

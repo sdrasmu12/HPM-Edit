@@ -387,7 +387,7 @@ political_decisions = {
 		effect = {
 			add_country_modifier = {
 				name = prussian_general_staff
-				duration = -1
+				duration = 10950
 			}
 			prestige = 5
 			set_country_flag = von_moltke
@@ -792,6 +792,30 @@ political_decisions = {
 				}
 				country_event = 33025
 			}
+		}
+	}
+	
+	annex_limburg = {
+		picture = treaty_signing
+		potential = {
+			has_country_flag = limburg_crisis
+			LBG = { exists = yes }
+		}
+		
+		allow = {
+			war = no
+			is_sphere_leader_of = LBG
+			LBG = {
+				exists = yes
+				is_vassal = no
+			}
+		}
+		
+		effect = {
+			clr_country_flag = limburg_crisis
+			any_country = { clr_country_flag = limburg_crisis_NET }
+			any_country = { limit = { has_country_flag = support_netherlands } clr_country_flag = support_netherlands leave_alliance = NET }
+			inherit = LBG
 		}
 	}
 }

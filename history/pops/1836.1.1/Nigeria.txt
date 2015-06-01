@@ -1468,7 +1468,7 @@
 	farmers = {
 		culture = african_minor
 		religion = sunni
-		size = 7225
+		size = 19225
 	}
 
 	aristocrats = {
@@ -1498,13 +1498,13 @@
 	farmers = {
 		culture = african_minor
 		religion = animist
-		size = 1800
+		size = 13800
 	}
 
 	slaves = {
 		culture = african_minor
 		religion = animist
-		size = 2000
+		size = 10000
 	}
 }
 #Hausaland Region (3056000)
@@ -1538,7 +1538,7 @@
 	farmers = {
 		culture = hausa
 		religion = sunni
-		size = 120125
+		size = 180125
 	}
 
 	aristocrats = {
@@ -1568,13 +1568,13 @@
 	farmers = {
 		culture = hausa
 		religion = animist
-		size = 27325
+		size = 47325
 	}
 
 	slaves = {
 		culture = hausa
 		religion = animist
-		size = 14000
+		size = 74000
 	}
 
 	aristocrats = {
@@ -1604,7 +1604,7 @@
 	farmers = {
 		culture = fulbe
 		religion = sunni
-		size = 32925
+		size = 102925
 	}
 }
 #Kebbi (252000/63000 POPS)
@@ -1734,7 +1734,7 @@
 	farmers = {
 		culture = hausa
 		religion = sunni
-		size = 90100
+		size = 150100
 	}
 
 	aristocrats = {
@@ -1764,13 +1764,13 @@
 	farmers = {
 		culture = hausa
 		religion = animist
-		size = 25500
+		size = 45500
 	}
 
 	slaves = {
 		culture = hausa
 		religion = animist
-		size = 14000
+		size = 54000
 	}
 
 	aristocrats = {
@@ -1800,7 +1800,7 @@
 	farmers = {
 		culture = fulbe
 		religion = sunni
-		size = 20025
+		size = 100025
 	}
 }
 #Sokoto (888000/220000 POPS)
@@ -1984,7 +1984,7 @@
 	farmers = {
 		culture = hausa
 		religion = sunni
-		size = 53700
+		size = 83700
 	}
 
 	aristocrats = {
@@ -2014,13 +2014,13 @@
 	farmers = {
 		culture = hausa
 		religion = animist
-		size = 10925
+		size = 35925
 	}
 
 	slaves = {
 		culture = hausa
 		religion = animist
-		size = 7000
+		size = 47000
 	}
 
 	aristocrats = {
@@ -2050,7 +2050,7 @@
 	farmers = {
 		culture = fulbe
 		religion = sunni
-		size = 23350
+		size = 78350
 	}
 }
 #Adamawa Region (140000) #see Cameroun.txt for balance of region   

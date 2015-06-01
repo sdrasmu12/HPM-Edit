@@ -7,10 +7,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
+		slavery = yes_slavery
 		NOT = { has_global_flag = american_civil_war_has_happened }
 		has_country_flag = john_browns_raid
 		has_country_flag = dred_scott_decision
@@ -19,13 +16,14 @@ country_event = {
 			value = 0.4
 		}
 	}
-	
-	immediate = { clr_country_flag = the_slavery_debate
-				  CSA = { set_country_flag = the_slavery_debate }
-								}
+
+	immediate = {
+		clr_country_flag = the_slavery_debate
+		CSA = { set_country_flag = the_slavery_debate }
+	}
 	
 	mean_time_to_happen = {
-		months = 4
+		months = 1
 		modifier = {
 			factor = 20
 			NOT = {
@@ -187,10 +185,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-		}
+		slavery = yes_slavery
 		NOT = {
 			has_global_flag = american_civil_war_has_happened
 		}
@@ -199,20 +194,20 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 		modifier = {
-			factor = 20
+			factor = 10
 			NOT = {
 				year = 1845
 			}
 		}
 		modifier = {
-			factor = 10
+			factor = 5
 			year = 1845
 			NOT = {
 				year = 1855
 			}
 		}
 		modifier = {
-			factor = 5
+			factor = 1.1
 			year = 1855
 			NOT = {
 				year = 1860
@@ -247,10 +242,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
+		slavery = yes_slavery
 		NOT = {
 			has_country_flag = john_browns_raid
 			has_global_flag = american_civil_war_has_happened
@@ -315,10 +307,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-		}
+		slavery = yes_slavery
 		NOT = {
 			has_country_flag = dred_scott_decision
 			has_global_flag = american_civil_war_has_happened
@@ -388,10 +377,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		state_scope = {
 			is_slave = yes
@@ -588,10 +574,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
 		slavery = yes_slavery
-		slavery = freedom_of_womb
-		}
 		any_state = {
 			is_slave = yes
 		}
@@ -773,100 +756,6 @@ country_event = {
 	}
 }
 
-#Yankee Doodle
-country_event = {
-	id = 16061
-	title = "EVTNAME16060"
-	desc = "EVTDESC16060"
-	picture = "yankee"
-	
-	trigger = {
-		tag = USA
-		slavery = freedom_of_womb
-		any_state = {
-			is_slave = no
-		}
-		NOT = {
-			has_global_flag = american_civil_war_has_happened
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 600
-		modifier = {
-			factor = 0.9
-			average_consciousness = 5
-		}
-		modifier = {
-			factor = 0.9
-			average_consciousness = 6
-		}
-		modifier = {
-			factor = 1.1
-			NOT = {
-				average_consciousness = 5
-			}
-		}
-		modifier = {
-			factor = 20
-			NOT = {
-				year = 1845
-			}
-		}
-		modifier = {
-			factor = 10
-			year = 1845
-			NOT = {
-				year = 1855
-			}
-		}
-		modifier = {
-			factor = 5
-			year = 1855
-			NOT = {
-				year = 1860
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA16060"
-		random_state = {
-			limit = {
-				is_slave = no
-				is_colonial = no
-			}
-			any_pop = {
-				dominant_issue = {
-					value = no_slavery
-					factor = 0.05
-				}
-				ideology = {
-					value = liberal
-					factor = 0.10
-				}
-				consciousness = 1
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB16060"
-		random_state = {
-			limit = {
-				is_slave = no
-				is_colonial = no
-			}
-			farmers = {
-				consciousness = 1.5
-			}
-			labourers = {
-				consciousness = 1.5
-			}
-		}
-	}
-}
-
 #Fire-Eaters
 province_event = {
 	id = 16070
@@ -877,10 +766,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		state_scope = {
 			is_slave = yes
@@ -964,10 +850,7 @@ country_event = {
 	picture = "prisonworkers"
 		
 	trigger = {
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
+		slavery = yes_slavery
 		tag = USA
 		any_state = {
 			is_slave = yes
@@ -1063,10 +946,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		state_scope = {
 			is_colonial = no
@@ -1243,100 +1123,6 @@ province_event = {
 	}
 }
 
-#Anti-Slavery Society
-province_event = {
-	id = 16101
-	title = "EVTNAME16100"
-	desc = "EVTDESC16100"
-	
-	trigger = {
-		owner = {
-			tag = USA
-			slavery = freedom_of_womb
-		}
-		state_scope = {
-			is_colonial = no
-		}
-		any_neighbor_province = {
-			state_scope = {
-				is_slave = no
-			}
-		}
-		NOT = {
-			has_global_flag = american_civil_war_has_happened
-			has_province_modifier = american_anti_slavery_society
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 100 #1000
-		modifier = {
-			factor = 0.9
-			average_consciousness = 5
-		}
-		modifier = {
-			factor = 0.9
-			average_consciousness = 6
-		}
-		modifier = {
-			factor = 1.1
-			NOT = {
-				average_consciousness = 5
-			}
-		}
-		modifier = {
-			factor = 20
-			NOT = {
-				year = 1845
-			}
-		}
-		modifier = {
-			factor = 10
-			year = 1845
-			NOT = {
-				year = 1855
-			}
-		}
-		modifier = {
-			factor = 5
-			year = 1855
-			NOT = {
-				year = 1860
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA16100"
-		add_province_modifier = {
-			name = american_anti_slavery_society
-			duration = 365
-		}
-		any_pop = {
-			dominant_issue = {
-				value = no_slavery
-				factor = 0.05
-			}
-			ideology = {
-				value = liberal
-				factor = 0.05
-			}
-			militancy = 0.2 #2
-		}
-	}
-
-	option = {
-		name = "EVTOPTB16100"
-		any_pop = {
-			consciousness = 0.5 #1.5
-			ideology = {
-				value = conservative
-				factor = 0.05
-			}
-		}
-	}
-}
-
 #Slave Market
 country_event = {
 	id = 16110
@@ -1347,10 +1133,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-		}
+		slavery = yes_slavery
 		any_state = {
 			is_slave = yes
 		}
@@ -1535,106 +1318,6 @@ province_event = {
 	}
 }
 
-#Abolitionist Pamphlets
-province_event = {
-	id = 16121
-	title = "EVTNAME16120"
-	desc = "EVTDESC16120"
-	
-	trigger = {
-		owner = {
-			tag = USA
-			slavery = freedom_of_womb
-		}
-		state_scope = {
-			is_slave = yes
-			is_colonial = no
-		}
-		NOT = {
-			has_global_flag = american_civil_war_has_happened
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 100 #600
-		modifier = {
-			factor = 0.9
-			average_consciousness = 5
-		}
-		modifier = {
-			factor = 0.9
-			average_consciousness = 6
-		}
-		modifier = {
-			factor = 1.1
-			NOT = {
-				average_consciousness = 5
-			}
-		}
-		modifier = {
-			factor = 20
-			NOT = {
-				year = 1845
-			}
-		}
-		modifier = {
-			factor = 10
-			year = 1845
-			NOT = {
-				year = 1855
-			}
-		}
-		modifier = {
-			factor = 5
-			year = 1855
-			NOT = {
-				year = 1860
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA16120"
-		poor_strata = {
-			dominant_issue = {
-				value = no_slavery
-				factor = 0.02
-			}
-			consciousness = 0.2 #2
-			ideology = {
-				value = liberal
-				factor = 0.05
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB16120"
-		rich_strata = {
-			dominant_issue = {
-				value = yes_slavery
-				factor = 0.05
-			}
-			consciousness = 0.15 #1.5
-			ideology = {
-				value = conservative
-				factor = 0.20
-			}
-		}
-		middle_strata = {
-			dominant_issue = {
-				value = yes_slavery
-				factor = 0.05
-			}
-			consciousness = 0.15 #1.5
-			ideology = {
-				value = conservative
-				factor = 0.10
-			}
-		}
-	}
-}
-
 #Fugitive Slave 
 province_event = {
 	id = 16130
@@ -1644,10 +1327,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb
-			}
+			slavery = yes_slavery
 		}
 		state_scope = {
 			is_slave = no
@@ -1748,10 +1428,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb
-			}
+			slavery = yes_slavery
 		}
 		state_scope = {
 			is_slave = yes
@@ -1837,10 +1514,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb
-			}
+			slavery = yes_slavery
 		}
 		state_scope = {
 			is_slave = no
@@ -2007,83 +1681,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = 16161
-	title = "EVTNAME16160"
-	desc = "EVTDESC16160"
-	picture = "Liberator"
-	
-	trigger = {
-		tag = USA
-		slavery = freedom_of_womb
-		any_state = {
-			is_slave = yes
-		}
-		NOT = {
-			has_global_flag = american_civil_war_has_happened
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 750
-		modifier = {
-			factor = 0.9
-			average_consciousness = 5
-		}
-		modifier = {
-			factor = 0.9
-			average_consciousness = 6
-		}
-		modifier = {
-			factor = 0.5
-			NOT = {
-				average_consciousness = 5
-			}
-		}
-		modifier = {
-			factor = 20
-			NOT = {
-				year = 1845
-			}
-		}
-		modifier = {
-			factor = 10
-			year = 1845
-			NOT = {
-				year = 1855
-			}
-		}
-		modifier = {
-			factor = 5
-			year = 1855
-			NOT = {
-				year = 1860
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA16160"
-		any_state = {
-			limit = {
-				is_slave = no
-				is_colonial = no
-			}
-			any_pop = {
-				consciousness = 0.5
-				dominant_issue = {
-					value = no_slavery
-					factor = 0.1
-				}
-				ideology = {
-					value = liberal
-					factor = 0.05
-				}
-			}
-		}
-	}
-}
-
 #Slave Power
 country_event = {
 	id = 16170
@@ -2093,10 +1690,7 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-		}
+		slavery = yes_slavery
 		any_state = {
 			is_slave = yes
 		}
@@ -2175,8 +1769,12 @@ province_event = {
 			tag = USA
 			slavery = yes_slavery
 		}
-		state_scope = { is_colonial = yes }
-		owner = { slavery = yes_slavery }
+		state_scope = {
+			is_colonial = yes
+		}
+		owner = {
+			slavery = yes_slavery
+		}
 		has_country_flag = kansas_nebraska_act_acting
 		NOT = {
 			has_global_flag = american_civil_war_has_happened
@@ -2256,101 +1854,6 @@ province_event = {
 	}
 }
 
-province_event = {
-	id = 16181
-	title = "EVTNAME16180"
-	desc = "EVTDESC16180"
-	
-	trigger = {
-		owner = {
-			tag = USA
-			slavery = freedom_of_womb
-		}
-		state_scope = {
-			is_colonial = yes
-		}
-		owner = {
-			slavery = freedom_of_womb
-		}
-		has_country_flag = kansas_nebraska_act_acting
-		NOT = {
-			has_global_flag = american_civil_war_has_happened
-			has_province_modifier = free_staters
-		}
-		any_neighbor_province = {
-			state_scope = { 
-				OR = { 
-					is_slave = no
-					is_colonial = yes
-				}
-			}
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 100 #750
-		modifier = {
-			factor = 0.3
-			has_province_modifier = border_ruffians
-		}
-		modifier = {
-			factor = 0.9
-			owner = {
-				has_country_flag = emigrant_aid_company
-			}
-		}
-		modifier = {
-			factor = 20
-			NOT = {
-				year = 1845
-			}
-		}
-		modifier = {
-			factor = 10
-			year = 1845
-			NOT = {
-				year = 1855
-			}
-		}
-		modifier = {
-			factor = 5
-			year = 1855
-			NOT = {
-				year = 1860
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA16180"
-		add_province_modifier = {
-			name = free_staters
-			duration = 365
-		}
-		any_pop = {
-			dominant_issue = {
-					value = no_slavery
-					factor = 0.05
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB16180"
-		owner = {
-			any_state = {
-				limit = {
-					is_slave = no
-					is_colonial = no
-				}
-				any_pop = {
-					consciousness = 0.15 #0.5
-				}
-			}
-		}
-	}
-}
-
 #Border Ruffians
 province_event = {
 	id = 16190
@@ -2360,20 +1863,14 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		state_scope = {
 			is_colonial = yes
 		}
 		has_country_flag = kansas_nebraska_act_acting
 		owner = {
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		NOT = {
 			has_province_modifier = border_ruffians
@@ -2456,10 +1953,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		has_province_modifier = border_ruffians
 		has_province_modifier = free_staters
@@ -2519,10 +2013,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		has_province_modifier = border_ruffians
 		NOT = {
@@ -2571,10 +2062,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 			NOT = {
 				has_country_flag = emigrant_aid_company
 			}
@@ -2644,10 +2132,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		has_province_modifier = free_staters
 		NOT = {
@@ -2712,10 +2197,7 @@ province_event = {
 	trigger = {
 		owner = {
 			tag = USA
-			OR = {
 			slavery = yes_slavery
-			slavery = freedom_of_womb
-			}
 		}
 		has_province_modifier = border_ruffians
 		NOT = {
@@ -2776,44 +2258,20 @@ province_event = {
 	title = "EVTNAME16250"
 	desc = "EVTDESC16250"
 	
-
 	trigger = {
 		NOT = { is_core = CSA }
 		continent = north_america
 		owner = {
 			tag = USA
-			OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb
-			}
-			NOT = { has_global_flag = american_civil_war_has_happened }
-		}
-		NOT = {
-			OR = {
-			province_id = 173
-			province_id = 174
-			province_id = 175
-			province_id = 176
-			province_id = 177
-			province_id = 159
-			province_id = 160
-			province_id = 161
-			province_id = 162
-			province_id = 155
-			province_id = 156
-			province_id = 157
-			province_id = 158
+			slavery = yes_slavery
+			NOT = {
+				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		any_neighbor_province = { state_scope = { is_slave = yes } }
-		state_scope = { is_slave = yes }
-		OR = {
-			yes_slavery = 10
-			AND = {
-			freedom_of_womb = 10
-			slavery = freedom_of_womb
-			}
+		state_scope = {
+			is_slave = yes
 		}
+		yes_slavery = 10
 		OR = {
 			average_consciousness = 5
 			owner = { ruling_party_ideology = liberal }
@@ -2831,15 +2289,6 @@ province_event = {
 		modifier = {
 			factor = 0.5
 			yes_slavery = 15
-		}
-		modifier = {
-			factor = 0.1
-			any_neighbor_province = { is_core = CSA }
-		}
-		
-		modifier = {
-			factor = 0.5
-			freedom_of_womb = 15
 		}
 		modifier = {
 			factor = 0.5
@@ -2875,7 +2324,7 @@ country_event = {
 	
 	trigger = {
 		tag = USA
-		slavery = freedom_of_womb
+		slavery = yes_slavery
 		year = 1852
 		NOT = { has_global_flag = american_civil_war_has_happened }
 	}
@@ -2895,7 +2344,7 @@ country_event = {
 			consciousness = 2
 			dominant_issue = {
 				factor = 0.1
-				value = no_slavery
+				value = freedom_of_womb
 			}
 			ideology = {
 				value = liberal
@@ -2909,7 +2358,7 @@ country_event = {
 			consciousness = 2
 			dominant_issue = {
 				factor = 0.05
-				value = freedom_of_womb
+				value = yes_slavery
 			}
 			ideology = {
 				value = conservative
@@ -2930,8 +2379,9 @@ country_event = {
 		tag = USA
 		year = 1841
 		slavery = yes_slavery
-		NOT = { has_global_flag = american_civil_war_has_happened }
-		NOT = { has_country_flag = the_amistad }
+		NOT = {
+			has_global_flag = american_civil_war_has_happened
+		}
 	}
 	
 	fire_only_once = yes
@@ -2948,40 +2398,6 @@ country_event = {
 			dominant_issue = {
 				factor = 0.05
 				value = freedom_of_womb
-			}
-		}
-	}
-}
-
-# The Amistad Decision 2
-country_event = {
-	id = 16311
-	title = "EVTNAME16310"
-	desc = "EVTDESC16310"
-	picture = "Amistad"
-	
-	trigger = {
-		tag = USA
-		year = 1841
-		slavery = freedom_of_womb
-		NOT = { has_global_flag = american_civil_war_has_happened }
-		NOT = { has_country_flag = the_amistad }
-	}
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		months = 4
-	}
-	
-	option = {
-		name = "EVTOPTA16310"
-		set_country_flag = the_amistad
-		any_pop = {
-			consciousness = 2
-			dominant_issue = {
-				factor = 0.05
-				value = no_slavery
 			}
 		}
 	}
@@ -3005,24 +2421,13 @@ country_event = {
 				add_core = USA
 			}
 		}
-		random_country = {
-			limit = {
-				tag = FROM
-				primary_culture = anglo_canadian
-			}
-			THIS = { add_accepted_culture = anglo_canadian }
-		}
+		
 		inherit = FROM
 		random_owned = {
 			limit = {
 				is_core = RGR
 				state_scope = { is_slave = no }
-				owner = { 
-				OR = {
-				slavery = yes_slavery
-				slavery = freedom_of_womb				
-					}
-				}
+				owner = { slavery = yes_slavery }
 			}
 			state_scope = { is_slave = yes }
 		}
@@ -3138,7 +2543,7 @@ country_event = {
 		name = "EVTOPTA16420"
 		any_pop = {
 			limit = {
-				culture = dakota
+				has_pop_culture = dakota
 			}
 			militancy = 8
 		}
@@ -3167,7 +2572,7 @@ country_event = {
 		prestige = -5
 		any_pop = {
 			limit = {
-				culture = dakota
+				has_pop_culture = dakota
 			}
 			militancy = 10
 			consciousness = 10
@@ -3196,7 +2601,7 @@ country_event = {
 		name = "EVTOPTA16430"
 		any_pop = {
 			limit = {
-				culture = dakota
+				has_pop_culture = dakota
 			}
 			militancy = -10
 			consciousness = -10
@@ -3233,7 +2638,7 @@ country_event = {
 			state_scope = {
 				any_pop = {
 					limit = {
-						culture = native_american_minor
+						has_pop_culture = native_american_minor
 					}
 					militancy = 8
 				}
@@ -3273,7 +2678,7 @@ province_event = {
 		state_scope = {
 			any_pop = {
 				limit = {
-					culture = native_american_minor
+					has_pop_culture = native_american_minor
 				}
 				militancy = 10
 			}
@@ -3306,7 +2711,7 @@ country_event = {
 		name = "EVTOPTA16450"
 		any_pop = {
 			limit = {
-				culture = native_american_minor
+				has_pop_culture = native_american_minor
 			}
 			militancy = -10
 			consciousness = -10
@@ -3412,6 +2817,6 @@ country_event = {
 				issue = no_slavery
 				}
 			}
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		}
 	}

@@ -1,3 +1,9 @@
+AGC = {
+	value = -400
+}
+OMA = {
+	value = 400
+}
 ENG = {
 	value = 100
 }
@@ -84,8 +90,8 @@ army = {
 	}
 
 	regiment = {
-		name= "5. Brigada de Infantaria"
-		type = infantry
+		name= "1. Brigada de Artilharia"
+		type = artillery
 		home = 522
 	}
 
@@ -190,3 +196,20 @@ navy = {
 
 }
 
+leader = {
+	name = "Duke of Saldanha"
+	type = land
+	date = 1825.8.20
+	background = aristocrat
+	personality = soldierly
+	prestige = 0.1
+	}
+	
+leader = {
+	name = "José Joaquim da Rosa Coelho"
+	type = sea
+	date = 1820.12.14
+	background = generals_aide
+	personality = stout
+	prestige = 0.05
+	}

@@ -3,4 +3,3 @@ controller = ECU
 add_core = ECU
 trade_goods = timber
 life_rating = 30
- 

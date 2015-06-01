@@ -757,7 +757,7 @@
 		religion = theravada
 		size = 6475
 	}
-	
+
 	slaves = {
 		culture = lao
 		religion = theravada
@@ -1027,7 +1027,13 @@
 	farmers = {
 		culture = karen
 		religion = theravada
-		size = 30950
+		size = 30650
+	}
+	
+	farmers = {
+		culture = karen
+		religion = protestant
+		size = 300
 	}
 
 	aristocrats = {
@@ -1125,7 +1131,13 @@
 	farmers = {
 		culture = karen
 		religion = theravada
-		size = 34825
+		size = 34525
+	}
+	
+	farmers = {
+		culture = karen
+		religion = protestant
+		size = 300
 	}
 
 	aristocrats = {
@@ -1185,7 +1197,13 @@
 	farmers = {
 		culture = burmese
 		religion = theravada
-		size = 24050
+		size = 23050
+	}
+	
+	farmers = {
+		culture = malay
+		religion = sunni
+		size = 1000
 	}
 
 }
@@ -1226,7 +1244,7 @@
 	farmers = {
 		culture = burmese
 		religion = sunni
-		size = 11875
+		size = 14875
 	}
 
 	aristocrats = {
@@ -1262,7 +1280,7 @@
 	farmers = {
 		culture = burmese
 		religion = theravada
-		size = 18825
+		size = 15825
 	}
 
 	clergymen = { 

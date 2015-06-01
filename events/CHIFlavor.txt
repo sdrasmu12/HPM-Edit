@@ -129,6 +129,20 @@ country_event = {
 		}
 		random_country = {
 			limit = {
+				tag = TNT
+				vassal_of = THIS
+			}
+			THIS = { release_vassal = TNT }
+		}
+		random_country = {
+			limit = {
+				tag = KML
+				vassal_of = THIS
+			}
+			THIS = { release_vassal = KML }
+		}
+		random_country = {
+			limit = {
 				tag = TIB
 				vassal_of = THIS
 			}
@@ -142,15 +156,23 @@ country_event = {
 			owner = {
 				any_owned = {
 					limit = {
-						OR = {
-							region = TIB_1587
-							region = NEP_1326
-						}
+						region = TIB_1591
 					}
 					secede_province = TIB
 				}
 			}
 		}
+		random = {
+			chance = 70
+			random_country = {
+				limit = {
+					tag = MGL
+					vassal_of = THIS
+					}
+				government = theocracy
+				}
+		}
+		
 		random_country = {
 			limit = {
 				tag = MGL
@@ -178,7 +200,6 @@ country_event = {
 		}
 		CHI_1468 = { remove_core = CHI }
 		CHI_1465 = { remove_core = CHI }
-		1469 = { remove_core = CHI }
 		government = presidential_dictatorship
 		ruling_party_ideology = reactionary
 		political_reform = none_voting
@@ -279,10 +300,7 @@ country_event = {
 			owner = {
 				any_owned = {
 					limit = {
-						OR = {
-							region = TIB_1587
-							region = NEP_1326
-						}
+						region = TIB_1591
 					}
 					secede_province = TIB
 				}
@@ -315,7 +333,6 @@ country_event = {
 		}
 		CHI_1468 = { remove_core = CHI }
 		CHI_1465 = { remove_core = CHI }
-		1469 = { remove_core = CHI }
 
 		government = democracy
 		ruling_party_ideology = liberal
@@ -739,6 +756,10 @@ country_event = {
 	
 	option = {
 		name = "EVT1645091OPTA"
+		add_country_modifier = {
+			name = global_baby_boom
+			duration = 7300
+		}
 		remove_country_modifier = western_influences
 		add_country_modifier = {
 			name = "uncivilized_isolationism"
@@ -2422,8 +2443,6 @@ country_event = {
 		CHI_1082 = { add_core = MCK }
 		CHI_1479 = { add_core = MCK }
 		CHI_1552 = { add_core = MCK }
-		1081 = { add_core = MCK }
-		2697 = { add_core = MCK }
 		1533 = { add_core = MCK }
 		random_owned = {
 			limit = {
@@ -3267,7 +3286,7 @@ country_event = {
 					government = hms_government
 				}
 			}
-			NOT = { prestige = 100 }
+			NOT = { prestige = 200 }
 		}
 	}
 	
@@ -5220,6 +5239,7 @@ country_event = {
 		war = no
 		has_global_flag = warlord_era_has_begun
 		is_culture_group = east_asian
+		is_vassal = no
 		any_neighbor_country = {
 
 			is_culture_group = east_asian
@@ -5235,7 +5255,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 6
+		months = 36
 		modifier = {
 			factor = 0.5
 			any_neighbor_country = {
@@ -5258,7 +5278,7 @@ country_event = {
 		}
 		add_country_modifier = {
 			name = drive_to_reunify
-			duration = 365
+			duration = 1825
 		}
 		random_country = {
 			limit = {

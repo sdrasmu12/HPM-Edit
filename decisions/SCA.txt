@@ -1,7 +1,97 @@
 political_decisions = {
 	
+	
+	abandon_the_finnish = {
+		picture = old_finnish_map
+		potential = {
+			NOT = { tag = SCA }
+			accepted_culture = finnish
+			has_country_modifier = leader_of_kalmar
+		}
+		
+		allow = {
+			citizenship_policy = residency
+		}
+		
+		effect = {
+			remove_accepted_culture = finnish
+			any_pop = {
+				limit = { culture = finnish }
+			militancy = 3
+			consciousness = 6
+			}
+		}
+		
+		ai_will_do = { factor = 1 	}
+	}
+	
+	claim_finland = {
+		picture = old_finnish_map
+		potential = {
+			tag = SCA
+			343 = { NOT = { is_core = THIS } }
+		}
+		
+		allow = {
+			OR = {
+				war_policy = jingoism
+				war_policy = pro_military
+			}
+		}
+		
+		effect = {
+			badboy = 2
+			FIN = { all_core = { add_core = SCA } }
+		}
+		
+		ai_will_do = { factor = 1 	}
+	}
+	
+	embrace_the_finns = {
+		picture = form_scandinavia
+		potential = {
+			tag = SCA
+			NOT = { accepted_culture = finnish }
+		}
+		
+		allow = {
+			citizens_rights = all_voting_pops
+			citizenship_policy = full_citizenship
+		}
+		
+		effect = {
+			add_accepted_culture = finnish	
+			any_pop = {
+				limit = { culture = finnish }
+			militancy = -1
+			consciousness = -3
+			}
+			
+			any_pop = {
+				limit = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			consciousness = 1
+			}
+			
+			any_pop = {
+				limit = {
+					is_primary_culture = no
+					is_accepted_culture = no
+				}
+			consciousness = 3
+			}
+		}
+		
+		ai_will_do = { factor = 1 	}
+	}
+	
 	move_capital_to_gothenburg = {
 		picture = declare_republic_of_neuchatel
+		alert = no
 		potential = {
 			tag = SCA
 			owns = 329 # Gothenburg
@@ -49,10 +139,6 @@ political_decisions = {
 					ICL = { has_country_modifier = kalmar_union }
 				}
 				AND = {
-					NOT = { tag = FIN }
-					FIN = { has_country_modifier = kalmar_union }
-				}
-				AND = {
 					NOT = { tag = SCH }
 					SCH = { has_country_modifier = kalmar_union }
 				}
@@ -60,6 +146,7 @@ political_decisions = {
 		}
 		
 		allow = {
+			NOT = { accepted_culture = finnish }
 			prestige = 300
 			is_greater_power = yes
 			war = no
@@ -86,9 +173,12 @@ political_decisions = {
 			prestige = 20
 			all_core = { remove_core = THIS }
 			change_tag = SCA
+			remove_country_modifier = kalmar_union
+			remove_country_modifier = customs_union
 			any_country = {
 				limit = {
 					is_culture_group = scandinavian
+					NOT = { primary_culture = finnish }
 					NOT = { has_country_flag = post_colonial_country }
 				}
 				all_core = { add_core = SCA }
@@ -116,6 +206,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = scandinavian
 			NOT = { exists = SCA }
+			NOT = { primary_culture = finnish }
 			NOT = { has_global_flag = kalmar_reformed }
 			NOT = { has_country_flag = greater_finland }
 			NOT = { has_country_flag = post_colonial_country }
@@ -149,20 +240,13 @@ political_decisions = {
 					in_sphere = THIS
 				}
 			}
-			FIN = {
-				OR = {
-					tag = THIS
-					exists = no
-					relation = { who = THIS value = 100 }
-					in_sphere = THIS
-				}
-			}
 		}
 		
 		effect = {
 			any_country = {
 				limit = {
 					is_culture_group = scandinavian
+					NOT = { primary_culture = finnish }
 					NOT = { tag = THIS }
 					NOT = { has_country_flag = post_colonial_country }
 					OR = {
@@ -207,10 +291,6 @@ political_decisions = {
 				AND = {
 					NOT = { tag = ICL }
 					ICL = { has_country_modifier = kalmar_union }
-				}
-				AND = {
-					NOT = { tag = FIN }
-					FIN = { has_country_modifier = kalmar_union }
 				}
 				AND = {
 					NOT = { tag = SCH }
@@ -270,10 +350,6 @@ political_decisions = {
 					ICL = { has_country_modifier = kalmar_union }
 				}
 				AND = {
-					NOT = { tag = FIN }
-					FIN = { has_country_modifier = kalmar_union }
-				}
-				AND = {
 					NOT = { tag = SCH }
 					SCH = { has_country_modifier = kalmar_union }
 				}
@@ -292,7 +368,6 @@ political_decisions = {
 			add_accepted_culture = swedish
 			add_accepted_culture = danish
 			add_accepted_culture = norwegian
-			add_accepted_culture = finnish
 			add_accepted_culture = icelandic
 			any_country = {
 				limit = {
@@ -328,10 +403,6 @@ political_decisions = {
 					is_greater_power = no
 				}
 				ICL = { 
-					has_country_modifier = leader_of_kalmar	
-					is_greater_power = no
-				}
-				FIN = { 
 					has_country_modifier = leader_of_kalmar	
 					is_greater_power = no
 				}
@@ -425,7 +496,6 @@ political_decisions = {
 					add_accepted_culture = swedish
 					add_accepted_culture = danish
 					add_accepted_culture = norwegian
-					add_accepted_culture = finnish
 					add_accepted_culture = icelandic
 				}
 			}

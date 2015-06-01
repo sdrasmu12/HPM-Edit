@@ -44,7 +44,7 @@ political_decisions = {
 				NOT = {
 					relation = {
 						who = USA
-						value = 50
+						value = -10
 					}
 				}
 			}
@@ -174,6 +174,7 @@ political_decisions = {
 			has_global_flag = berlin_conference
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
+			capital_scope = { continent = europe }
 			NOT = { has_global_flag = merina_monarchy_is_over }
 			MAD = {
 				exists = yes
@@ -422,8 +423,8 @@ political_decisions = {
 		picture = embrace_minority
 		potential = {
 			tag = FRA
-			any_owned_province = { is_core = OCC }
-			OCC = { exists = no }
+			any_owned_province = { is_core = BRT }
+			BRT = { exists = no }
 			NOT = {
 				has_country_flag = enacted_french_schooling
 				school_reforms = no_schools
@@ -438,12 +439,10 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = enacted_french_schooling
-			remove_accepted_culture = occitan
 			remove_accepted_culture = picard
 			any_owned = {
 				limit = {
 					OR = {
-						is_core = OCC
 						is_core = BRT
 						culture = picard
 					}
@@ -453,7 +452,6 @@ political_decisions = {
 					duration = -1
 				}
 			}
-			OCC = { all_core = { remove_core = OCC } }
 			random_owned = {
 				limit = {
 					BRT = { exists = no }

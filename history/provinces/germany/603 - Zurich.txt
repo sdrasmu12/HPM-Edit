@@ -3,7 +3,6 @@ controller = SWI
 add_core = SWI
 trade_goods = cattle
 life_rating = 40
- 
 fort = 1
 state_building = {
 	level = 1
@@ -11,7 +10,7 @@ state_building = {
 	upgrade = yes
 }
 #state_building = {
-#	level = 4
+#	level = 1
 #	building = lumber_mill
 #	upgrade = yes
 #}

@@ -600,8 +600,16 @@
 		size = 1800
 	}
 }
-#Amapa (8000/2000 POPS)
-2414 = {
+
+#Macapa (8000/2000 POPS)
+2415 = {
+	clergymen = {
+		culture = brazilian
+		religion = catholic
+		size = 25
+	}
+
+	
 	aristocrats = {
 		culture = french
 		religion = catholic
@@ -647,47 +655,15 @@
 	farmers = {
 		culture = afro_antillean
 		religion = catholic
-		size = 150
+		size = 15
 	}
 
 	slaves = {
 		culture = afro_antillean
 		religion = catholic
-		size = 680
+		size = 80
 	}
-
-	clergymen = {
-		culture = amazonian
-		religion = animist
-		size = 25
-	}
-
-	artisans = {
-		culture = amazonian
-		religion = animist
-		size = 50
-	}
-
-	soldiers = {
-		culture = amazonian
-		religion = animist
-		size = 15
-	}
-
-	farmers = {
-		culture = amazonian
-		religion = animist
-		size = 910
-	}
-}
-#Macapa (8000/2000 POPS)
-2415 = {
-	clergymen = {
-		culture = brazilian
-		religion = catholic
-		size = 25
-	}
-
+	
 	artisans = {
 		culture = amazonian
 		religion = catholic
@@ -715,25 +691,25 @@
 	clergymen = {
 		culture = amazonian
 		religion = animist
-		size = 25
+		size = 50
 	}
 
 	artisans = {
 		culture = amazonian
 		religion = animist
-		size = 50
+		size = 100
 	}
 
 	soldiers = {
 		culture = amazonian
 		religion = animist
-		size = 15
+		size = 30
 	}
 
 	farmers = {
 		culture = amazonian
 		religion = animist
-		size = 900
+		size = 1810
 	}
 }
 #Altamira (12000/3000 POPS)
@@ -2115,13 +2091,13 @@
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = brazilian
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = brazilian
 		religion = catholic
@@ -2849,7 +2825,7 @@
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = brazilian
 		religion = catholic

@@ -1,5 +1,9 @@
+CRL = {
+	truce_until = 1837.1.1
+}
+
 AFG = {
-	value = 30
+	value = 110
 }
 ENG = {
 	value = 75
@@ -11,7 +15,7 @@ QNG = {
 leader = {
 	name = "Ranjit Singh"
 	type = land
-	date = 1800.1.1
+	date = 1810.1.1
 	personality = disciplined
 	background = natural_born_leader
 	prestige = 0.2

@@ -2,10 +2,9 @@ capital = 1818
 primary_culture = baguirmi
 religion = sunni
 government = absolute_monarchy
-plurality = 0.0
+plurality = 1
 nationalvalue = nv_tradition
-literacy = 0.00
-non_state_culture_literacy = 0
+literacy = 0.01
 
 # Political reforms
 slavery = yes_slavery

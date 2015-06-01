@@ -6,13 +6,13 @@ political_decisions = {
 		news_desc_short = "kiel_canal_NEWS_SHORT"
 		
 		potential = {
-			NOT = { 
-			has_global_flag = kiel_under_construction
-			is_canal_enabled = 1 }
+			NOT = { has_global_flag = kiel_under_construction }
+			NOT = { is_canal_enabled = 1 }
 			owns = 369
 			is_greater_power = yes
 			mechanical_production = 1
 		}
+		
 		allow = {
 			invention = machine_tools
 			invention = nitroglycerin
@@ -21,8 +21,8 @@ political_decisions = {
 		}
 		effect = {
 			set_global_flag = kiel_under_construction
-			country_event = 36976
 			369 = { secede_province = THIS }
+			country_event = 36976
 		}
 		ai_will_do = {
 			factor = 1
@@ -41,13 +41,8 @@ political_decisions = {
 		
 		picture = suezcanal
 		potential = {
-			NOT = {
-				OR = {
-					is_canal_enabled = 2 
-					has_global_flag = suez_canal_built
-					has_country_modifier = suez_canal_construction 
-					}
-				}
+			NOT = { is_canal_enabled = 2 }
+			NOT = { has_global_flag = suez_canal_built }
 			is_greater_power = yes
 			mechanical_production = 1
 		}
@@ -64,9 +59,16 @@ political_decisions = {
 		}
 		
 		effect = {
-			country_event = 36970
 			set_global_flag = suez_canal_built
+			random_country = {
+				limit = {
+					NOT = { tag = THIS }
+					owns = 1755
+				}
+				treasury = 7500
+			}
 			1755 = { secede_province = THIS }
+			country_event = 36970
 		}
 		
 		ai_will_do = {
@@ -77,6 +79,54 @@ political_decisions = {
 			}
 		}
 	}
+	
+	found_suez_canal_company = {
+		picture = suezcanalcompany
+		potential = {
+			NOT = { is_canal_enabled = 2 }
+			NOT = { has_global_flag = suez_canal_built }
+			NOT = { has_global_flag = suez_canal_company_founded }
+			is_greater_power = yes
+			mechanical_production = 1
+			EGY = {
+				OR = {
+					part_of_sphere = no 
+					in_sphere = THIS
+				}
+			}
+			EGY = { exists = yes owns = 1755 }
+		}
+		
+		allow = {
+			invention = machine_tools
+			invention = nitroglycerin		
+			iron_steamers = 1
+			money = 5000
+		}
+		
+		effect = {
+			set_global_flag = suez_canal_company_founded
+			prestige = 5
+			treasury = -4000
+			EGY = { treasury = 5000 }
+			relation = { who = EGY value = 75 }
+			diplomatic_influence = {
+				who = EGY
+				value = 75
+			}
+			any_country = {
+				limit = { NOT = { tag = THIS } is_greater_power = yes }
+				diplomatic_influence = {
+					who = EGY
+					value = -50
+				}
+			}
+		}
+		
+		ai_will_do = { 
+			factor = 1 
+		}
+	}
 
 	build_panama_canal = {
 		news = yes
@@ -84,9 +134,8 @@ political_decisions = {
 		news_desc_medium = "panama_canal_NEWS_MEDIUM"
 		news_desc_short = "panama_canal_NEWS_SHORT"
 		potential = {
-			NOT = {
-			has_global_flag = panama_under_construction
-			is_canal_enabled = 3 }
+			NOT = { has_global_flag = panama_under_construction }
+			NOT = { is_canal_enabled = 3 }
 			is_greater_power = yes
 			mechanical_production = 1
 		}
@@ -102,8 +151,15 @@ political_decisions = {
 			money = 20000
 		}
 		effect = {
-			country_event = 36978
+			random_country = {
+				limit = {
+					NOT = { tag = THIS }
+					owns = 1723
+				}
+				treasury = 10000
+			}
 			1723 = { secede_province = THIS }
+			country_event = 36978
 			set_global_flag = panama_under_construction
 		}
 		ai_will_do = {

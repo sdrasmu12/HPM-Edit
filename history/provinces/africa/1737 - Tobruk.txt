@@ -3,5 +3,5 @@ controller = TUR
 add_core = CYR
 trade_goods = grain
 life_rating = 35
-terrain = coastal_desert
+terrain = semidesert
 colonial = 2

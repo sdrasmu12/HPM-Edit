@@ -701,6 +701,21 @@ political_decisions = {
 						vassal_of = FRA
 					}
 				}
+				CHK = {
+					NOT = { has_country_flag = annexed_to_FRA }
+					neighbour = THIS
+					civilized = no
+					ai = yes
+					war = no
+					OR = {
+						part_of_sphere = no
+						in_sphere = FRA
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = FRA
+					}
+				}
 			}
 			has_global_flag = berlin_conference
 		}
@@ -730,7 +745,7 @@ political_decisions = {
 				}
 				set_country_flag = annexed_to_FRA
 				annex_to = FRA
-			}		
+			}
 		}
 	}
 	
@@ -866,6 +881,7 @@ political_decisions = {
 				civilized = yes
 			}
 		}
+		ai_will_do = { factor = 1 }
 	}
 	
 	form_french_indochina = {
@@ -913,6 +929,99 @@ political_decisions = {
 				}
 				relation = { who = THIS value = -100 }
 			}	
+		}
+	}
+	
+	form_laos = {
+		picture = form_laos
+		potential = {
+			primary_culture = lao
+			OR = {
+				owns = 1356
+				owns = 1357
+			}
+			NOT = { exists = LXA }
+			NOT = { has_country_flag = laos_formed }			
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			prestige = 30
+			num_of_cities = 4
+			OR = {
+				nationalism_n_imperialism = 1
+				AND = {
+					owns = 1356
+					owns = 1357
+					owns = 1361
+					owns = 1362
+					owns = 1363
+				}
+				is_greater_power = yes
+				is_secondary_power = yes
+				AND = {
+					military_score = 40
+					prestige = 150
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = laos_formed
+			random_owned = {
+				limit = {
+					owner = { tag = LUA }
+				}
+				owner = {
+					set_country_flag = Luangprabang
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { tag = CHK }
+				}
+				owner = {
+					set_country_flag = Champasak
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { tag = WIA }
+				}
+				owner = {
+					set_country_flag = Wiangchhan
+				}
+			}
+			LUA_1356 = { add_core = LXA }
+			1358 = { add_core = LXA }
+			1359 = { add_core = LXA }						
+			prestige = 10
+			badboy = 2
+			change_tag = LXA
+			any_country = {
+				limit = {
+					is_greater_power = no
+					is_vassal = no
+					relation = {
+						who = THIS
+						value = 5
+					}
+					NOT = { 
+						tag = THIS
+						truce_with = THIS
+					}
+					primary_culture = lao
+				}
+				country_event = 97120
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				badboy = 0.8
+			}
 		}
 	}
 }

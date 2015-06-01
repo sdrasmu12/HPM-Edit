@@ -69,7 +69,7 @@
 	clergymen = {
 		culture = finnish
 		religion = protestant
-		size = 75
+		size = 100
 	}
 
 	artisans = {
@@ -87,13 +87,13 @@
 	farmers = {
 		culture = finnish
 		religion = protestant
-		size = 8825
+		size = 8425
 	}
 
 	farmers = {
 		culture = sami
 		religion = protestant
-		size = 500
+		size = 1075
 	}
 }
 #Karelia Region (524000)

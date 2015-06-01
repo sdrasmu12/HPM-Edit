@@ -7,8 +7,8 @@ religion = orthodox
 government = absolute_monarchy
 plurality = 5.0
 nationalvalue = nv_autocracy
-literacy = 0.10
-non_state_culture_literacy = 0.07
+literacy = 0.08
+non_state_culture_literacy = 0.09
 civilized = yes
 
 set_country_flag = serfdom_not_abolished
@@ -39,9 +39,7 @@ school_reforms = no_schools
 conscription = four_year_draft
 debt_law = serfdom
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = gentry
-citizens_rights = primary_culture_only
+child_labor = child_labor_legalcitizens_rights = primary_culture_only
 
 ruling_party = RUS_conservative
 upper_house = {
@@ -74,10 +72,10 @@ private_banks = 1
 no_standard = 1
 early_classical_theory_and_critique = 1
 guild_based_production = 1
-piston_steam_engine = 1
 publishing_industry = 1
 mechanized_mining = 1
 basic_chemistry = 1
+piston_steam_engine = 1
 
 #Inventions
 #corvettes = yes
@@ -94,7 +92,6 @@ govt_flag = {
 	flag = theocracy
 }
 
-
 oob = "RUS_oob.txt"
 1861.1.1 = {
 	oob = "/1861/RUS_oob.txt"
@@ -106,6 +103,7 @@ oob = "RUS_oob.txt"
 	set_country_flag = eastern_christians_up_in_here_yall
 	set_country_flag = peking_convention
 	set_country_flag = shimoda_treaty
+	set_global_flag = 2nd_caucasian_war
 	decision = russian_vladivostok
 	ruling_party = RUS_reactionary
 	plurality = 60

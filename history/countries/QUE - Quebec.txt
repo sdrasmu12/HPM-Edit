@@ -1,6 +1,5 @@
 capital = 65
 primary_culture = french_canadian
-culture = british
 culture = anglo_canadian
 religion = catholic
 government = hms_government
@@ -33,9 +32,7 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legal
-bureaucracy_ref = hereditary_bureaucracy
-citizens_rights = culture_voting_only
+child_labor = child_labor_legalcitizens_rights = culture_voting_only
 
 ruling_party = QUE_conservative
 upper_house = {
@@ -48,8 +45,3 @@ upper_house = {
 	communist = 0
 }
 
-1861.1.1 = {
-# Technologies
-
-#Inventions
-}
